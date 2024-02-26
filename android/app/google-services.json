@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "429711773743",
+    "project_id": "eventfull-7b3e6",
+    "storage_bucket": "eventfull-7b3e6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:429711773743:android:1595547bd267a3926976da",
+        "android_client_info": {
+          "package_name": "com.mycompany.eventfull"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "429711773743-bmjd21sp9803j29rpskfg2nf6kqief8g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAdpMZ7yl81V0w6YXCP2pJwWHGdcq6cuhk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "429711773743-bmjd21sp9803j29rpskfg2nf6kqief8g.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "429711773743-8kvsqk1ht8iagf554aeqk4ejt4cocd67.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mycompany.eventfull"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
