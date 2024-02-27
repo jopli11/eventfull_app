@@ -161,19 +161,27 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(16.0, 4.0, 16.0, 0.0),
+                  padding: const EdgeInsets.fromLTRB(
+                      16.0, 4.0, 16.0, 50.0), // Increase bottom padding to 5.0
                   child: Row(
                     children: [
-                      _buildSocialIconButton(FontAwesomeIcons.youtube, 'https://www.youtube.com/'),
-                      _buildSocialIconButton(FontAwesomeIcons.instagram, 'https://www.instagram.com/'),
-                      _buildSocialIconButton(FontAwesomeIcons.facebookF, 'https://www.facebook.com/'),
-                      _buildSocialIconButton(FontAwesomeIcons.linkedinIn, 'https://www.linkedin.com/'),
+                      _buildSocialIconButton(
+                          FontAwesomeIcons.youtube, 'https://www.youtube.com/'),
+                      const SizedBox(width:5.0), // Add SizedBox with width 5.0 for spacing between buttons
+                      _buildSocialIconButton(FontAwesomeIcons.instagram,
+                          'https://www.instagram.com/'),
+                      const SizedBox(width:5.0), // Add SizedBox with width 5.0 for spacing between buttons
+                      _buildSocialIconButton(FontAwesomeIcons.facebookF,
+                          'https://www.facebook.com/'),
+                      const SizedBox(width:5.0), // Add SizedBox with width 5.0 for spacing between buttons
+                      _buildSocialIconButton(FontAwesomeIcons.linkedinIn,
+                          'https://www.linkedin.com/'),
                     ],
                   ),
                 ),
-                Spacer(),
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(16.0, 0.0, 0.0, 0.0),
+                  padding: const EdgeInsets.fromLTRB(
+                      16.0, 0.0, 0.0, 5.0), // Reduce bottom padding to 5.0
                   child: Text(
                     'App Version',
                     style: FlutterFlowTheme.of(context).titleLarge.override(
@@ -188,7 +196,8 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                 Opacity(
                   opacity: 0.5,
                   child: Padding(
-                    padding: const EdgeInsets.fromLTRB(16.0, 4.0, 0.0, 0.0),
+                    padding: const EdgeInsets.fromLTRB(
+                        16.0, 4.0, 0.0, 5.0), // Reduce bottom padding to 5.0
                     child: Text(
                       'v0.0.1',
                       style: FlutterFlowTheme.of(context).labelMedium.override(
@@ -208,7 +217,6 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                       GoRouter.of(context).prepareAuthEvent();
                       await authManager.signOut();
                       GoRouter.of(context).clearRedirectLocation();
-
                       context.goNamedAuth('SignUp', context.mounted);
                     },
                     text: 'Log Out',
@@ -216,7 +224,9 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                       width: 150.0,
                       height: 50.0,
                       color: const Color(0xFFED49BB),
-                      textStyle: FlutterFlowTheme.of(context).labelMedium.override(
+                      textStyle: FlutterFlowTheme.of(context)
+                          .labelMedium
+                          .override(
                             fontFamily: 'Proxima Nova Final',
                             color: FlutterFlowTheme.of(context).primaryBtnText,
                             fontSize: 18.0,
@@ -228,7 +238,7 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                         color: Colors.transparent,
                         width: 1.0,
                       ),
-                        borderRadius: BorderRadius.circular(12),
+                      borderRadius: BorderRadius.circular(12),
                       padding: const EdgeInsets.symmetric(horizontal: 24.0),
                     ),
                   ),
