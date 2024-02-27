@@ -190,7 +190,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           path: '/search',
           builder: (context, params) => params.isEmpty
               ? NavBarPage(initialPage: 'Search')
-              : const SearchWidget(),
+              : SearchWidget(),
         ),
         FFRoute(
           name: 'AddEvent',

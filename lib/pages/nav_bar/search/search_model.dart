@@ -1,35 +1,75 @@
-import '/backend/backend.dart';
-import '/flutter_flow/flutter_flow_util.dart';
-import 'search_widget.dart' show SearchWidget;
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'dart:async'; // Import the async library for Timer
 
-class SearchModel extends FlutterFlowModel<SearchWidget> {
-  ///  Local state fields for this page.
+class UsersRecord {
+  final String id;
+  final String displayName;
+  final String fullName;
+  final String photoUrl;
+  final String role;
 
-  bool isShowFullList = true;
+  UsersRecord({
+    required this.id,
+    required this.displayName,
+    required this.fullName,
+    required this.photoUrl,
+    required this.role,
+  });
 
-  ///  State fields for stateful widgets in this page.
+  factory UsersRecord.fromSnapshot(DocumentSnapshot doc) {
+    Map<String, dynamic> data = doc.data() as Map<String, dynamic>;
+    return UsersRecord(
+      id: doc.id,
+      displayName: data['display_name'] ?? 'No Name',
+      fullName: data['full_name'] ?? 'No Full Name',
+      photoUrl: data['photo_url'] ?? 'https://example.com/default_avatar.png',
+      role: data['role'] ?? 'user',
+    );
+  }
+}
 
-  final unfocusNode = FocusNode();
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode;
-  TextEditingController? textController;
-  String? Function(BuildContext, String?)? textControllerValidator;
-  List<UsersRecord> simpleSearchResults = [];
+class SearchModel extends ChangeNotifier {
+  TextEditingController textController = TextEditingController();
+  List<UsersRecord> users = [];
+  final FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
+  Timer? searchDebounce;
 
-  /// Initialization and disposal methods.
-
-  @override
-  void initState(BuildContext context) {}
-
-  @override
-  void dispose() {
-    unfocusNode.dispose();
-    textFieldFocusNode?.dispose();
-    textController?.dispose();
+  SearchModel() {
+    loadAllUsers();
   }
 
-  /// Action blocks are added here.
+  get unfocusNode => null;
 
-  /// Additional helper methods are added here.
+  Future<void> loadAllUsers() async {
+    var querySnapshot = await firebaseFirestore.collection('users').get();
+    users =
+        querySnapshot.docs.map((doc) => UsersRecord.fromSnapshot(doc)).toList();
+    notifyListeners();
+  }
+
+  void searchUsers(String query) async {
+    // Cancel any existing timers
+    if (searchDebounce?.isActive ?? false) searchDebounce?.cancel();
+
+    // Set a new timer
+    searchDebounce = Timer(const Duration(milliseconds: 500), () async {
+      if (query.isEmpty) {
+        await loadAllUsers();
+      } else {
+        // Query Firestore for users with an exact match on the display name
+        var querySnapshot = await firebaseFirestore
+            .collection('users')
+            .where('display_name', isEqualTo: query) // Adjusted for exact match
+            .get();
+
+        users = querySnapshot.docs
+            .map((doc) => UsersRecord.fromSnapshot(doc))
+            .toList();
+        notifyListeners();
+      }
+    });
+  }
+
+  
 }
