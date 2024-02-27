@@ -5,8 +5,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'settings_page_model.dart';
 export 'settings_page_model.dart';
 
@@ -52,13 +51,14 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
             ),
           ),
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(0.0, 150.0, 0.0, 0.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 150.0, 0.0, 0.0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 0.0, 0.0),
+                  padding:
+                      const EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 0.0, 0.0),
                   child: Text(
                     'Settings Page',
                     style: FlutterFlowTheme.of(context).headlineMedium.override(
@@ -72,13 +72,13 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                 Opacity(
                   opacity: 0.5,
                   child: Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 0.0, 0.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(
+                        16.0, 4.0, 0.0, 0.0),
                     child: Text(
                       'Please evaluate your options below.',
                       style: FlutterFlowTheme.of(context).labelMedium.override(
                             fontFamily: 'Proxima Nova Final',
-                            color: Color(0x9995A1AC),
+                            color: const Color(0x9995A1AC),
                             fontSize: 14.0,
                             fontWeight: FontWeight.w500,
                             useGoogleFonts: false,
@@ -92,64 +92,13 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                   scrollDirection: Axis.vertical,
                   children: [
                     Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 1.0),
-                      child: InkWell(
-                        splashColor: Colors.transparent,
-                        focusColor: Colors.transparent,
-                        hoverColor: Colors.transparent,
-                        highlightColor: Colors.transparent,
-                        onTap: () async {
-                          context.pushNamed('MyTickets');
-                        },
-                        child: Container(
-                          width: double.infinity,
-                          decoration: BoxDecoration(),
-                          child: Padding(
-                            padding: EdgeInsets.all(15.0),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                  'My Tickets',
-                                  style: FlutterFlowTheme.of(context)
-                                      .titleLarge
-                                      .override(
-                                        fontFamily: 'Proxima Nova Final',
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryBtnText,
-                                        useGoogleFonts: false,
-                                      ),
-                                ),
-                                InkWell(
-                                  splashColor: Colors.transparent,
-                                  focusColor: Colors.transparent,
-                                  hoverColor: Colors.transparent,
-                                  highlightColor: Colors.transparent,
-                                  onTap: () async {
-                                    context.pushNamed('MyTickets');
-                                  },
-                                  child: Icon(
-                                    Icons.chevron_right_rounded,
-                                    color: Color(0xFFED49BB),
-                                    size: 24.0,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 1.0),
+                      padding: const EdgeInsetsDirectional.fromSTEB(
+                          0.0, 0.0, 0.0, 1.0),
                       child: Container(
                         width: double.infinity,
-                        decoration: BoxDecoration(),
+                        decoration: const BoxDecoration(),
                         child: Padding(
-                          padding: EdgeInsets.all(15.0),
+                          padding: const EdgeInsets.all(15.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -167,7 +116,7 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                                       useGoogleFonts: false,
                                     ),
                               ),
-                              Icon(
+                              const Icon(
                                 Icons.chevron_right_rounded,
                                 color: Color(0xFFED49BB),
                                 size: 24.0,
@@ -178,13 +127,13 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                       ),
                     ),
                     Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 1.0),
+                      padding: const EdgeInsetsDirectional.fromSTEB(
+                          0.0, 0.0, 0.0, 1.0),
                       child: Container(
                         width: double.infinity,
-                        decoration: BoxDecoration(),
+                        decoration: const BoxDecoration(),
                         child: Padding(
-                          padding: EdgeInsets.all(15.0),
+                          padding: const EdgeInsets.all(15.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -201,7 +150,7 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                                       fontWeight: FontWeight.w500,
                                     ),
                               ),
-                              Icon(
+                              const Icon(
                                 Icons.chevron_right_rounded,
                                 color: Color(0xFFED49BB),
                                 size: 24.0,
@@ -212,13 +161,13 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                       ),
                     ),
                     Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 1.0),
+                      padding: const EdgeInsetsDirectional.fromSTEB(
+                          0.0, 0.0, 0.0, 1.0),
                       child: Container(
                         width: double.infinity,
-                        decoration: BoxDecoration(),
+                        decoration: const BoxDecoration(),
                         child: Padding(
-                          padding: EdgeInsets.all(15.0),
+                          padding: const EdgeInsets.all(15.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -235,7 +184,7 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                                       fontWeight: FontWeight.w500,
                                     ),
                               ),
-                              Icon(
+                              const Icon(
                                 Icons.chevron_right_rounded,
                                 color: Color(0xFFED49BB),
                                 size: 24.0,
@@ -246,13 +195,13 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                       ),
                     ),
                     Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 1.0),
+                      padding: const EdgeInsetsDirectional.fromSTEB(
+                          0.0, 0.0, 0.0, 1.0),
                       child: Container(
                         width: double.infinity,
-                        decoration: BoxDecoration(),
+                        decoration: const BoxDecoration(),
                         child: Padding(
-                          padding: EdgeInsets.all(15.0),
+                          padding: const EdgeInsets.all(15.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -270,7 +219,7 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                                       useGoogleFonts: false,
                                     ),
                               ),
-                              Icon(
+                              const Icon(
                                 Icons.chevron_right_rounded,
                                 color: Color(0xFFED49BB),
                                 size: 24.0,
@@ -281,13 +230,13 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                       ),
                     ),
                     Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 1.0),
+                      padding: const EdgeInsetsDirectional.fromSTEB(
+                          0.0, 0.0, 0.0, 1.0),
                       child: Container(
                         width: double.infinity,
-                        decoration: BoxDecoration(),
+                        decoration: const BoxDecoration(),
                         child: Padding(
-                          padding: EdgeInsets.all(15.0),
+                          padding: const EdgeInsets.all(15.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -305,7 +254,7 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                                       useGoogleFonts: false,
                                     ),
                               ),
-                              Icon(
+                              const Icon(
                                 Icons.chevron_right_rounded,
                                 color: Color(0xFFED49BB),
                                 size: 24.0,
@@ -320,13 +269,13 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                 Opacity(
                   opacity: 0.5,
                   child: Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 0.0, 8.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(
+                        16.0, 4.0, 0.0, 8.0),
                     child: Text(
                       'Follow us on',
                       style: FlutterFlowTheme.of(context).labelMedium.override(
                             fontFamily: 'Proxima Nova Final',
-                            color: Color(0x9995A1AC),
+                            color: const Color(0x9995A1AC),
                             fontSize: 14.0,
                             fontWeight: FontWeight.w500,
                             useGoogleFonts: false,
@@ -335,7 +284,8 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(
+                      16.0, 4.0, 16.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
@@ -343,64 +293,85 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                         borderRadius: 12.0,
                         borderWidth: 1.0,
                         buttonSize: 48.0,
-                        fillColor: Color(0xFFED49BB),
+                        fillColor: const Color(0xFFED49BB),
                         icon: FaIcon(
                           FontAwesomeIcons.youtube,
                           color: FlutterFlowTheme.of(context).primaryBtnText,
                           size: 24.0,
                         ),
-                        onPressed: () {
-                          print('IconButton pressed ...');
+                        onPressed: () async {
+                          const url = 'https://www.youtube.com/';
+                          try {
+                            await launchUrl(Uri.parse(url));
+                          } catch (e) {
+                            print("Can't load URL: $e");
+                          }
                         },
                       ),
                       FlutterFlowIconButton(
                         borderRadius: 12.0,
                         borderWidth: 1.0,
                         buttonSize: 48.0,
-                        fillColor: Color(0xFFED49BB),
+                        fillColor: const Color(0xFFED49BB),
                         icon: FaIcon(
                           FontAwesomeIcons.instagram,
                           color: FlutterFlowTheme.of(context).primaryBtnText,
                           size: 24.0,
                         ),
-                        onPressed: () {
-                          print('IconButton pressed ...');
+                        onPressed: () async {
+                          const url = 'https://www.instagram.com/';
+                          try {
+                            await launchUrl(Uri.parse(url));
+                          } catch (e) {
+                            print("Can't load URL: $e");
+                          }
                         },
                       ),
                       FlutterFlowIconButton(
                         borderRadius: 12.0,
                         borderWidth: 1.0,
                         buttonSize: 48.0,
-                        fillColor: Color(0xFFED49BB),
+                        fillColor: const Color(0xFFED49BB),
                         icon: FaIcon(
                           FontAwesomeIcons.facebookF,
                           color: FlutterFlowTheme.of(context).primaryBtnText,
                           size: 24.0,
                         ),
-                        onPressed: () {
-                          print('IconButton pressed ...');
+                        onPressed: () async {
+                          const url = 'https://www.facebook.com/';
+                          try {
+                            await launchUrl(Uri.parse(url));
+                          } catch (e) {
+                            print("Can't load URL: $e");
+                          }
                         },
                       ),
                       FlutterFlowIconButton(
                         borderRadius: 12.0,
                         borderWidth: 1.0,
                         buttonSize: 48.0,
-                        fillColor: Color(0xFFED49BB),
+                        fillColor: const Color(0xFFED49BB),
                         icon: FaIcon(
                           FontAwesomeIcons.linkedinIn,
                           color: FlutterFlowTheme.of(context).primaryBtnText,
                           size: 24.0,
                         ),
-                        onPressed: () {
-                          print('IconButton pressed ...');
+                        onPressed: () async {
+                          const url = 'https://www.linkedin.com/';
+                          try {
+                            await launchUrl(Uri.parse(url));
+                          } catch (e) {
+                            print("Can't load URL: $e");
+                          }
                         },
                       ),
-                    ].divide(SizedBox(width: 8.0)),
+                    ].divide(const SizedBox(width: 8.0)).toList(),
                   ),
                 ),
-                Spacer(),
+                const Spacer(),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                  padding:
+                      const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                   child: Text(
                     'App Version',
                     style: FlutterFlowTheme.of(context).titleLarge.override(
@@ -415,13 +386,13 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                 Opacity(
                   opacity: 0.5,
                   child: Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 0.0, 0.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(
+                        16.0, 4.0, 0.0, 0.0),
                     child: Text(
                       'v0.0.1',
                       style: FlutterFlowTheme.of(context).labelMedium.override(
                             fontFamily: 'Proxima Nova Final',
-                            color: Color(0x9995A1AC),
+                            color: const Color(0x9995A1AC),
                             fontSize: 14.0,
                             fontWeight: FontWeight.w500,
                             useGoogleFonts: false,
@@ -430,7 +401,8 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 0.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(
+                      16.0, 12.0, 0.0, 0.0),
                   child: FFButtonWidget(
                     onPressed: () async {
                       GoRouter.of(context).prepareAuthEvent();
@@ -443,11 +415,11 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                     options: FFButtonOptions(
                       width: 150.0,
                       height: 50.0,
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                      iconPadding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      color: Color(0xFFED49BB),
+                      padding: const EdgeInsetsDirectional.fromSTEB(
+                          24.0, 0.0, 24.0, 0.0),
+                      iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                          0.0, 0.0, 0.0, 0.0),
+                      color: const Color(0xFFED49BB),
                       textStyle: FlutterFlowTheme.of(context)
                           .labelMedium
                           .override(
@@ -458,24 +430,24 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                             useGoogleFonts: false,
                           ),
                       elevation: 0.0,
-                      borderSide: BorderSide(
+                      borderSide: const BorderSide(
                         width: 1.0,
                       ),
                       borderRadius: BorderRadius.circular(12.0),
                     ),
                   ),
                 ),
-              ].addToEnd(SizedBox(height: 64.0)),
+              ].addToEnd(const SizedBox(height: 64.0)),
             ),
           ),
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(15.0, 60.0, 0.0, 0.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(15.0, 60.0, 0.0, 0.0),
             child: FlutterFlowIconButton(
               borderColor: Colors.transparent,
               borderRadius: 30.0,
               borderWidth: 1.0,
               buttonSize: 50.0,
-              icon: Icon(
+              icon: const Icon(
                 Icons.chevron_left_rounded,
                 color: Colors.white,
                 size: 30.0,
