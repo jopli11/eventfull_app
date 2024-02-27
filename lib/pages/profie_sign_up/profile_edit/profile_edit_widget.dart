@@ -5,14 +5,10 @@ import '/backend/firebase_storage/storage.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'profile_edit_model.dart';
 export 'profile_edit_model.dart';
 
@@ -70,7 +66,7 @@ class _ProfileEditWidgetState extends State<ProfileEditWidget> {
           : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: Color(0xFFF1F4F8),
+        backgroundColor: const Color(0xFFF1F4F8),
         body: Stack(
           children: [
             Column(
@@ -91,11 +87,11 @@ class _ProfileEditWidgetState extends State<ProfileEditWidget> {
                   ),
                   child: Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 110.0, 0.0, 60.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 110.0, 0.0, 60.0),
                     child: Container(
                       width: MediaQuery.sizeOf(context).width * 1.0,
                       height: 350.0,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         borderRadius: BorderRadius.only(
                           bottomLeft: Radius.circular(0.0),
                           bottomRight: Radius.circular(0.0),
@@ -104,13 +100,13 @@ class _ProfileEditWidgetState extends State<ProfileEditWidget> {
                         ),
                       ),
                       child: Padding(
-                        padding: EdgeInsets.all(4.0),
+                        padding: const EdgeInsets.all(4.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Expanded(
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     20.0, 0.0, 20.0, 460.0),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
@@ -126,13 +122,13 @@ class _ProfileEditWidgetState extends State<ProfileEditWidget> {
                                           opacity: 0.6,
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 20.0, 0.0, 0.0),
                                             child: Container(
                                               width: 120.0,
                                               height: 120.0,
                                               decoration: BoxDecoration(
-                                                color: Color(0xFFDBE2E7),
+                                                color: const Color(0xFFDBE2E7),
                                                 image: DecorationImage(
                                                   fit: BoxFit.cover,
                                                   image: Image.asset(
@@ -141,20 +137,20 @@ class _ProfileEditWidgetState extends State<ProfileEditWidget> {
                                                 ),
                                                 shape: BoxShape.circle,
                                                 border: Border.all(
-                                                  color: Color(0xFFED49BB),
+                                                  color: const Color(0xFFED49BB),
                                                 ),
                                               ),
                                               child: Stack(
                                                 children: [
                                                   Align(
                                                     alignment:
-                                                        AlignmentDirectional(
+                                                        const AlignmentDirectional(
                                                             -0.02, 0.02),
                                                     child:
                                                         FlutterFlowIconButton(
                                                       borderRadius: 20.0,
                                                       borderWidth: 0.0,
-                                                      icon: Icon(
+                                                      icon: const Icon(
                                                         Icons.add_rounded,
                                                         color: Colors.white,
                                                         size: 72.0,
@@ -170,7 +166,7 @@ class _ProfileEditWidgetState extends State<ProfileEditWidget> {
                                                     height: 200.0,
                                                     clipBehavior:
                                                         Clip.antiAlias,
-                                                    decoration: BoxDecoration(
+                                                    decoration: const BoxDecoration(
                                                       shape: BoxShape.circle,
                                                     ),
                                                     child: Image.network(
@@ -185,7 +181,7 @@ class _ProfileEditWidgetState extends State<ProfileEditWidget> {
                                                       height: 200.0,
                                                       clipBehavior:
                                                           Clip.antiAlias,
-                                                      decoration: BoxDecoration(
+                                                      decoration: const BoxDecoration(
                                                         shape: BoxShape.circle,
                                                       ),
                                                       child: Image.network(
@@ -206,10 +202,10 @@ class _ProfileEditWidgetState extends State<ProfileEditWidget> {
                                       children: [
                                         Align(
                                           alignment:
-                                              AlignmentDirectional(0.0, 0.0),
+                                              const AlignmentDirectional(0.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     105.0, 10.0, 0.0, 0.0),
                                             child: InkWell(
                                               splashColor: Colors.transparent,
@@ -304,7 +300,7 @@ class _ProfileEditWidgetState extends State<ProfileEditWidget> {
                                                           fontFamily:
                                                               'Proxima Nova Final',
                                                           color:
-                                                              Color(0xFF233D9B),
+                                                              const Color(0xFF233D9B),
                                                           fontSize: 16.0,
                                                           fontWeight:
                                                               FontWeight.w500,
@@ -329,30 +325,30 @@ class _ProfileEditWidgetState extends State<ProfileEditWidget> {
               ],
             ),
             Align(
-              alignment: AlignmentDirectional(0.0, 0.0),
+              alignment: const AlignmentDirectional(0.0, 0.0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(25.0, 290.0, 25.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(25.0, 290.0, 25.0, 0.0),
                     child: Container(
                       width: 455.0,
                       height: 400.0,
-                      decoration: BoxDecoration(),
+                      decoration: const BoxDecoration(),
                       child: Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
                         child: Stack(
                           children: [
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 30.0, 220.0, 0.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Align(
-                                    alignment: AlignmentDirectional(-1.0, 0.0),
+                                    alignment: const AlignmentDirectional(-1.0, 0.0),
                                     child: Text(
                                       'Username',
                                       style: FlutterFlowTheme.of(context)
@@ -368,9 +364,9 @@ class _ProfileEditWidgetState extends State<ProfileEditWidget> {
                                     ),
                                   ),
                                   Align(
-                                    alignment: AlignmentDirectional(-1.0, 0.0),
+                                    alignment: const AlignmentDirectional(-1.0, 0.0),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 35.0, 0.0, 0.0),
                                       child: Text(
                                         'Name',
@@ -389,9 +385,9 @@ class _ProfileEditWidgetState extends State<ProfileEditWidget> {
                                     ),
                                   ),
                                   Align(
-                                    alignment: AlignmentDirectional(-1.0, 0.0),
+                                    alignment: const AlignmentDirectional(-1.0, 0.0),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 35.0, 0.0, 0.0),
                                       child: Text(
                                         'Bio',
@@ -410,9 +406,9 @@ class _ProfileEditWidgetState extends State<ProfileEditWidget> {
                                     ),
                                   ),
                                   Align(
-                                    alignment: AlignmentDirectional(-1.0, 0.0),
+                                    alignment: const AlignmentDirectional(-1.0, 0.0),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 35.0, 0.0, 0.0),
                                       child: Text(
                                         'Email',
@@ -431,9 +427,9 @@ class _ProfileEditWidgetState extends State<ProfileEditWidget> {
                                     ),
                                   ),
                                   Align(
-                                    alignment: AlignmentDirectional(-1.0, 0.0),
+                                    alignment: const AlignmentDirectional(-1.0, 0.0),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 35.0, 0.0, 0.0),
                                       child: Text(
                                         'Location',
@@ -452,9 +448,9 @@ class _ProfileEditWidgetState extends State<ProfileEditWidget> {
                                     ),
                                   ),
                                   Align(
-                                    alignment: AlignmentDirectional(-1.0, 0.0),
+                                    alignment: const AlignmentDirectional(-1.0, 0.0),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 35.0, 0.0, 0.0),
                                       child: Text(
                                         'Links',
@@ -476,7 +472,7 @@ class _ProfileEditWidgetState extends State<ProfileEditWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   150.0, 15.0, 0.0, 0.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
@@ -484,9 +480,9 @@ class _ProfileEditWidgetState extends State<ProfileEditWidget> {
                                   Opacity(
                                     opacity: 0.4,
                                     child: Align(
-                                      alignment: AlignmentDirectional(0.0, 0.0),
+                                      alignment: const AlignmentDirectional(0.0, 0.0),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 8.0, 0.0),
                                         child: AuthUserStreamWidget(
                                           builder: (context) => TextFormField(
@@ -496,7 +492,7 @@ class _ProfileEditWidgetState extends State<ProfileEditWidget> {
                                             onChanged: (_) =>
                                                 EasyDebounce.debounce(
                                               '_model.textController1',
-                                              Duration(milliseconds: 75),
+                                              const Duration(milliseconds: 75),
                                               () => setState(() {}),
                                             ),
                                             autofocus: true,
@@ -525,13 +521,13 @@ class _ProfileEditWidgetState extends State<ProfileEditWidget> {
                                                         fontFamily:
                                                             'Proxima Nova Final',
                                                         color:
-                                                            Color(0x9995A1AC),
+                                                            const Color(0x9995A1AC),
                                                         fontSize: 18.0,
                                                         useGoogleFonts: false,
                                                       ),
                                               enabledBorder:
                                                   UnderlineInputBorder(
-                                                borderSide: BorderSide(
+                                                borderSide: const BorderSide(
                                                   color: Color(0xFFED49BB),
                                                   width: 2.0,
                                                 ),
@@ -591,9 +587,9 @@ class _ProfileEditWidgetState extends State<ProfileEditWidget> {
                                   Opacity(
                                     opacity: 0.4,
                                     child: Align(
-                                      alignment: AlignmentDirectional(0.0, 0.0),
+                                      alignment: const AlignmentDirectional(0.0, 0.0),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 8.0, 0.0),
                                         child: AuthUserStreamWidget(
                                           builder: (context) => TextFormField(
@@ -603,7 +599,7 @@ class _ProfileEditWidgetState extends State<ProfileEditWidget> {
                                             onChanged: (_) =>
                                                 EasyDebounce.debounce(
                                               '_model.textController2',
-                                              Duration(milliseconds: 75),
+                                              const Duration(milliseconds: 75),
                                               () => setState(() {}),
                                             ),
                                             autofocus: true,
@@ -632,13 +628,13 @@ class _ProfileEditWidgetState extends State<ProfileEditWidget> {
                                                         fontFamily:
                                                             'Proxima Nova Final',
                                                         color:
-                                                            Color(0xFFB3B3B3),
+                                                            const Color(0xFFB3B3B3),
                                                         fontSize: 18.0,
                                                         useGoogleFonts: false,
                                                       ),
                                               enabledBorder:
                                                   UnderlineInputBorder(
-                                                borderSide: BorderSide(
+                                                borderSide: const BorderSide(
                                                   color: Color(0xFFED49BB),
                                                   width: 2.0,
                                                 ),
@@ -698,9 +694,9 @@ class _ProfileEditWidgetState extends State<ProfileEditWidget> {
                                   Opacity(
                                     opacity: 0.4,
                                     child: Align(
-                                      alignment: AlignmentDirectional(0.0, 0.0),
+                                      alignment: const AlignmentDirectional(0.0, 0.0),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 8.0, 0.0),
                                         child: AuthUserStreamWidget(
                                           builder: (context) => TextFormField(
@@ -710,7 +706,7 @@ class _ProfileEditWidgetState extends State<ProfileEditWidget> {
                                             onChanged: (_) =>
                                                 EasyDebounce.debounce(
                                               '_model.textController3',
-                                              Duration(milliseconds: 75),
+                                              const Duration(milliseconds: 75),
                                               () => setState(() {}),
                                             ),
                                             autofocus: true,
@@ -738,13 +734,13 @@ class _ProfileEditWidgetState extends State<ProfileEditWidget> {
                                                         fontFamily:
                                                             'Proxima Nova Final',
                                                         color:
-                                                            Color(0xFFB3B3B3),
+                                                            const Color(0xFFB3B3B3),
                                                         fontSize: 18.0,
                                                         useGoogleFonts: false,
                                                       ),
                                               enabledBorder:
                                                   UnderlineInputBorder(
-                                                borderSide: BorderSide(
+                                                borderSide: const BorderSide(
                                                   color: Color(0xFFED49BB),
                                                   width: 2.0,
                                                 ),
@@ -804,9 +800,9 @@ class _ProfileEditWidgetState extends State<ProfileEditWidget> {
                                   Opacity(
                                     opacity: 0.4,
                                     child: Align(
-                                      alignment: AlignmentDirectional(0.0, 0.0),
+                                      alignment: const AlignmentDirectional(0.0, 0.0),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 8.0, 0.0),
                                         child: TextFormField(
                                           controller: _model.textController4,
@@ -814,7 +810,7 @@ class _ProfileEditWidgetState extends State<ProfileEditWidget> {
                                           onChanged: (_) =>
                                               EasyDebounce.debounce(
                                             '_model.textController4',
-                                            Duration(milliseconds: 75),
+                                            const Duration(milliseconds: 75),
                                             () => setState(() {}),
                                           ),
                                           autofocus: true,
@@ -840,12 +836,12 @@ class _ProfileEditWidgetState extends State<ProfileEditWidget> {
                                                     .override(
                                                       fontFamily:
                                                           'Proxima Nova Final',
-                                                      color: Color(0xFFB3B3B3),
+                                                      color: const Color(0xFFB3B3B3),
                                                       fontSize: 18.0,
                                                       useGoogleFonts: false,
                                                     ),
                                             enabledBorder: UnderlineInputBorder(
-                                              borderSide: BorderSide(
+                                              borderSide: const BorderSide(
                                                 color: Color(0xFFED49BB),
                                                 width: 2.0,
                                               ),
@@ -903,9 +899,9 @@ class _ProfileEditWidgetState extends State<ProfileEditWidget> {
                                   Opacity(
                                     opacity: 0.4,
                                     child: Align(
-                                      alignment: AlignmentDirectional(0.0, 0.0),
+                                      alignment: const AlignmentDirectional(0.0, 0.0),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 8.0, 0.0),
                                         child: AuthUserStreamWidget(
                                           builder: (context) =>
@@ -952,7 +948,7 @@ class _ProfileEditWidgetState extends State<ProfileEditWidget> {
                                                 onChanged: (_) =>
                                                     EasyDebounce.debounce(
                                                   '_model.textController5',
-                                                  Duration(milliseconds: 75),
+                                                  const Duration(milliseconds: 75),
                                                   () => setState(() {}),
                                                 ),
                                                 autofocus: true,
@@ -981,13 +977,13 @@ class _ProfileEditWidgetState extends State<ProfileEditWidget> {
                                                         fontFamily:
                                                             'Proxima Nova Final',
                                                         color:
-                                                            Color(0xFFB3B3B3),
+                                                            const Color(0xFFB3B3B3),
                                                         fontSize: 18.0,
                                                         useGoogleFonts: false,
                                                       ),
                                                   enabledBorder:
                                                       UnderlineInputBorder(
-                                                    borderSide: BorderSide(
+                                                    borderSide: const BorderSide(
                                                       color: Color(0xFFED49BB),
                                                       width: 2.0,
                                                     ),
@@ -1059,9 +1055,9 @@ class _ProfileEditWidgetState extends State<ProfileEditWidget> {
                                   Opacity(
                                     opacity: 0.4,
                                     child: Align(
-                                      alignment: AlignmentDirectional(0.0, 0.0),
+                                      alignment: const AlignmentDirectional(0.0, 0.0),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 8.0, 0.0),
                                         child: AuthUserStreamWidget(
                                           builder: (context) => TextFormField(
@@ -1071,7 +1067,7 @@ class _ProfileEditWidgetState extends State<ProfileEditWidget> {
                                             onChanged: (_) =>
                                                 EasyDebounce.debounce(
                                               '_model.textController6',
-                                              Duration(milliseconds: 75),
+                                              const Duration(milliseconds: 75),
                                               () => setState(() {}),
                                             ),
                                             autofocus: true,
@@ -1100,13 +1096,13 @@ class _ProfileEditWidgetState extends State<ProfileEditWidget> {
                                                         fontFamily:
                                                             'Proxima Nova Final',
                                                         color:
-                                                            Color(0xFFB3B3B3),
+                                                            const Color(0xFFB3B3B3),
                                                         fontSize: 18.0,
                                                         useGoogleFonts: false,
                                                       ),
                                               enabledBorder:
                                                   UnderlineInputBorder(
-                                                borderSide: BorderSide(
+                                                borderSide: const BorderSide(
                                                   color: Color(0xFFED49BB),
                                                   width: 2.0,
                                                 ),
@@ -1178,17 +1174,17 @@ class _ProfileEditWidgetState extends State<ProfileEditWidget> {
               mainAxisSize: MainAxisSize.max,
               children: [
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(25.0, 0.0, 25.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(25.0, 0.0, 25.0, 0.0),
                   child: Container(
                     width: 404.0,
                     height: 130.0,
-                    decoration: BoxDecoration(),
+                    decoration: const BoxDecoration(),
                     child: Stack(
                       children: [
                         Align(
-                          alignment: AlignmentDirectional(-1.0, 0.0),
+                          alignment: const AlignmentDirectional(-1.0, 0.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 50.0, 0.0, 0.0),
                             child: InkWell(
                               splashColor: Colors.transparent,
@@ -1213,9 +1209,9 @@ class _ProfileEditWidgetState extends State<ProfileEditWidget> {
                           ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(0.0, 0.0),
+                          alignment: const AlignmentDirectional(0.0, 0.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 50.0, 0.0, 0.0),
                             child: Text(
                               'Edit Profile',
@@ -1231,26 +1227,19 @@ class _ProfileEditWidgetState extends State<ProfileEditWidget> {
                           ),
                         ),
                         Opacity(
-                          opacity: (_model.uploadedFileUrl != null &&
-                                      _model.uploadedFileUrl != '') ||
-                                  (_model.textController1.text == null ||
-                                      _model.textController1.text == '') ||
-                                  (_model.textController2.text == null ||
-                                      _model.textController2.text == '') ||
-                                  (_model.textController3.text == null ||
-                                      _model.textController3.text == '') ||
-                                  (_model.textController4.text == null ||
-                                      _model.textController4.text == '') ||
-                                  (_model.textController5.text == null ||
-                                      _model.textController5.text == '') ||
-                                  (_model.textController6.text == null ||
-                                      _model.textController6.text == '')
+                          opacity: (_model.uploadedFileUrl != '') ||
+                                  (_model.textController1.text == '') ||
+                                  (_model.textController2.text == '') ||
+                                  (_model.textController3.text == '') ||
+                                  (_model.textController4.text == '') ||
+                                  (_model.textController5.text == '') ||
+                                  (_model.textController6.text == '')
                               ? 0.0
                               : 1.0,
                           child: Align(
-                            alignment: AlignmentDirectional(1.0, 0.0),
+                            alignment: const AlignmentDirectional(1.0, 0.0),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 50.0, 0.0, 0.0),
                               child: InkWell(
                                 splashColor: Colors.transparent,

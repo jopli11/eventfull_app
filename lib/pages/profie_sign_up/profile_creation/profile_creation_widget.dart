@@ -8,10 +8,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'profile_creation_model.dart';
 export 'profile_creation_model.dart';
 
@@ -66,7 +63,7 @@ class _ProfileCreationWidgetState extends State<ProfileCreationWidget> {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
           return Scaffold(
-            backgroundColor: Color(0xFFF1F4F8),
+            backgroundColor: const Color(0xFFF1F4F8),
             body: Center(
               child: SizedBox(
                 width: 50.0,
@@ -80,14 +77,13 @@ class _ProfileCreationWidgetState extends State<ProfileCreationWidget> {
             ),
           );
         }
-        final profileCreationUsersRecord = snapshot.data!;
         return GestureDetector(
           onTap: () => _model.unfocusNode.canRequestFocus
               ? FocusScope.of(context).requestFocus(_model.unfocusNode)
               : FocusScope.of(context).unfocus(),
           child: Scaffold(
             key: scaffoldKey,
-            backgroundColor: Color(0xFFF1F4F8),
+            backgroundColor: const Color(0xFFF1F4F8),
             body: Stack(
               children: [
                 Column(
@@ -107,12 +103,12 @@ class _ProfileCreationWidgetState extends State<ProfileCreationWidget> {
                         ),
                       ),
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             0.0, 110.0, 0.0, 60.0),
                         child: Container(
                           width: MediaQuery.sizeOf(context).width * 1.0,
                           height: 350.0,
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             borderRadius: BorderRadius.only(
                               bottomLeft: Radius.circular(0.0),
                               bottomRight: Radius.circular(0.0),
@@ -121,13 +117,13 @@ class _ProfileCreationWidgetState extends State<ProfileCreationWidget> {
                             ),
                           ),
                           child: Padding(
-                            padding: EdgeInsets.all(4.0),
+                            padding: const EdgeInsets.all(4.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Expanded(
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         20.0, 0.0, 20.0, 460.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
@@ -144,14 +140,14 @@ class _ProfileCreationWidgetState extends State<ProfileCreationWidget> {
                                             Opacity(
                                               opacity: 0.6,
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 20.0, 0.0, 0.0),
                                                 child: Container(
                                                   width: 120.0,
                                                   height: 120.0,
                                                   decoration: BoxDecoration(
-                                                    color: Color(0xFFDBE2E7),
+                                                    color: const Color(0xFFDBE2E7),
                                                     image: DecorationImage(
                                                       fit: BoxFit.cover,
                                                       image: Image.asset(
@@ -160,7 +156,7 @@ class _ProfileCreationWidgetState extends State<ProfileCreationWidget> {
                                                     ),
                                                     shape: BoxShape.circle,
                                                     border: Border.all(
-                                                      color: Color(0xFFED49BB),
+                                                      color: const Color(0xFFED49BB),
                                                     ),
                                                   ),
                                                   child: Stack(
@@ -171,7 +167,7 @@ class _ProfileCreationWidgetState extends State<ProfileCreationWidget> {
                                                         clipBehavior:
                                                             Clip.antiAlias,
                                                         decoration:
-                                                            BoxDecoration(
+                                                            const BoxDecoration(
                                                           shape:
                                                               BoxShape.circle,
                                                         ),
@@ -183,13 +179,13 @@ class _ProfileCreationWidgetState extends State<ProfileCreationWidget> {
                                                       ),
                                                       Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 -0.02, 0.02),
                                                         child:
                                                             FlutterFlowIconButton(
                                                           borderRadius: 48.0,
                                                           borderWidth: 48.0,
-                                                          icon: Icon(
+                                                          icon: const Icon(
                                                             Icons.add_rounded,
                                                             color: Colors.white,
                                                             size: 72.0,
@@ -286,10 +282,10 @@ class _ProfileCreationWidgetState extends State<ProfileCreationWidget> {
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Align(
-                                              alignment: AlignmentDirectional(
+                                              alignment: const AlignmentDirectional(
                                                   0.0, 0.0),
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         105.0, 10.0, 0.0, 0.0),
                                                 child: Text(
@@ -301,7 +297,7 @@ class _ProfileCreationWidgetState extends State<ProfileCreationWidget> {
                                                         fontFamily:
                                                             'Proxima Nova Final',
                                                         color:
-                                                            Color(0xFF233D9B),
+                                                            const Color(0xFF233D9B),
                                                         fontSize: 16.0,
                                                         fontWeight:
                                                             FontWeight.w500,
@@ -325,31 +321,31 @@ class _ProfileCreationWidgetState extends State<ProfileCreationWidget> {
                   ],
                 ),
                 Align(
-                  alignment: AlignmentDirectional(0.0, 0.0),
+                  alignment: const AlignmentDirectional(0.0, 0.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             25.0, 290.0, 25.0, 0.0),
                         child: Container(
                           width: 455.0,
                           height: 500.0,
-                          decoration: BoxDecoration(),
+                          decoration: const BoxDecoration(),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 5.0, 0.0, 5.0, 0.0),
                             child: Stack(
                               children: [
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 30.0, 220.0, 0.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Align(
                                         alignment:
-                                            AlignmentDirectional(-1.0, 0.0),
+                                            const AlignmentDirectional(-1.0, 0.0),
                                         child: Text(
                                           'Username',
                                           style: FlutterFlowTheme.of(context)
@@ -368,10 +364,10 @@ class _ProfileCreationWidgetState extends State<ProfileCreationWidget> {
                                       ),
                                       Align(
                                         alignment:
-                                            AlignmentDirectional(-1.0, 0.0),
+                                            const AlignmentDirectional(-1.0, 0.0),
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 35.0, 0.0, 0.0),
                                           child: Text(
                                             'Name',
@@ -392,10 +388,10 @@ class _ProfileCreationWidgetState extends State<ProfileCreationWidget> {
                                       ),
                                       Align(
                                         alignment:
-                                            AlignmentDirectional(-1.0, 0.0),
+                                            const AlignmentDirectional(-1.0, 0.0),
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 35.0, 0.0, 0.0),
                                           child: Text(
                                             'Bio',
@@ -416,10 +412,10 @@ class _ProfileCreationWidgetState extends State<ProfileCreationWidget> {
                                       ),
                                       Align(
                                         alignment:
-                                            AlignmentDirectional(-1.0, 0.0),
+                                            const AlignmentDirectional(-1.0, 0.0),
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 35.0, 0.0, 0.0),
                                           child: Text(
                                             'Email',
@@ -440,10 +436,10 @@ class _ProfileCreationWidgetState extends State<ProfileCreationWidget> {
                                       ),
                                       Align(
                                         alignment:
-                                            AlignmentDirectional(-1.0, 0.0),
+                                            const AlignmentDirectional(-1.0, 0.0),
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 35.0, 0.0, 0.0),
                                           child: Text(
                                             'Location',
@@ -464,10 +460,10 @@ class _ProfileCreationWidgetState extends State<ProfileCreationWidget> {
                                       ),
                                       Align(
                                         alignment:
-                                            AlignmentDirectional(-1.0, 0.0),
+                                            const AlignmentDirectional(-1.0, 0.0),
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 35.0, 0.0, 0.0),
                                           child: Text(
                                             'Links',
@@ -490,7 +486,7 @@ class _ProfileCreationWidgetState extends State<ProfileCreationWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       150.0, 15.0, 0.0, 0.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
@@ -499,10 +495,10 @@ class _ProfileCreationWidgetState extends State<ProfileCreationWidget> {
                                         opacity: 0.4,
                                         child: Align(
                                           alignment:
-                                              AlignmentDirectional(0.0, 0.0),
+                                              const AlignmentDirectional(0.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 8.0, 0.0),
                                             child: TextFormField(
                                               controller:
@@ -534,12 +530,12 @@ class _ProfileCreationWidgetState extends State<ProfileCreationWidget> {
                                                           fontFamily:
                                                               'Proxima Nova Final',
                                                           color:
-                                                              Color(0x9995A1AC),
+                                                              const Color(0x9995A1AC),
                                                           useGoogleFonts: false,
                                                         ),
                                                 enabledBorder:
                                                     UnderlineInputBorder(
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Color(0xFFED49BB),
                                                     width: 2.0,
                                                   ),
@@ -610,10 +606,10 @@ class _ProfileCreationWidgetState extends State<ProfileCreationWidget> {
                                         opacity: 0.4,
                                         child: Align(
                                           alignment:
-                                              AlignmentDirectional(0.0, 0.0),
+                                              const AlignmentDirectional(0.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 8.0, 0.0),
                                             child: TextFormField(
                                               controller:
@@ -643,12 +639,12 @@ class _ProfileCreationWidgetState extends State<ProfileCreationWidget> {
                                                     .labelMedium
                                                     .override(
                                                       fontFamily: 'Readex Pro',
-                                                      color: Color(0x9995A1AC),
+                                                      color: const Color(0x9995A1AC),
                                                       fontSize: 14.0,
                                                     ),
                                                 enabledBorder:
                                                     UnderlineInputBorder(
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Color(0xFFED49BB),
                                                     width: 2.0,
                                                   ),
@@ -719,10 +715,10 @@ class _ProfileCreationWidgetState extends State<ProfileCreationWidget> {
                                         opacity: 0.4,
                                         child: Align(
                                           alignment:
-                                              AlignmentDirectional(0.0, 0.0),
+                                              const AlignmentDirectional(0.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 8.0, 0.0),
                                             child: TextFormField(
                                               controller:
@@ -752,11 +748,11 @@ class _ProfileCreationWidgetState extends State<ProfileCreationWidget> {
                                                     .labelMedium
                                                     .override(
                                                       fontFamily: 'Readex Pro',
-                                                      color: Color(0x9995A1AC),
+                                                      color: const Color(0x9995A1AC),
                                                     ),
                                                 enabledBorder:
                                                     UnderlineInputBorder(
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Color(0xFFED49BB),
                                                     width: 2.0,
                                                   ),
@@ -823,10 +819,10 @@ class _ProfileCreationWidgetState extends State<ProfileCreationWidget> {
                                         opacity: 0.4,
                                         child: Align(
                                           alignment:
-                                              AlignmentDirectional(0.0, 0.0),
+                                              const AlignmentDirectional(0.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 8.0, 0.0),
                                             child: TextFormField(
                                               controller:
@@ -858,12 +854,12 @@ class _ProfileCreationWidgetState extends State<ProfileCreationWidget> {
                                                           fontFamily:
                                                               'Proxima Nova Final',
                                                           color:
-                                                              Color(0x9995A1AC),
+                                                              const Color(0x9995A1AC),
                                                           useGoogleFonts: false,
                                                         ),
                                                 enabledBorder:
                                                     UnderlineInputBorder(
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Color(0xFFED49BB),
                                                     width: 2.0,
                                                   ),
@@ -930,10 +926,10 @@ class _ProfileCreationWidgetState extends State<ProfileCreationWidget> {
                                         opacity: 0.4,
                                         child: Align(
                                           alignment:
-                                              AlignmentDirectional(0.0, 0.0),
+                                              const AlignmentDirectional(0.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 8.0, 0.0),
                                             child: AuthUserStreamWidget(
                                               builder: (context) =>
@@ -1007,14 +1003,14 @@ class _ProfileCreationWidgetState extends State<ProfileCreationWidget> {
                                                               .override(
                                                                 fontFamily:
                                                                     'Proxima Nova Final',
-                                                                color: Color(
+                                                                color: const Color(
                                                                     0x9995A1AC),
                                                                 useGoogleFonts:
                                                                     false,
                                                               ),
                                                       enabledBorder:
                                                           UnderlineInputBorder(
-                                                        borderSide: BorderSide(
+                                                        borderSide: const BorderSide(
                                                           color:
                                                               Color(0xFFED49BB),
                                                           width: 2.0,
@@ -1085,10 +1081,10 @@ class _ProfileCreationWidgetState extends State<ProfileCreationWidget> {
                                         opacity: 0.4,
                                         child: Align(
                                           alignment:
-                                              AlignmentDirectional(0.0, 0.0),
+                                              const AlignmentDirectional(0.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 8.0, 0.0),
                                             child: TextFormField(
                                               controller:
@@ -1120,12 +1116,12 @@ class _ProfileCreationWidgetState extends State<ProfileCreationWidget> {
                                                           fontFamily:
                                                               'Proxima Nova Final',
                                                           color:
-                                                              Color(0x9995A1AC),
+                                                              const Color(0x9995A1AC),
                                                           useGoogleFonts: false,
                                                         ),
                                                 enabledBorder:
                                                     UnderlineInputBorder(
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Color(0xFFED49BB),
                                                     width: 2.0,
                                                   ),
@@ -1192,22 +1188,22 @@ class _ProfileCreationWidgetState extends State<ProfileCreationWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 380.0, 0.0, 0.0),
                                   child: Container(
                                     width: 388.0,
                                     height: 81.0,
-                                    decoration: BoxDecoration(),
+                                    decoration: const BoxDecoration(),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
                                         Stack(
                                           children: [
                                             Align(
-                                              alignment: AlignmentDirectional(
+                                              alignment: const AlignmentDirectional(
                                                   0.0, 0.0),
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 15.0, 170.0, 0.0),
                                                 child: FFButtonWidget(
@@ -1243,14 +1239,14 @@ class _ProfileCreationWidgetState extends State<ProfileCreationWidget> {
                                                     width: 150.0,
                                                     height: 50.0,
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
                                                     iconPadding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
-                                                    color: Color(0xFFED49BB),
+                                                    color: const Color(0xFFED49BB),
                                                     textStyle: FlutterFlowTheme
                                                             .of(context)
                                                         .titleSmall
@@ -1264,7 +1260,7 @@ class _ProfileCreationWidgetState extends State<ProfileCreationWidget> {
                                                           useGoogleFonts: false,
                                                         ),
                                                     elevation: 3.0,
-                                                    borderSide: BorderSide(
+                                                    borderSide: const BorderSide(
                                                       color: Colors.transparent,
                                                       width: 1.0,
                                                     ),
@@ -1276,10 +1272,10 @@ class _ProfileCreationWidgetState extends State<ProfileCreationWidget> {
                                               ),
                                             ),
                                             Align(
-                                              alignment: AlignmentDirectional(
+                                              alignment: const AlignmentDirectional(
                                                   0.0, 0.0),
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         170.0, 15.0, 0.0, 0.0),
                                                 child: FFButtonWidget(
@@ -1292,14 +1288,14 @@ class _ProfileCreationWidgetState extends State<ProfileCreationWidget> {
                                                     width: 150.0,
                                                     height: 50.0,
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
                                                     iconPadding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
-                                                    color: Color(0xFF233D9B),
+                                                    color: const Color(0xFF233D9B),
                                                     textStyle: FlutterFlowTheme
                                                             .of(context)
                                                         .titleSmall
@@ -1307,14 +1303,14 @@ class _ProfileCreationWidgetState extends State<ProfileCreationWidget> {
                                                           fontFamily:
                                                               'Proxima Nova Final',
                                                           color:
-                                                              Color(0xFFB3B3B3),
+                                                              const Color(0xFFB3B3B3),
                                                           fontSize: 18.0,
                                                           fontWeight:
                                                               FontWeight.w500,
                                                           useGoogleFonts: false,
                                                         ),
                                                     elevation: 3.0,
-                                                    borderSide: BorderSide(
+                                                    borderSide: const BorderSide(
                                                       color: Colors.transparent,
                                                       width: 1.0,
                                                     ),
@@ -1344,17 +1340,17 @@ class _ProfileCreationWidgetState extends State<ProfileCreationWidget> {
                   children: [
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(25.0, 0.0, 25.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(25.0, 0.0, 25.0, 0.0),
                       child: Container(
                         width: 404.0,
                         height: 130.0,
-                        decoration: BoxDecoration(),
+                        decoration: const BoxDecoration(),
                         child: Stack(
                           children: [
                             Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 50.0, 0.0, 0.0),
                                 child: Text(
                                   'Create Profile',

@@ -5,13 +5,10 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_toggle_icon.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'home_feed_model.dart';
 export 'home_feed_model.dart';
 
@@ -50,7 +47,7 @@ class _HomeFeedWidgetState extends State<HomeFeedWidget> {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
           return Scaffold(
-            backgroundColor: Color(0xFFF1F4F8),
+            backgroundColor: const Color(0xFFF1F4F8),
             body: Center(
               child: SizedBox(
                 width: 50.0,
@@ -64,14 +61,13 @@ class _HomeFeedWidgetState extends State<HomeFeedWidget> {
             ),
           );
         }
-        List<UserEventsRecord> homeFeedUserEventsRecordList = snapshot.data!;
         return GestureDetector(
           onTap: () => _model.unfocusNode.canRequestFocus
               ? FocusScope.of(context).requestFocus(_model.unfocusNode)
               : FocusScope.of(context).unfocus(),
           child: Scaffold(
             key: scaffoldKey,
-            backgroundColor: Color(0xFFF1F4F8),
+            backgroundColor: const Color(0xFFF1F4F8),
             body: Visibility(
               visible: responsiveVisibility(
                 context: context,
@@ -85,7 +81,7 @@ class _HomeFeedWidgetState extends State<HomeFeedWidget> {
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Container(
-                        decoration: BoxDecoration(),
+                        decoration: const BoxDecoration(),
                         child: Stack(
                           children: [
                             Container(
@@ -121,7 +117,7 @@ class _HomeFeedWidgetState extends State<HomeFeedWidget> {
                     ],
                   ),
                   Container(
-                    decoration: BoxDecoration(),
+                    decoration: const BoxDecoration(),
                     child: Stack(
                       children: [
                         SingleChildScrollView(
@@ -129,10 +125,10 @@ class _HomeFeedWidgetState extends State<HomeFeedWidget> {
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 20.0, 0.0, 0.0),
                                 child: Container(
-                                  decoration: BoxDecoration(),
+                                  decoration: const BoxDecoration(),
                                   child: StreamBuilder<List<EventsRecord>>(
                                     stream: queryEventsRecord(
                                       queryBuilder: (eventsRecord) =>
@@ -186,7 +182,7 @@ class _HomeFeedWidgetState extends State<HomeFeedWidget> {
                                               children: [
                                                 Container(
                                                   height: 525.0,
-                                                  decoration: BoxDecoration(),
+                                                  decoration: const BoxDecoration(),
                                                   child: Column(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -196,7 +192,7 @@ class _HomeFeedWidgetState extends State<HomeFeedWidget> {
                                                     children: [
                                                       Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 0.0, 0.0),
                                                         child: InkWell(
                                                           splashColor: Colors
@@ -239,7 +235,7 @@ class _HomeFeedWidgetState extends State<HomeFeedWidget> {
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     15.0,
                                                                     0.0,
@@ -251,7 +247,7 @@ class _HomeFeedWidgetState extends State<HomeFeedWidget> {
                                                           children: [
                                                             Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           8.0,
@@ -288,7 +284,7 @@ class _HomeFeedWidgetState extends State<HomeFeedWidget> {
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     15.0,
                                                                     0.0,
@@ -300,7 +296,7 @@ class _HomeFeedWidgetState extends State<HomeFeedWidget> {
                                                           children: [
                                                             Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           5.0,
@@ -364,7 +360,7 @@ class _HomeFeedWidgetState extends State<HomeFeedWidget> {
                                                                           fontFamily:
                                                                               'Proxima Nova Final',
                                                                           color:
-                                                                              Color(0xFF57636C),
+                                                                              const Color(0xFF57636C),
                                                                           fontSize:
                                                                               2.0,
                                                                           fontWeight:
@@ -378,7 +374,7 @@ class _HomeFeedWidgetState extends State<HomeFeedWidget> {
                                                             ),
                                                             Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           12.0,
                                                                           5.0,
@@ -404,7 +400,7 @@ class _HomeFeedWidgetState extends State<HomeFeedWidget> {
                                                                     .override(
                                                                       fontFamily:
                                                                           'Proxima Nova Final',
-                                                                      color: Color(
+                                                                      color: const Color(
                                                                           0xFF57636C),
                                                                       fontSize:
                                                                           2.0,
@@ -421,11 +417,11 @@ class _HomeFeedWidgetState extends State<HomeFeedWidget> {
                                                       ),
                                                       Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 -1.0, 0.0),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       5.0,
                                                                       4.0,
@@ -444,7 +440,7 @@ class _HomeFeedWidgetState extends State<HomeFeedWidget> {
                                                             children: [
                                                               Align(
                                                                 alignment:
-                                                                    AlignmentDirectional(
+                                                                    const AlignmentDirectional(
                                                                         0.0,
                                                                         0.0),
                                                                 child:
@@ -470,7 +466,7 @@ class _HomeFeedWidgetState extends State<HomeFeedWidget> {
                                                                   },
                                                                   value: _model
                                                                       .isEventAdded,
-                                                                  onIcon: Icon(
+                                                                  onIcon: const Icon(
                                                                     Icons
                                                                         .favorite_rounded,
                                                                     color: Color(
@@ -492,7 +488,7 @@ class _HomeFeedWidgetState extends State<HomeFeedWidget> {
                                                                     .transparent,
                                                                 borderWidth:
                                                                     1.0,
-                                                                icon: Icon(
+                                                                icon: const Icon(
                                                                   Icons
                                                                       .share_rounded,
                                                                   color: Color(
@@ -509,7 +505,7 @@ class _HomeFeedWidgetState extends State<HomeFeedWidget> {
                                                                     .transparent,
                                                                 borderWidth:
                                                                     1.0,
-                                                                icon: Icon(
+                                                                icon: const Icon(
                                                                   Icons
                                                                       .shopping_cart_checkout_rounded,
                                                                   color: Color(
@@ -526,7 +522,7 @@ class _HomeFeedWidgetState extends State<HomeFeedWidget> {
                                                                     .transparent,
                                                                 borderWidth:
                                                                     1.0,
-                                                                icon: Icon(
+                                                                icon: const Icon(
                                                                   Icons
                                                                       .navigate_next_rounded,
                                                                   color: Color(
@@ -561,25 +557,25 @@ class _HomeFeedWidgetState extends State<HomeFeedWidget> {
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(0.0, 0.0),
+                    alignment: const AlignmentDirectional(0.0, 0.0),
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 15.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 15.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           Align(
-                            alignment: AlignmentDirectional(1.0, -1.0),
+                            alignment: const AlignmentDirectional(1.0, -1.0),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   15.0, 50.0, 15.0, 0.0),
                               child: FlutterFlowIconButton(
                                 borderRadius: 100.0,
                                 borderWidth: 1.0,
                                 buttonSize: 50.0,
-                                fillColor: Color(0x51192B7F),
-                                icon: Icon(
+                                fillColor: const Color(0x51192B7F),
+                                icon: const Icon(
                                   Icons.menu_rounded,
                                   color: Color(0xFFED49BB),
                                   size: 30.0,

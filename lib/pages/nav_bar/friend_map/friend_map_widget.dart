@@ -1,15 +1,10 @@
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_google_map.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:pointer_interceptor/pointer_interceptor.dart';
-import 'package:provider/provider.dart';
 import 'friend_map_model.dart';
 export 'friend_map_model.dart';
 
@@ -41,8 +36,8 @@ class _FriendMapWidgetState extends State<FriendMapWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 300.ms,
-          begin: Offset(0.5, 0.0),
-          end: Offset(0.0, 1.0),
+          begin: const Offset(0.5, 0.0),
+          end: const Offset(0.0, 1.0),
         ),
       ],
     ),
@@ -77,12 +72,12 @@ class _FriendMapWidgetState extends State<FriendMapWidget>
       child: Scaffold(
         key: scaffoldKey,
         resizeToAvoidBottomInset: false,
-        backgroundColor: Color(0xFFF1F4F8),
+        backgroundColor: const Color(0xFFF1F4F8),
         body: Container(
           width: double.infinity,
           height: double.infinity,
           decoration: BoxDecoration(
-            color: Color(0xFFF1F4F8),
+            color: const Color(0xFFF1F4F8),
             image: DecorationImage(
               fit: BoxFit.fill,
               image: Image.asset(
@@ -96,7 +91,7 @@ class _FriendMapWidgetState extends State<FriendMapWidget>
                 controller: _model.googleMapsController,
                 onCameraIdle: (latLng) => _model.googleMapsCenter = latLng,
                 initialLocation: _model.googleMapsCenter ??=
-                    LatLng(13.106061, -59.613158),
+                    const LatLng(13.106061, -59.613158),
                 markerColor: GoogleMarkerColor.violet,
                 mapType: MapType.normal,
                 style: GoogleMapStyle.standard,
@@ -111,7 +106,7 @@ class _FriendMapWidgetState extends State<FriendMapWidget>
                 centerMapOnMarkerTap: true,
               ),
               Align(
-                alignment: AlignmentDirectional(0.0, 0.0),
+                alignment: const AlignmentDirectional(0.0, 0.0),
                 child: PointerInterceptor(
                   intercepting: isWeb,
                   child: Column(
@@ -119,7 +114,7 @@ class _FriendMapWidgetState extends State<FriendMapWidget>
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 44.0, 16.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
@@ -130,7 +125,7 @@ class _FriendMapWidgetState extends State<FriendMapWidget>
                               borderRadius: 30.0,
                               borderWidth: 1.0,
                               buttonSize: 50.0,
-                              icon: Icon(
+                              icon: const Icon(
                                 Icons.chevron_left_rounded,
                                 color: Colors.white,
                                 size: 30.0,

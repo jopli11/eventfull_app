@@ -5,15 +5,11 @@ import '/flutter_flow/flutter_flow_static_map.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/flutter_flow/lat_lng.dart';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:mapbox_search/mapbox_search.dart';
-import 'package:provider/provider.dart';
 import 'event_expanded_model.dart';
 export 'event_expanded_model.dart';
 
@@ -55,7 +51,7 @@ class _EventExpandedWidgetState extends State<EventExpandedWidget> {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
           return Scaffold(
-            backgroundColor: Color(0xFFF1F4F8),
+            backgroundColor: const Color(0xFFF1F4F8),
             body: Center(
               child: SizedBox(
                 width: 50.0,
@@ -76,7 +72,7 @@ class _EventExpandedWidgetState extends State<EventExpandedWidget> {
               : FocusScope.of(context).unfocus(),
           child: Scaffold(
             key: scaffoldKey,
-            backgroundColor: Color(0xFFF1F4F8),
+            backgroundColor: const Color(0xFFF1F4F8),
             body: InkWell(
               splashColor: Colors.transparent,
               focusColor: Colors.transparent,
@@ -125,7 +121,7 @@ class _EventExpandedWidgetState extends State<EventExpandedWidget> {
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           children: [
-                            Container(
+                            SizedBox(
                               width: double.infinity,
                               child: Stack(
                                 children: [
@@ -137,13 +133,13 @@ class _EventExpandedWidgetState extends State<EventExpandedWidget> {
                                   ),
                                   Container(
                                     height: 200.0,
-                                    decoration: BoxDecoration(),
+                                    decoration: const BoxDecoration(),
                                   ),
                                 ],
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   15.0, 25.0, 15.0, 0.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
@@ -152,7 +148,7 @@ class _EventExpandedWidgetState extends State<EventExpandedWidget> {
                                   Container(
                                     width: double.infinity,
                                     height: 50.0,
-                                    decoration: BoxDecoration(
+                                    decoration: const BoxDecoration(
                                       color: Color(0x00FFFFFF),
                                     ),
                                     child: Row(
@@ -166,7 +162,7 @@ class _EventExpandedWidgetState extends State<EventExpandedWidget> {
                                               CrossAxisAlignment.start,
                                           children: [
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 2.0),
                                               child: SelectionArea(
                                                   child: Text(
@@ -202,7 +198,7 @@ class _EventExpandedWidgetState extends State<EventExpandedWidget> {
                                                   .override(
                                                     fontFamily:
                                                         'Proxima Nova Final',
-                                                    color: Color(0x9995A1AC),
+                                                    color: const Color(0x9995A1AC),
                                                     fontSize: 12.0,
                                                     fontWeight: FontWeight.w500,
                                                     useGoogleFonts: false,
@@ -217,7 +213,7 @@ class _EventExpandedWidgetState extends State<EventExpandedWidget> {
                                               width: 50.0,
                                               height: 50.0,
                                               decoration: BoxDecoration(
-                                                color: Color(0x32FFFFFF),
+                                                color: const Color(0x32FFFFFF),
                                                 borderRadius:
                                                     BorderRadius.circular(10.0),
                                                 shape: BoxShape.rectangle,
@@ -258,7 +254,7 @@ class _EventExpandedWidgetState extends State<EventExpandedWidget> {
                                                           fontFamily:
                                                               'Proxima Nova Final',
                                                           color:
-                                                              Color(0xFFED49BB),
+                                                              const Color(0xFFED49BB),
                                                           fontWeight:
                                                               FontWeight.w500,
                                                           useGoogleFonts: false,
@@ -273,19 +269,19 @@ class _EventExpandedWidgetState extends State<EventExpandedWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 5.0, 0.0, 5.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 10.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
-                                              Padding(
+                                              const Padding(
                                                 padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 5.0, 0.0),
@@ -307,7 +303,7 @@ class _EventExpandedWidgetState extends State<EventExpandedWidget> {
                                                     .bodyMedium
                                                     .override(
                                                       fontFamily: 'Readex Pro',
-                                                      color: Color(0x7BFFFFFF),
+                                                      color: const Color(0x7BFFFFFF),
                                                       fontSize: 14.0,
                                                       fontWeight:
                                                           FontWeight.w300,
@@ -320,7 +316,7 @@ class _EventExpandedWidgetState extends State<EventExpandedWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 10.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -328,7 +324,7 @@ class _EventExpandedWidgetState extends State<EventExpandedWidget> {
                                         Row(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
-                                            Padding(
+                                            const Padding(
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 5.0, 0.0),
                                               child: Icon(
@@ -345,7 +341,7 @@ class _EventExpandedWidgetState extends State<EventExpandedWidget> {
                                                   .bodyMedium
                                                   .override(
                                                     fontFamily: 'Readex Pro',
-                                                    color: Color(0x7BFFFFFF),
+                                                    color: const Color(0x7BFFFFFF),
                                                     fontWeight: FontWeight.w300,
                                                   ),
                                             )),
@@ -358,7 +354,7 @@ class _EventExpandedWidgetState extends State<EventExpandedWidget> {
                                     width: 440.0,
                                     height: 100.0,
                                     decoration: BoxDecoration(
-                                      color: Color(0x1AFFFFFF),
+                                      color: const Color(0x1AFFFFFF),
                                       borderRadius: BorderRadius.circular(20.0),
                                     ),
                                     child: Row(
@@ -367,7 +363,7 @@ class _EventExpandedWidgetState extends State<EventExpandedWidget> {
                                           MainAxisAlignment.spaceBetween,
                                       children: [
                                         Padding(
-                                          padding: EdgeInsets.all(20.0),
+                                          padding: const EdgeInsets.all(20.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
@@ -408,17 +404,17 @@ class _EventExpandedWidgetState extends State<EventExpandedWidget> {
                                                         _model.ratingBarValue =
                                                             newValue),
                                                 itemBuilder: (context, index) =>
-                                                    Icon(
+                                                    const Icon(
                                                   Icons.star_rounded,
                                                   color: Color(0xFFFD7138),
                                                 ),
                                                 direction: Axis.horizontal,
                                                 initialRating: _model
                                                     .ratingBarValue ??= 4.5,
-                                                unratedColor: Color(0xFF9E9E9E),
+                                                unratedColor: const Color(0xFF9E9E9E),
                                                 itemCount: 5,
                                                 itemSize: 10.0,
-                                                glowColor: Color(0xFFFD7138),
+                                                glowColor: const Color(0xFFFD7138),
                                               ),
                                             ],
                                           ),
@@ -431,7 +427,7 @@ class _EventExpandedWidgetState extends State<EventExpandedWidget> {
                                               CrossAxisAlignment.start,
                                           children: [
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 0.0, 0.0, 10.0),
                                               child: SelectionArea(
@@ -453,7 +449,7 @@ class _EventExpandedWidgetState extends State<EventExpandedWidget> {
                                             Stack(
                                               children: [
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           60.0, 0.0, 0.0, 0.0),
                                                   child: Container(
@@ -461,7 +457,7 @@ class _EventExpandedWidgetState extends State<EventExpandedWidget> {
                                                     height: 30.0,
                                                     clipBehavior:
                                                         Clip.antiAlias,
-                                                    decoration: BoxDecoration(
+                                                    decoration: const BoxDecoration(
                                                       shape: BoxShape.circle,
                                                     ),
                                                     child: Image.network(
@@ -473,7 +469,7 @@ class _EventExpandedWidgetState extends State<EventExpandedWidget> {
                                                   width: 30.0,
                                                   height: 30.0,
                                                   clipBehavior: Clip.antiAlias,
-                                                  decoration: BoxDecoration(
+                                                  decoration: const BoxDecoration(
                                                     shape: BoxShape.circle,
                                                   ),
                                                   child: Image.network(
@@ -481,7 +477,7 @@ class _EventExpandedWidgetState extends State<EventExpandedWidget> {
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           20.0, 0.0, 0.0, 0.0),
                                                   child: Container(
@@ -489,7 +485,7 @@ class _EventExpandedWidgetState extends State<EventExpandedWidget> {
                                                     height: 30.0,
                                                     clipBehavior:
                                                         Clip.antiAlias,
-                                                    decoration: BoxDecoration(
+                                                    decoration: const BoxDecoration(
                                                       shape: BoxShape.circle,
                                                     ),
                                                     child: Image.network(
@@ -498,7 +494,7 @@ class _EventExpandedWidgetState extends State<EventExpandedWidget> {
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           40.0, 0.0, 0.0, 0.0),
                                                   child: Container(
@@ -506,7 +502,7 @@ class _EventExpandedWidgetState extends State<EventExpandedWidget> {
                                                     height: 30.0,
                                                     clipBehavior:
                                                         Clip.antiAlias,
-                                                    decoration: BoxDecoration(
+                                                    decoration: const BoxDecoration(
                                                       shape: BoxShape.circle,
                                                     ),
                                                     child: Image.network(
@@ -515,13 +511,13 @@ class _EventExpandedWidgetState extends State<EventExpandedWidget> {
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           80.0, 0.0, 0.0, 0.0),
                                                   child: Container(
                                                     width: 30.0,
                                                     height: 30.0,
-                                                    decoration: BoxDecoration(
+                                                    decoration: const BoxDecoration(
                                                       color: Color(0xFFED49BB),
                                                       shape: BoxShape.circle,
                                                     ),
@@ -553,7 +549,7 @@ class _EventExpandedWidgetState extends State<EventExpandedWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 10.0, 0.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
@@ -572,7 +568,7 @@ class _EventExpandedWidgetState extends State<EventExpandedWidget> {
                                                 fit: BoxFit.contain,
                                                 borderRadius:
                                                     BorderRadius.circular(10.0),
-                                                markerColor: Color(0xFFFD7138),
+                                                markerColor: const Color(0xFFFD7138),
                                                 zoom: 8,
                                                 tilt: 0,
                                                 rotation: 0,
@@ -587,7 +583,7 @@ class _EventExpandedWidgetState extends State<EventExpandedWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsets.all(20.0),
+                              padding: const EdgeInsets.all(20.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -596,7 +592,7 @@ class _EventExpandedWidgetState extends State<EventExpandedWidget> {
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 10.0),
                                         child: SelectionArea(
                                             child: Text(
@@ -625,7 +621,7 @@ class _EventExpandedWidgetState extends State<EventExpandedWidget> {
                                         .bodyMedium
                                         .override(
                                           fontFamily: 'Proxima Nova Final',
-                                          color: Color(0x7BFFFFFF),
+                                          color: const Color(0x7BFFFFFF),
                                           fontWeight: FontWeight.w500,
                                           useGoogleFonts: false,
                                         ),
@@ -634,7 +630,7 @@ class _EventExpandedWidgetState extends State<EventExpandedWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsets.all(20.0),
+                              padding: const EdgeInsets.all(20.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -643,7 +639,7 @@ class _EventExpandedWidgetState extends State<EventExpandedWidget> {
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 10.0),
                                         child: SelectionArea(
                                             child: Text(
@@ -688,7 +684,7 @@ class _EventExpandedWidgetState extends State<EventExpandedWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   15.0, 20.0, 15.0, 20.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
@@ -702,7 +698,7 @@ class _EventExpandedWidgetState extends State<EventExpandedWidget> {
                                     children: [
                                       Align(
                                         alignment:
-                                            AlignmentDirectional(0.0, 0.0),
+                                            const AlignmentDirectional(0.0, 0.0),
                                         child: FFButtonWidget(
                                           onPressed: () {
                                             print('Button pressed ...');
@@ -712,12 +708,12 @@ class _EventExpandedWidgetState extends State<EventExpandedWidget> {
                                             width: 325.0,
                                             height: 50.0,
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     24.0, 0.0, 24.0, 0.0),
                                             iconPadding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
-                                            color: Color(0xFFED49BB),
+                                            color: const Color(0xFFED49BB),
                                             textStyle:
                                                 FlutterFlowTheme.of(context)
                                                     .titleSmall
@@ -730,7 +726,7 @@ class _EventExpandedWidgetState extends State<EventExpandedWidget> {
                                                       useGoogleFonts: false,
                                                     ),
                                             elevation: 3.0,
-                                            borderSide: BorderSide(
+                                            borderSide: const BorderSide(
                                               color: Colors.transparent,
                                               width: 1.0,
                                             ),
@@ -744,7 +740,7 @@ class _EventExpandedWidgetState extends State<EventExpandedWidget> {
                                   Container(
                                     width: 353.0,
                                     height: 49.0,
-                                    decoration: BoxDecoration(),
+                                    decoration: const BoxDecoration(),
                                   ),
                                 ],
                               ),
@@ -756,7 +752,7 @@ class _EventExpandedWidgetState extends State<EventExpandedWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(15.0, 50.0, 15.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(15.0, 50.0, 15.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -766,7 +762,7 @@ class _EventExpandedWidgetState extends State<EventExpandedWidget> {
                           borderRadius: 30.0,
                           borderWidth: 1.0,
                           buttonSize: 50.0,
-                          icon: Icon(
+                          icon: const Icon(
                             Icons.chevron_left,
                             color: Colors.white,
                             size: 30.0,
@@ -780,8 +776,8 @@ class _EventExpandedWidgetState extends State<EventExpandedWidget> {
                           borderRadius: 30.0,
                           borderWidth: 1.0,
                           buttonSize: 40.0,
-                          fillColor: Color(0x34FFFFFF),
-                          icon: Icon(
+                          fillColor: const Color(0x34FFFFFF),
+                          icon: const Icon(
                             Icons.share,
                             color: Colors.white,
                             size: 20.0,

@@ -5,11 +5,8 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart'
     as smooth_page_indicator;
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'on_boarding01_model.dart';
 export 'on_boarding01_model.dart';
 
@@ -42,15 +39,15 @@ class _OnBoarding01WidgetState extends State<OnBoarding01Widget>
           curve: Curves.easeInOut,
           delay: 200.ms,
           duration: 300.ms,
-          begin: Offset(0.0, 20.0),
-          end: Offset(0.0, 0.0),
+          begin: const Offset(0.0, 20.0),
+          end: const Offset(0.0, 0.0),
         ),
         ScaleEffect(
           curve: Curves.easeInOut,
           delay: 200.ms,
           duration: 300.ms,
-          begin: Offset(0.9, 0.9),
-          end: Offset(1.0, 1.0),
+          begin: const Offset(0.9, 0.9),
+          end: const Offset(1.0, 1.0),
         ),
       ],
     ),
@@ -69,15 +66,15 @@ class _OnBoarding01WidgetState extends State<OnBoarding01Widget>
           curve: Curves.easeInOut,
           delay: 300.ms,
           duration: 300.ms,
-          begin: Offset(0.0, 20.0),
-          end: Offset(0.0, 0.0),
+          begin: const Offset(0.0, 20.0),
+          end: const Offset(0.0, 0.0),
         ),
         ScaleEffect(
           curve: Curves.easeInOut,
           delay: 300.ms,
           duration: 300.ms,
-          begin: Offset(0.9, 0.9),
-          end: Offset(1.0, 1.0),
+          begin: const Offset(0.9, 0.9),
+          end: const Offset(1.0, 1.0),
         ),
       ],
     ),
@@ -90,15 +87,15 @@ class _OnBoarding01WidgetState extends State<OnBoarding01Widget>
           curve: Curves.easeOut,
           delay: 0.ms,
           duration: 3200.ms,
-          begin: Offset(0.0, -80.0),
-          end: Offset(0.0, 0.0),
+          begin: const Offset(0.0, -80.0),
+          end: const Offset(0.0, 0.0),
         ),
         MoveEffect(
           curve: Curves.easeInOut,
           delay: 3200.ms,
           duration: 3200.ms,
-          begin: Offset(0.0, 0.0),
-          end: Offset(0.0, -80.0),
+          begin: const Offset(0.0, 0.0),
+          end: const Offset(0.0, -80.0),
         ),
       ],
     ),
@@ -117,15 +114,15 @@ class _OnBoarding01WidgetState extends State<OnBoarding01Widget>
           curve: Curves.easeInOut,
           delay: 200.ms,
           duration: 300.ms,
-          begin: Offset(0.0, 20.0),
-          end: Offset(0.0, 0.0),
+          begin: const Offset(0.0, 20.0),
+          end: const Offset(0.0, 0.0),
         ),
         ScaleEffect(
           curve: Curves.easeInOut,
           delay: 200.ms,
           duration: 300.ms,
-          begin: Offset(0.9, 0.9),
-          end: Offset(1.0, 1.0),
+          begin: const Offset(0.9, 0.9),
+          end: const Offset(1.0, 1.0),
         ),
       ],
     ),
@@ -144,15 +141,15 @@ class _OnBoarding01WidgetState extends State<OnBoarding01Widget>
           curve: Curves.easeInOut,
           delay: 300.ms,
           duration: 300.ms,
-          begin: Offset(0.0, 20.0),
-          end: Offset(0.0, 0.0),
+          begin: const Offset(0.0, 20.0),
+          end: const Offset(0.0, 0.0),
         ),
         ScaleEffect(
           curve: Curves.easeInOut,
           delay: 300.ms,
           duration: 300.ms,
-          begin: Offset(0.9, 0.9),
-          end: Offset(1.0, 1.0),
+          begin: const Offset(0.9, 0.9),
+          end: const Offset(1.0, 1.0),
         ),
       ],
     ),
@@ -165,15 +162,15 @@ class _OnBoarding01WidgetState extends State<OnBoarding01Widget>
           curve: Curves.easeOut,
           delay: 0.ms,
           duration: 3200.ms,
-          begin: Offset(0.0, -80.0),
-          end: Offset(0.0, 0.0),
+          begin: const Offset(0.0, -80.0),
+          end: const Offset(0.0, 0.0),
         ),
         MoveEffect(
           curve: Curves.easeInOut,
           delay: 3200.ms,
           duration: 3200.ms,
-          begin: Offset(0.0, 0.0),
-          end: Offset(0.0, -80.0),
+          begin: const Offset(0.0, 0.0),
+          end: const Offset(0.0, -80.0),
         ),
       ],
     ),
@@ -192,15 +189,15 @@ class _OnBoarding01WidgetState extends State<OnBoarding01Widget>
           curve: Curves.easeInOut,
           delay: 200.ms,
           duration: 300.ms,
-          begin: Offset(0.0, 20.0),
-          end: Offset(0.0, 0.0),
+          begin: const Offset(0.0, 20.0),
+          end: const Offset(0.0, 0.0),
         ),
         ScaleEffect(
           curve: Curves.easeInOut,
           delay: 200.ms,
           duration: 300.ms,
-          begin: Offset(0.9, 0.9),
-          end: Offset(1.0, 1.0),
+          begin: const Offset(0.9, 0.9),
+          end: const Offset(1.0, 1.0),
         ),
       ],
     ),
@@ -219,15 +216,15 @@ class _OnBoarding01WidgetState extends State<OnBoarding01Widget>
           curve: Curves.easeInOut,
           delay: 300.ms,
           duration: 300.ms,
-          begin: Offset(0.0, 20.0),
-          end: Offset(0.0, 0.0),
+          begin: const Offset(0.0, 20.0),
+          end: const Offset(0.0, 0.0),
         ),
         ScaleEffect(
           curve: Curves.easeInOut,
           delay: 300.ms,
           duration: 300.ms,
-          begin: Offset(0.9, 0.9),
-          end: Offset(1.0, 1.0),
+          begin: const Offset(0.9, 0.9),
+          end: const Offset(1.0, 1.0),
         ),
       ],
     ),
@@ -240,15 +237,15 @@ class _OnBoarding01WidgetState extends State<OnBoarding01Widget>
           curve: Curves.easeOut,
           delay: 0.ms,
           duration: 3200.ms,
-          begin: Offset(0.0, -80.0),
-          end: Offset(0.0, 0.0),
+          begin: const Offset(0.0, -80.0),
+          end: const Offset(0.0, 0.0),
         ),
         MoveEffect(
           curve: Curves.easeInOut,
           delay: 3200.ms,
           duration: 3200.ms,
-          begin: Offset(0.0, 0.0),
-          end: Offset(0.0, -80.0),
+          begin: const Offset(0.0, 0.0),
+          end: const Offset(0.0, -80.0),
         ),
       ],
     ),
@@ -292,13 +289,13 @@ class _OnBoarding01WidgetState extends State<OnBoarding01Widget>
               children: [
                 Expanded(
                   child: Align(
-                    alignment: AlignmentDirectional(0.0, 0.0),
+                    alignment: const AlignmentDirectional(0.0, 0.0),
                     child: Container(
                       width: double.infinity,
-                      constraints: BoxConstraints(
+                      constraints: const BoxConstraints(
                         maxWidth: 670.0,
                       ),
-                      decoration: BoxDecoration(),
+                      decoration: const BoxDecoration(),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         children: [
@@ -308,7 +305,7 @@ class _OnBoarding01WidgetState extends State<OnBoarding01Widget>
                             child: Stack(
                               children: [
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 50.0),
                                   child: PageView(
                                     controller: _model.pageViewController ??=
@@ -319,7 +316,7 @@ class _OnBoarding01WidgetState extends State<OnBoarding01Widget>
                                         children: [
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     40.0, 12.0, 40.0, 0.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
@@ -327,7 +324,7 @@ class _OnBoarding01WidgetState extends State<OnBoarding01Widget>
                                                   MainAxisAlignment.center,
                                               children: [
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 425.0, 0.0, 0.0),
                                                   child: Text(
@@ -349,7 +346,7 @@ class _OnBoarding01WidgetState extends State<OnBoarding01Widget>
                                                       'textOnPageLoadAnimation1']!),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 16.0, 0.0, 0.0),
                                                   child: Text(
@@ -379,20 +376,20 @@ class _OnBoarding01WidgetState extends State<OnBoarding01Widget>
                                             child: Container(
                                               width: double.infinity,
                                               height: 420.0,
-                                              decoration: BoxDecoration(),
+                                              decoration: const BoxDecoration(),
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
                                                   Container(
                                                     width: double.infinity,
                                                     height: 600.0,
-                                                    decoration: BoxDecoration(),
+                                                    decoration: const BoxDecoration(),
                                                     child:
                                                         MasonryGridView.builder(
                                                       physics:
                                                           const NeverScrollableScrollPhysics(),
                                                       gridDelegate:
-                                                          SliverSimpleGridDelegateWithFixedCrossAxisCount(
+                                                          const SliverSimpleGridDelegateWithFixedCrossAxisCount(
                                                         crossAxisCount: 3,
                                                       ),
                                                       crossAxisSpacing: 10.0,
@@ -403,7 +400,7 @@ class _OnBoarding01WidgetState extends State<OnBoarding01Widget>
                                                         return [
                                                           () => ClipRRect(
                                                                 borderRadius:
-                                                                    BorderRadius
+                                                                    const BorderRadius
                                                                         .only(
                                                                   bottomLeft: Radius
                                                                       .circular(
@@ -443,7 +440,7 @@ class _OnBoarding01WidgetState extends State<OnBoarding01Widget>
                                                               ),
                                                           () => ClipRRect(
                                                                 borderRadius:
-                                                                    BorderRadius
+                                                                    const BorderRadius
                                                                         .only(
                                                                   bottomLeft: Radius
                                                                       .circular(
@@ -469,7 +466,7 @@ class _OnBoarding01WidgetState extends State<OnBoarding01Widget>
                                                               ),
                                                           () => ClipRRect(
                                                                 borderRadius:
-                                                                    BorderRadius
+                                                                    const BorderRadius
                                                                         .only(
                                                                   bottomLeft: Radius
                                                                       .circular(
@@ -523,7 +520,7 @@ class _OnBoarding01WidgetState extends State<OnBoarding01Widget>
                                                               ),
                                                           () => ClipRRect(
                                                                 borderRadius:
-                                                                    BorderRadius
+                                                                    const BorderRadius
                                                                         .only(
                                                                   bottomLeft: Radius
                                                                       .circular(
@@ -577,7 +574,7 @@ class _OnBoarding01WidgetState extends State<OnBoarding01Widget>
                                                               ),
                                                           () => ClipRRect(
                                                                 borderRadius:
-                                                                    BorderRadius
+                                                                    const BorderRadius
                                                                         .only(
                                                                   bottomLeft: Radius
                                                                       .circular(
@@ -630,7 +627,7 @@ class _OnBoarding01WidgetState extends State<OnBoarding01Widget>
                                         children: [
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     40.0, 12.0, 40.0, 0.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
@@ -638,7 +635,7 @@ class _OnBoarding01WidgetState extends State<OnBoarding01Widget>
                                                   MainAxisAlignment.center,
                                               children: [
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 425.0, 0.0, 0.0),
                                                   child: Text(
@@ -660,7 +657,7 @@ class _OnBoarding01WidgetState extends State<OnBoarding01Widget>
                                                       'textOnPageLoadAnimation3']!),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 16.0, 0.0, 0.0),
                                                   child: Text(
@@ -690,14 +687,14 @@ class _OnBoarding01WidgetState extends State<OnBoarding01Widget>
                                             child: Container(
                                               width: double.infinity,
                                               height: 420.0,
-                                              decoration: BoxDecoration(),
+                                              decoration: const BoxDecoration(),
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
                                                   Container(
                                                     width: double.infinity,
                                                     height: 600.0,
-                                                    decoration: BoxDecoration(),
+                                                    decoration: const BoxDecoration(),
                                                     child: ClipRRect(
                                                       borderRadius:
                                                           BorderRadius.circular(
@@ -707,7 +704,7 @@ class _OnBoarding01WidgetState extends State<OnBoarding01Widget>
                                                         width: 300.0,
                                                         height: 200.0,
                                                         fit: BoxFit.fitHeight,
-                                                        alignment: Alignment(
+                                                        alignment: const Alignment(
                                                             0.0, -1.0),
                                                       ),
                                                     ),
@@ -723,7 +720,7 @@ class _OnBoarding01WidgetState extends State<OnBoarding01Widget>
                                         children: [
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     40.0, 12.0, 40.0, 0.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
@@ -731,7 +728,7 @@ class _OnBoarding01WidgetState extends State<OnBoarding01Widget>
                                                   MainAxisAlignment.center,
                                               children: [
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 425.0, 0.0, 0.0),
                                                   child: Text(
@@ -753,7 +750,7 @@ class _OnBoarding01WidgetState extends State<OnBoarding01Widget>
                                                       'textOnPageLoadAnimation5']!),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 16.0, 0.0, 0.0),
                                                   child: Text(
@@ -783,20 +780,20 @@ class _OnBoarding01WidgetState extends State<OnBoarding01Widget>
                                             child: Container(
                                               width: double.infinity,
                                               height: 420.0,
-                                              decoration: BoxDecoration(),
+                                              decoration: const BoxDecoration(),
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
                                                   Container(
                                                     width: double.infinity,
                                                     height: 600.0,
-                                                    decoration: BoxDecoration(),
+                                                    decoration: const BoxDecoration(),
                                                     child:
                                                         MasonryGridView.builder(
                                                       physics:
                                                           const NeverScrollableScrollPhysics(),
                                                       gridDelegate:
-                                                          SliverSimpleGridDelegateWithFixedCrossAxisCount(
+                                                          const SliverSimpleGridDelegateWithFixedCrossAxisCount(
                                                         crossAxisCount: 3,
                                                       ),
                                                       crossAxisSpacing: 10.0,
@@ -807,7 +804,7 @@ class _OnBoarding01WidgetState extends State<OnBoarding01Widget>
                                                         return [
                                                           () => ClipRRect(
                                                                 borderRadius:
-                                                                    BorderRadius
+                                                                    const BorderRadius
                                                                         .only(
                                                                   bottomLeft: Radius
                                                                       .circular(
@@ -847,7 +844,7 @@ class _OnBoarding01WidgetState extends State<OnBoarding01Widget>
                                                               ),
                                                           () => ClipRRect(
                                                                 borderRadius:
-                                                                    BorderRadius
+                                                                    const BorderRadius
                                                                         .only(
                                                                   bottomLeft: Radius
                                                                       .circular(
@@ -873,7 +870,7 @@ class _OnBoarding01WidgetState extends State<OnBoarding01Widget>
                                                               ),
                                                           () => ClipRRect(
                                                                 borderRadius:
-                                                                    BorderRadius
+                                                                    const BorderRadius
                                                                         .only(
                                                                   bottomLeft: Radius
                                                                       .circular(
@@ -927,7 +924,7 @@ class _OnBoarding01WidgetState extends State<OnBoarding01Widget>
                                                               ),
                                                           () => ClipRRect(
                                                                 borderRadius:
-                                                                    BorderRadius
+                                                                    const BorderRadius
                                                                         .only(
                                                                   bottomLeft: Radius
                                                                       .circular(
@@ -981,7 +978,7 @@ class _OnBoarding01WidgetState extends State<OnBoarding01Widget>
                                                               ),
                                                           () => ClipRRect(
                                                                 borderRadius:
-                                                                    BorderRadius
+                                                                    const BorderRadius
                                                                         .only(
                                                                   bottomLeft: Radius
                                                                       .circular(
@@ -1034,9 +1031,9 @@ class _OnBoarding01WidgetState extends State<OnBoarding01Widget>
                                   ),
                                 ),
                                 Align(
-                                  alignment: AlignmentDirectional(0.0, 1.0),
+                                  alignment: const AlignmentDirectional(0.0, 1.0),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 10.0),
                                     child: smooth_page_indicator
                                         .SmoothPageIndicator(
@@ -1048,11 +1045,11 @@ class _OnBoarding01WidgetState extends State<OnBoarding01Widget>
                                         await _model.pageViewController!
                                             .animateToPage(
                                           i,
-                                          duration: Duration(milliseconds: 500),
+                                          duration: const Duration(milliseconds: 500),
                                           curve: Curves.ease,
                                         );
                                       },
-                                      effect: smooth_page_indicator
+                                      effect: const smooth_page_indicator
                                           .ExpandingDotsEffect(
                                         expansionFactor: 3.0,
                                         spacing: 8.0,
@@ -1070,7 +1067,7 @@ class _OnBoarding01WidgetState extends State<OnBoarding01Widget>
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 15.0, 50.0, 15.0, 0.0),
                             child: FFButtonWidget(
                               onPressed: () async {
@@ -1080,11 +1077,11 @@ class _OnBoarding01WidgetState extends State<OnBoarding01Widget>
                               options: FFButtonOptions(
                                 width: 300.0,
                                 height: 60.0,
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
-                                color: Color(0xFFED49BB),
+                                color: const Color(0xFFED49BB),
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleMedium
                                     .override(
@@ -1095,7 +1092,7 @@ class _OnBoarding01WidgetState extends State<OnBoarding01Widget>
                                       useGoogleFonts: false,
                                     ),
                                 elevation: 4.0,
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                   color: Colors.transparent,
                                   width: 1.0,
                                 ),

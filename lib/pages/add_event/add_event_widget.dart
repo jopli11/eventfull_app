@@ -6,14 +6,8 @@ import '/flutter_flow/flutter_flow_place_picker.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/flutter_flow/place.dart';
 import '/flutter_flow/upload_data.dart';
-import 'dart:io';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'add_event_model.dart';
 export 'add_event_model.dart';
 
@@ -59,10 +53,10 @@ class _AddEventWidgetState extends State<AddEventWidget> {
           : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: Color(0xFFF1F4F8),
+        backgroundColor: const Color(0xFFF1F4F8),
         body: Container(
-          decoration: BoxDecoration(),
-          child: Container(
+          decoration: const BoxDecoration(),
+          child: SizedBox(
             width: 430.0,
             height: 932.0,
             child: Stack(
@@ -91,7 +85,7 @@ class _AddEventWidgetState extends State<AddEventWidget> {
                       Container(
                         width: 430.0,
                         height: 430.0,
-                        decoration: BoxDecoration(),
+                        decoration: const BoxDecoration(),
                         child: Stack(
                           children: [
                             ClipRRect(
@@ -104,7 +98,7 @@ class _AddEventWidgetState extends State<AddEventWidget> {
                               ),
                             ),
                             Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
                               child: InkWell(
                                 splashColor: Colors.transparent,
                                 focusColor: Colors.transparent,
@@ -169,7 +163,7 @@ class _AddEventWidgetState extends State<AddEventWidget> {
                                     }
                                   }
                                 },
-                                child: Icon(
+                                child: const Icon(
                                   Icons.add_rounded,
                                   color: Color(0x51FFFFFF),
                                   size: 120.0,
@@ -177,16 +171,16 @@ class _AddEventWidgetState extends State<AddEventWidget> {
                               ),
                             ),
                             Align(
-                              alignment: AlignmentDirectional(1.0, 1.0),
+                              alignment: const AlignmentDirectional(1.0, 1.0),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 15.0, 15.0),
                                 child: FlutterFlowIconButton(
                                   borderRadius: 20.0,
                                   borderWidth: 1.0,
                                   buttonSize: 36.0,
-                                  fillColor: Color(0x51192B7F),
-                                  icon: Icon(
+                                  fillColor: const Color(0x51192B7F),
+                                  icon: const Icon(
                                     Icons.people_rounded,
                                     color: Color(0xFFED49BB),
                                     size: 20.0,
@@ -203,22 +197,22 @@ class _AddEventWidgetState extends State<AddEventWidget> {
                       Container(
                         width: 393.0,
                         height: 600.0,
-                        decoration: BoxDecoration(),
+                        decoration: const BoxDecoration(),
                         child: Stack(
                           children: [
                             Align(
-                              alignment: AlignmentDirectional(-1.0, -1.0),
+                              alignment: const AlignmentDirectional(-1.0, -1.0),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     15.0, 0.0, 25.0, 0.0),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Align(
                                       alignment:
-                                          AlignmentDirectional(-1.0, 0.0),
+                                          const AlignmentDirectional(-1.0, 0.0),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 20.0, 0.0, 0.0),
                                         child: Text(
                                           'Event title',
@@ -236,7 +230,7 @@ class _AddEventWidgetState extends State<AddEventWidget> {
                                     ),
                                     Expanded(
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 8.0, 0.0),
                                         child: TextFormField(
                                           controller: _model.textController1,
@@ -250,7 +244,7 @@ class _AddEventWidgetState extends State<AddEventWidget> {
                                                     .override(
                                                       fontFamily:
                                                           'Proxima Nova Final',
-                                                      color: Color(0x40FFFFFF),
+                                                      color: const Color(0x40FFFFFF),
                                                       fontWeight:
                                                           FontWeight.w500,
                                                       useGoogleFonts: false,
@@ -266,7 +260,7 @@ class _AddEventWidgetState extends State<AddEventWidget> {
                                                       useGoogleFonts: false,
                                                     ),
                                             enabledBorder: UnderlineInputBorder(
-                                              borderSide: BorderSide(
+                                              borderSide: const BorderSide(
                                                 color: Color(0xFFED49BB),
                                                 width: 0.25,
                                               ),
@@ -274,7 +268,7 @@ class _AddEventWidgetState extends State<AddEventWidget> {
                                                   BorderRadius.circular(0.0),
                                             ),
                                             focusedBorder: UnderlineInputBorder(
-                                              borderSide: BorderSide(
+                                              borderSide: const BorderSide(
                                                 color: Color(0x00000000),
                                                 width: 0.25,
                                               ),
@@ -282,7 +276,7 @@ class _AddEventWidgetState extends State<AddEventWidget> {
                                                   BorderRadius.circular(0.0),
                                             ),
                                             errorBorder: UnderlineInputBorder(
-                                              borderSide: BorderSide(
+                                              borderSide: const BorderSide(
                                                 color: Color(0x00000000),
                                                 width: 0.25,
                                               ),
@@ -291,7 +285,7 @@ class _AddEventWidgetState extends State<AddEventWidget> {
                                             ),
                                             focusedErrorBorder:
                                                 UnderlineInputBorder(
-                                              borderSide: BorderSide(
+                                              borderSide: const BorderSide(
                                                 color: Color(0x00000000),
                                                 width: 0.25,
                                               ),
@@ -321,18 +315,18 @@ class _AddEventWidgetState extends State<AddEventWidget> {
                               ),
                             ),
                             Align(
-                              alignment: AlignmentDirectional(-1.0, -1.0),
+                              alignment: const AlignmentDirectional(-1.0, -1.0),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     15.0, 90.0, 25.0, 0.0),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Align(
                                       alignment:
-                                          AlignmentDirectional(-1.0, 0.0),
+                                          const AlignmentDirectional(-1.0, 0.0),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 20.0, 0.0, 0.0),
                                         child: Text(
                                           'Description',
@@ -350,7 +344,7 @@ class _AddEventWidgetState extends State<AddEventWidget> {
                                     ),
                                     Expanded(
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 8.0, 0.0),
                                         child: TextFormField(
                                           controller: _model.textController2,
@@ -364,7 +358,7 @@ class _AddEventWidgetState extends State<AddEventWidget> {
                                                     .override(
                                                       fontFamily:
                                                           'Proxima Nova Final',
-                                                      color: Color(0x40FFFFFF),
+                                                      color: const Color(0x40FFFFFF),
                                                       fontWeight:
                                                           FontWeight.w500,
                                                       useGoogleFonts: false,
@@ -380,7 +374,7 @@ class _AddEventWidgetState extends State<AddEventWidget> {
                                                       useGoogleFonts: false,
                                                     ),
                                             enabledBorder: UnderlineInputBorder(
-                                              borderSide: BorderSide(
+                                              borderSide: const BorderSide(
                                                 color: Color(0xFFED49BB),
                                                 width: 0.25,
                                               ),
@@ -388,7 +382,7 @@ class _AddEventWidgetState extends State<AddEventWidget> {
                                                   BorderRadius.circular(0.0),
                                             ),
                                             focusedBorder: UnderlineInputBorder(
-                                              borderSide: BorderSide(
+                                              borderSide: const BorderSide(
                                                 color: Color(0x00000000),
                                                 width: 0.25,
                                               ),
@@ -396,7 +390,7 @@ class _AddEventWidgetState extends State<AddEventWidget> {
                                                   BorderRadius.circular(0.0),
                                             ),
                                             errorBorder: UnderlineInputBorder(
-                                              borderSide: BorderSide(
+                                              borderSide: const BorderSide(
                                                 color: Color(0x00000000),
                                                 width: 0.25,
                                               ),
@@ -405,7 +399,7 @@ class _AddEventWidgetState extends State<AddEventWidget> {
                                             ),
                                             focusedErrorBorder:
                                                 UnderlineInputBorder(
-                                              borderSide: BorderSide(
+                                              borderSide: const BorderSide(
                                                 color: Color(0x00000000),
                                                 width: 0.25,
                                               ),
@@ -435,9 +429,9 @@ class _AddEventWidgetState extends State<AddEventWidget> {
                               ),
                             ),
                             Align(
-                              alignment: AlignmentDirectional(-1.0, -1.0),
+                              alignment: const AlignmentDirectional(-1.0, -1.0),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     15.0, 270.0, 25.0, 0.0),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
@@ -449,10 +443,10 @@ class _AddEventWidgetState extends State<AddEventWidget> {
                                       children: [
                                         Align(
                                           alignment:
-                                              AlignmentDirectional(1.0, 0.0),
+                                              const AlignmentDirectional(1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 20.0, 0.0, 0.0),
                                             child: InkWell(
                                               splashColor: Colors.transparent,
@@ -461,7 +455,7 @@ class _AddEventWidgetState extends State<AddEventWidget> {
                                               highlightColor:
                                                   Colors.transparent,
                                               onTap: () async {
-                                                final _datePicked1Date =
+                                                final datePicked1Date =
                                                     await showDatePicker(
                                                   context: context,
                                                   initialDate:
@@ -471,9 +465,9 @@ class _AddEventWidgetState extends State<AddEventWidget> {
                                                   lastDate: DateTime(2050),
                                                 );
 
-                                                TimeOfDay? _datePicked1Time;
-                                                if (_datePicked1Date != null) {
-                                                  _datePicked1Time =
+                                                TimeOfDay? datePicked1Time;
+                                                if (datePicked1Date != null) {
+                                                  datePicked1Time =
                                                       await showTimePicker(
                                                     context: context,
                                                     initialTime:
@@ -482,16 +476,16 @@ class _AddEventWidgetState extends State<AddEventWidget> {
                                                   );
                                                 }
 
-                                                if (_datePicked1Date != null &&
-                                                    _datePicked1Time != null) {
+                                                if (datePicked1Date != null &&
+                                                    datePicked1Time != null) {
                                                   safeSetState(() {
                                                     _model.datePicked1 =
                                                         DateTime(
-                                                      _datePicked1Date.year,
-                                                      _datePicked1Date.month,
-                                                      _datePicked1Date.day,
-                                                      _datePicked1Time!.hour,
-                                                      _datePicked1Time.minute,
+                                                      datePicked1Date.year,
+                                                      datePicked1Date.month,
+                                                      datePicked1Date.day,
+                                                      datePicked1Time!.hour,
+                                                      datePicked1Time.minute,
                                                     );
                                                   });
                                                 }
@@ -515,10 +509,10 @@ class _AddEventWidgetState extends State<AddEventWidget> {
                                         ),
                                         Align(
                                           alignment:
-                                              AlignmentDirectional(1.0, 0.0),
+                                              const AlignmentDirectional(1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     105.0, 20.0, 0.0, 0.0),
                                             child: InkWell(
                                               splashColor: Colors.transparent,
@@ -527,7 +521,7 @@ class _AddEventWidgetState extends State<AddEventWidget> {
                                               highlightColor:
                                                   Colors.transparent,
                                               onTap: () async {
-                                                final _datePicked2Date =
+                                                final datePicked2Date =
                                                     await showDatePicker(
                                                   context: context,
                                                   initialDate:
@@ -537,9 +531,9 @@ class _AddEventWidgetState extends State<AddEventWidget> {
                                                   lastDate: DateTime(2050),
                                                 );
 
-                                                TimeOfDay? _datePicked2Time;
-                                                if (_datePicked2Date != null) {
-                                                  _datePicked2Time =
+                                                TimeOfDay? datePicked2Time;
+                                                if (datePicked2Date != null) {
+                                                  datePicked2Time =
                                                       await showTimePicker(
                                                     context: context,
                                                     initialTime:
@@ -548,16 +542,16 @@ class _AddEventWidgetState extends State<AddEventWidget> {
                                                   );
                                                 }
 
-                                                if (_datePicked2Date != null &&
-                                                    _datePicked2Time != null) {
+                                                if (datePicked2Date != null &&
+                                                    datePicked2Time != null) {
                                                   safeSetState(() {
                                                     _model.datePicked2 =
                                                         DateTime(
-                                                      _datePicked2Date.year,
-                                                      _datePicked2Date.month,
-                                                      _datePicked2Date.day,
-                                                      _datePicked2Time!.hour,
-                                                      _datePicked2Time.minute,
+                                                      datePicked2Date.year,
+                                                      datePicked2Date.month,
+                                                      datePicked2Date.day,
+                                                      datePicked2Time!.hour,
+                                                      datePicked2Time.minute,
                                                     );
                                                   });
                                                 }
@@ -585,10 +579,10 @@ class _AddEventWidgetState extends State<AddEventWidget> {
                                       child: Stack(
                                         children: [
                                           Align(
-                                            alignment: AlignmentDirectional(
+                                            alignment: const AlignmentDirectional(
                                                 -1.0, -1.0),
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 12.0, 0.0, 0.0),
                                               child: FFButtonWidget(
@@ -599,14 +593,14 @@ class _AddEventWidgetState extends State<AddEventWidget> {
                                                 options: FFButtonOptions(
                                                   width: 150.0,
                                                   height: 40.0,
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 0.0, 0.0),
                                                   iconPadding:
-                                                      EdgeInsetsDirectional
+                                                      const EdgeInsetsDirectional
                                                           .fromSTEB(0.0, 0.0,
                                                               0.0, 0.0),
-                                                  color: Color(0xFF192B7F),
+                                                  color: const Color(0xFF192B7F),
                                                   textStyle: FlutterFlowTheme
                                                           .of(context)
                                                       .titleSmall
@@ -618,7 +612,7 @@ class _AddEventWidgetState extends State<AddEventWidget> {
                                                         useGoogleFonts: false,
                                                       ),
                                                   elevation: 2.0,
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Colors.transparent,
                                                     width: 1.0,
                                                   ),
@@ -630,10 +624,10 @@ class _AddEventWidgetState extends State<AddEventWidget> {
                                             ),
                                           ),
                                           Align(
-                                            alignment: AlignmentDirectional(
+                                            alignment: const AlignmentDirectional(
                                                 -1.0, -1.0),
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       175.0, 12.0, 0.0, 0.0),
                                               child: FFButtonWidget(
@@ -644,14 +638,14 @@ class _AddEventWidgetState extends State<AddEventWidget> {
                                                 options: FFButtonOptions(
                                                   width: 150.0,
                                                   height: 40.0,
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 0.0, 0.0),
                                                   iconPadding:
-                                                      EdgeInsetsDirectional
+                                                      const EdgeInsetsDirectional
                                                           .fromSTEB(0.0, 0.0,
                                                               0.0, 0.0),
-                                                  color: Color(0xFF192B7F),
+                                                  color: const Color(0xFF192B7F),
                                                   textStyle: FlutterFlowTheme
                                                           .of(context)
                                                       .titleSmall
@@ -663,7 +657,7 @@ class _AddEventWidgetState extends State<AddEventWidget> {
                                                         useGoogleFonts: false,
                                                       ),
                                                   elevation: 2.0,
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Colors.transparent,
                                                     width: 1.0,
                                                   ),
@@ -682,18 +676,18 @@ class _AddEventWidgetState extends State<AddEventWidget> {
                               ),
                             ),
                             Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     15.0, 180.0, 25.0, 0.0),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Align(
                                       alignment:
-                                          AlignmentDirectional(-1.0, 0.0),
+                                          const AlignmentDirectional(-1.0, 0.0),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 20.0, 0.0, 0.0),
                                         child: Text(
                                           'Location',
@@ -711,9 +705,9 @@ class _AddEventWidgetState extends State<AddEventWidget> {
                                     ),
                                     Align(
                                       alignment:
-                                          AlignmentDirectional(-1.0, 0.0),
+                                          const AlignmentDirectional(-1.0, 0.0),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 12.0, 0.0, 0.0),
                                         child: FlutterFlowPlacePicker(
                                           iOSGoogleMapsApiKey:
@@ -736,7 +730,7 @@ class _AddEventWidgetState extends State<AddEventWidget> {
                                           buttonOptions: FFButtonOptions(
                                             width: 250.0,
                                             height: 40.0,
-                                            color: Color(0xFF192B7F),
+                                            color: const Color(0xFF192B7F),
                                             textStyle:
                                                 FlutterFlowTheme.of(context)
                                                     .titleSmall
@@ -751,7 +745,7 @@ class _AddEventWidgetState extends State<AddEventWidget> {
                                                       useGoogleFonts: false,
                                                     ),
                                             elevation: 2.0,
-                                            borderSide: BorderSide(
+                                            borderSide: const BorderSide(
                                               color: Colors.transparent,
                                               width: 1.0,
                                             ),
@@ -766,18 +760,18 @@ class _AddEventWidgetState extends State<AddEventWidget> {
                               ),
                             ),
                             Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     15.0, 360.0, 25.0, 0.0),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Align(
                                       alignment:
-                                          AlignmentDirectional(-1.0, 0.0),
+                                          const AlignmentDirectional(-1.0, 0.0),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 20.0, 0.0, 0.0),
                                         child: Text(
                                           'Ticket Link',
@@ -795,7 +789,7 @@ class _AddEventWidgetState extends State<AddEventWidget> {
                                     ),
                                     Expanded(
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 8.0, 0.0),
                                         child: TextFormField(
                                           controller:
@@ -810,7 +804,7 @@ class _AddEventWidgetState extends State<AddEventWidget> {
                                                     .override(
                                                       fontFamily:
                                                           'Proxima Nova Final',
-                                                      color: Color(0x40FFFFFF),
+                                                      color: const Color(0x40FFFFFF),
                                                       fontWeight:
                                                           FontWeight.w500,
                                                       useGoogleFonts: false,
@@ -826,7 +820,7 @@ class _AddEventWidgetState extends State<AddEventWidget> {
                                                       useGoogleFonts: false,
                                                     ),
                                             enabledBorder: UnderlineInputBorder(
-                                              borderSide: BorderSide(
+                                              borderSide: const BorderSide(
                                                 color: Color(0xFFED49BB),
                                                 width: 0.25,
                                               ),
@@ -834,7 +828,7 @@ class _AddEventWidgetState extends State<AddEventWidget> {
                                                   BorderRadius.circular(0.0),
                                             ),
                                             focusedBorder: UnderlineInputBorder(
-                                              borderSide: BorderSide(
+                                              borderSide: const BorderSide(
                                                 color: Color(0x00000000),
                                                 width: 0.25,
                                               ),
@@ -842,7 +836,7 @@ class _AddEventWidgetState extends State<AddEventWidget> {
                                                   BorderRadius.circular(0.0),
                                             ),
                                             errorBorder: UnderlineInputBorder(
-                                              borderSide: BorderSide(
+                                              borderSide: const BorderSide(
                                                 color: Color(0x00000000),
                                                 width: 0.25,
                                               ),
@@ -851,7 +845,7 @@ class _AddEventWidgetState extends State<AddEventWidget> {
                                             ),
                                             focusedErrorBorder:
                                                 UnderlineInputBorder(
-                                              borderSide: BorderSide(
+                                              borderSide: const BorderSide(
                                                 color: Color(0x00000000),
                                                 width: 0.25,
                                               ),
@@ -891,11 +885,11 @@ class _AddEventWidgetState extends State<AddEventWidget> {
                   children: [
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 820.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 820.0, 0.0, 0.0),
                       child: Container(
                         width: 430.0,
                         height: 120.0,
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           color: Color(0xFF0E1963),
                           borderRadius: BorderRadius.only(
                             bottomLeft: Radius.circular(0.0),
@@ -905,15 +899,15 @@ class _AddEventWidgetState extends State<AddEventWidget> {
                           ),
                         ),
                         child: Align(
-                          alignment: AlignmentDirectional(0.0, 0.0),
+                          alignment: const AlignmentDirectional(0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Align(
-                                alignment: AlignmentDirectional(0.0, 0.0),
+                                alignment: const AlignmentDirectional(0.0, 0.0),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 40.0),
                                   child: FFButtonWidget(
                                     onPressed: () async {
@@ -940,12 +934,12 @@ class _AddEventWidgetState extends State<AddEventWidget> {
                                     options: FFButtonOptions(
                                       width: 350.0,
                                       height: 45.0,
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           24.0, 0.0, 24.0, 0.0),
                                       iconPadding:
-                                          EdgeInsetsDirectional.fromSTEB(
+                                          const EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
-                                      color: Color(0xFFED49BB),
+                                      color: const Color(0xFFED49BB),
                                       textStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
@@ -955,7 +949,7 @@ class _AddEventWidgetState extends State<AddEventWidget> {
                                             useGoogleFonts: false,
                                           ),
                                       elevation: 3.0,
-                                      borderSide: BorderSide(
+                                      borderSide: const BorderSide(
                                         color: Colors.transparent,
                                         width: 1.0,
                                       ),
@@ -977,13 +971,13 @@ class _AddEventWidgetState extends State<AddEventWidget> {
                   children: [
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(15.0, 50.0, 15.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(15.0, 50.0, 15.0, 0.0),
                       child: FlutterFlowIconButton(
                         borderColor: Colors.transparent,
                         borderRadius: 30.0,
                         borderWidth: 1.0,
                         buttonSize: 50.0,
-                        icon: Icon(
+                        icon: const Icon(
                           Icons.chevron_left,
                           color: Colors.white,
                           size: 30.0,
