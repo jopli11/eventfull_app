@@ -7,13 +7,10 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/group_chat/empty_state_simple/empty_state_simple_widget.dart';
 import '/flutter_flow/random_data_util.dart' as random_data;
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
-import 'package:provider/provider.dart';
 import 'chat_invite_users_model.dart';
 export 'chat_invite_users_model.dart';
 
@@ -71,9 +68,9 @@ class _ChatInviteUsersWidgetState extends State<ChatInviteUsersWidget> {
           : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: Color(0xFF020442),
+        backgroundColor: const Color(0xFF020442),
         appBar: AppBar(
-          backgroundColor: Color(0xFF020442),
+          backgroundColor: const Color(0xFF020442),
           automaticallyImplyLeading: false,
           title: Column(
             mainAxisSize: MainAxisSize.max,
@@ -88,7 +85,7 @@ class _ChatInviteUsersWidgetState extends State<ChatInviteUsersWidget> {
                     ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
                 child: Text(
                   'Select users from below to invite to a chat.',
                   style: FlutterFlowTheme.of(context).labelSmall.override(
@@ -102,7 +99,7 @@ class _ChatInviteUsersWidgetState extends State<ChatInviteUsersWidget> {
           ),
           actions: [
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 12.0, 4.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 12.0, 4.0),
               child: FlutterFlowIconButton(
                 borderRadius: 30.0,
                 borderWidth: 1.0,
@@ -128,14 +125,14 @@ class _ChatInviteUsersWidgetState extends State<ChatInviteUsersWidget> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 12.0, 0.0, 0.0),
                           child: Text(
                             'Invite Friends',
@@ -150,7 +147,7 @@ class _ChatInviteUsersWidgetState extends State<ChatInviteUsersWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 12.0, 0.0, 0.0),
                         child: Text(
                           ((valueOrDefault<int>(
@@ -169,7 +166,7 @@ class _ChatInviteUsersWidgetState extends State<ChatInviteUsersWidget> {
                       ),
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(2.0, 12.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(2.0, 12.0, 0.0, 0.0),
                         child: Text(
                           'Selected',
                           style:
@@ -186,13 +183,13 @@ class _ChatInviteUsersWidgetState extends State<ChatInviteUsersWidget> {
                 Expanded(
                   child: Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                     child:
                         PagedListView<DocumentSnapshot<Object?>?, UsersRecord>(
                       pagingController: _model.setListViewController(
                         UsersRecord.collection.orderBy('display_name'),
                       ),
-                      padding: EdgeInsets.fromLTRB(
+                      padding: const EdgeInsets.fromLTRB(
                         0,
                         0,
                         0,
@@ -243,7 +240,7 @@ class _ChatInviteUsersWidgetState extends State<ChatInviteUsersWidget> {
                             visible: listViewUsersRecord.reference !=
                                 currentUserReference,
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 8.0),
                               child: Container(
                                 width: 100.0,
@@ -274,7 +271,7 @@ class _ChatInviteUsersWidgetState extends State<ChatInviteUsersWidget> {
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 0.0, 0.0),
                                       child: Container(
                                         width: 44.0,
@@ -282,7 +279,7 @@ class _ChatInviteUsersWidgetState extends State<ChatInviteUsersWidget> {
                                         decoration: BoxDecoration(
                                           color: FlutterFlowTheme.of(context)
                                               .accent1,
-                                          borderRadius: BorderRadius.only(
+                                          borderRadius: const BorderRadius.only(
                                             bottomLeft: Radius.circular(10.0),
                                             bottomRight: Radius.circular(10.0),
                                             topLeft: Radius.circular(10.0),
@@ -295,15 +292,15 @@ class _ChatInviteUsersWidgetState extends State<ChatInviteUsersWidget> {
                                           ),
                                         ),
                                         child: Padding(
-                                          padding: EdgeInsets.all(2.0),
+                                          padding: const EdgeInsets.all(2.0),
                                           child: ClipRRect(
                                             borderRadius:
                                                 BorderRadius.circular(8.0),
                                             child: CachedNetworkImage(
                                               fadeInDuration:
-                                                  Duration(milliseconds: 200),
+                                                  const Duration(milliseconds: 200),
                                               fadeOutDuration:
-                                                  Duration(milliseconds: 200),
+                                                  const Duration(milliseconds: 200),
                                               imageUrl:
                                                   listViewUsersRecord.photoUrl,
                                               width: 44.0,
@@ -318,7 +315,7 @@ class _ChatInviteUsersWidgetState extends State<ChatInviteUsersWidget> {
                                       child: Theme(
                                         data: ThemeData(
                                           unselectedWidgetColor:
-                                              Color(0x9995A1AC),
+                                              const Color(0x9995A1AC),
                                         ),
                                         child: CheckboxListTile(
                                           value:
@@ -381,13 +378,13 @@ class _ChatInviteUsersWidgetState extends State<ChatInviteUsersWidget> {
                                           tileColor:
                                               FlutterFlowTheme.of(context)
                                                   .secondaryBackground,
-                                          activeColor: Color(0xFFED49BB),
+                                          activeColor: const Color(0xFFED49BB),
                                           checkColor: Colors.white,
                                           dense: false,
                                           controlAffinity:
                                               ListTileControlAffinity.trailing,
                                           contentPadding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   12.0, 0.0, 8.0, 0.0),
                                           shape: RoundedRectangleBorder(
                                             borderRadius:
@@ -409,11 +406,11 @@ class _ChatInviteUsersWidgetState extends State<ChatInviteUsersWidget> {
               ],
             ),
             Align(
-              alignment: AlignmentDirectional(0.0, 1.0),
+              alignment: const AlignmentDirectional(0.0, 1.0),
               child: Container(
                 width: double.infinity,
                 height: 140.0,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   gradient: LinearGradient(
                     colors: [Color(0xFF101D68), Color(0xFF020442)],
                     stops: [0.0, 0.2],
@@ -421,9 +418,9 @@ class _ChatInviteUsersWidgetState extends State<ChatInviteUsersWidget> {
                     end: AlignmentDirectional(0, 1.0),
                   ),
                 ),
-                alignment: AlignmentDirectional(0.0, 0.0),
+                alignment: const AlignmentDirectional(0.0, 0.0),
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                   child: FFButtonWidget(
                     onPressed: () async {
                       if (_model.friendsList.length >= 2) {
@@ -524,7 +521,7 @@ class _ChatInviteUsersWidgetState extends State<ChatInviteUsersWidget> {
                                     color: FlutterFlowTheme.of(context).info,
                                   ),
                             ),
-                            duration: Duration(milliseconds: 3000),
+                            duration: const Duration(milliseconds: 3000),
                             backgroundColor:
                                 FlutterFlowTheme.of(context).primary,
                           ),
@@ -539,10 +536,10 @@ class _ChatInviteUsersWidgetState extends State<ChatInviteUsersWidget> {
                       width: double.infinity,
                       height: 50.0,
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       iconPadding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      color: Color(0xFFED49BB),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                      color: const Color(0xFFED49BB),
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
                                 fontFamily: 'Proxima Nova Final',
@@ -550,7 +547,7 @@ class _ChatInviteUsersWidgetState extends State<ChatInviteUsersWidget> {
                                 useGoogleFonts: false,
                               ),
                       elevation: 2.0,
-                      borderSide: BorderSide(
+                      borderSide: const BorderSide(
                         color: Colors.transparent,
                         width: 1.0,
                       ),

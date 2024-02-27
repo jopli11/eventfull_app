@@ -5,8 +5,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
+
 import 'chat_messages_model.dart';
 export 'chat_messages_model.dart';
 
@@ -47,27 +46,27 @@ class _ChatMessagesWidgetState extends State<ChatMessagesWidget> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+      padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
       child: Column(
         mainAxisSize: MainAxisSize.max,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           if (widget.chatMessagesRef?.user != currentUserReference)
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 4.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 4.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 18.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 18.0),
                     child: Container(
                       width: 36.0,
                       height: 36.0,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).accent1,
-                        borderRadius: BorderRadius.only(
+                        borderRadius: const BorderRadius.only(
                           bottomLeft: Radius.circular(10.0),
                           bottomRight: Radius.circular(10.0),
                           topLeft: Radius.circular(10.0),
@@ -75,17 +74,17 @@ class _ChatMessagesWidgetState extends State<ChatMessagesWidget> {
                         ),
                         shape: BoxShape.rectangle,
                         border: Border.all(
-                          color: Color(0xFFED49BB),
+                          color: const Color(0xFFED49BB),
                           width: 2.0,
                         ),
                       ),
                       child: Padding(
-                        padding: EdgeInsets.all(2.0),
+                        padding: const EdgeInsets.all(2.0),
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(8.0),
                           child: CachedNetworkImage(
-                            fadeInDuration: Duration(milliseconds: 200),
-                            fadeOutDuration: Duration(milliseconds: 200),
+                            fadeInDuration: const Duration(milliseconds: 200),
+                            fadeOutDuration: const Duration(milliseconds: 200),
                             imageUrl:
                                 'https://images.unsplash.com/photo-1472552944129-b035e9ea3744?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwyfHxuaWdodCUyMHNreXxlbnwwfHx8fDE3MDUwMzgyNjR8MA&ixlib=rb-4.0.3&q=80&w=1080',
                             width: 44.0,
@@ -108,15 +107,15 @@ class _ChatMessagesWidgetState extends State<ChatMessagesWidget> {
                                 : 280.0,
                           ),
                           decoration: BoxDecoration(
-                            color: Color(0xFF020442),
-                            boxShadow: [
+                            color: const Color(0xFF020442),
+                            boxShadow: const [
                               BoxShadow(
                                 blurRadius: 3.0,
                                 color: Color(0x33000000),
                                 offset: Offset(0.0, 1.0),
                               )
                             ],
-                            borderRadius: BorderRadius.only(
+                            borderRadius: const BorderRadius.only(
                               bottomLeft: Radius.circular(0.0),
                               bottomRight: Radius.circular(12.0),
                               topLeft: Radius.circular(12.0),
@@ -128,7 +127,7 @@ class _ChatMessagesWidgetState extends State<ChatMessagesWidget> {
                             ),
                           ),
                           child: Padding(
-                            padding: EdgeInsets.all(8.0),
+                            padding: const EdgeInsets.all(8.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -139,9 +138,9 @@ class _ChatMessagesWidgetState extends State<ChatMessagesWidget> {
                                     borderRadius: BorderRadius.circular(8.0),
                                     child: CachedNetworkImage(
                                       fadeInDuration:
-                                          Duration(milliseconds: 200),
+                                          const Duration(milliseconds: 200),
                                       fadeOutDuration:
-                                          Duration(milliseconds: 200),
+                                          const Duration(milliseconds: 200),
                                       imageUrl: widget.chatMessagesRef!.image,
                                       width: 300.0,
                                       height: 200.0,
@@ -149,7 +148,7 @@ class _ChatMessagesWidgetState extends State<ChatMessagesWidget> {
                                     ),
                                   ),
                                 Padding(
-                                  padding: EdgeInsets.all(4.0),
+                                  padding: const EdgeInsets.all(4.0),
                                   child: SelectionArea(
                                       child: AutoSizeText(
                                     valueOrDefault<String>(
@@ -172,7 +171,7 @@ class _ChatMessagesWidgetState extends State<ChatMessagesWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 4.0, 0.0, 0.0),
                           child: Text(
                             valueOrDefault<String>(
@@ -197,7 +196,7 @@ class _ChatMessagesWidgetState extends State<ChatMessagesWidget> {
             ),
           if (widget.chatMessagesRef?.user == currentUserReference)
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 4.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 4.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.end,
@@ -214,15 +213,15 @@ class _ChatMessagesWidgetState extends State<ChatMessagesWidget> {
                                 : 300.0,
                           ),
                           decoration: BoxDecoration(
-                            color: Color(0xFFED49BB),
-                            boxShadow: [
+                            color: const Color(0xFFED49BB),
+                            boxShadow: const [
                               BoxShadow(
                                 blurRadius: 3.0,
                                 color: Color(0x33000000),
                                 offset: Offset(0.0, 1.0),
                               )
                             ],
-                            borderRadius: BorderRadius.only(
+                            borderRadius: const BorderRadius.only(
                               bottomLeft: Radius.circular(12.0),
                               bottomRight: Radius.circular(0.0),
                               topLeft: Radius.circular(12.0),
@@ -233,13 +232,13 @@ class _ChatMessagesWidgetState extends State<ChatMessagesWidget> {
                             ),
                           ),
                           child: Padding(
-                            padding: EdgeInsets.all(8.0),
+                            padding: const EdgeInsets.all(8.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.min,
                               crossAxisAlignment: CrossAxisAlignment.end,
                               children: [
                                 Padding(
-                                  padding: EdgeInsets.all(4.0),
+                                  padding: const EdgeInsets.all(4.0),
                                   child: SelectionArea(
                                       child: Text(
                                     valueOrDefault<String>(
@@ -262,7 +261,7 @@ class _ChatMessagesWidgetState extends State<ChatMessagesWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 4.0, 0.0, 0.0),
                           child: Text(
                             valueOrDefault<String>(

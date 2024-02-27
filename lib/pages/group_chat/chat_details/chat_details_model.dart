@@ -1,24 +1,12 @@
-import '/auth/firebase_auth/auth_util.dart';
+
 import '/backend/backend.dart';
-import '/backend/firebase_storage/storage.dart';
-import '/flutter_flow/flutter_flow_icon_button.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import '/flutter_flow/upload_data.dart';
 import '/pages/group_chat/chat_messages/chat_messages_widget.dart';
 import '/pages/group_chat/delete_dialog/delete_dialog_widget.dart';
-import '/pages/group_chat/empty_state_simple/empty_state_simple_widget.dart';
 import '/pages/group_chat/user_list_small/user_list_small_widget.dart';
 import 'chat_details_widget.dart' show ChatDetailsWidget;
-import 'package:cached_network_image/cached_network_image.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:collection/collection.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
+
 
 class ChatDetailsModel extends FlutterFlowModel<ChatDetailsWidget> {
   ///  Local state fields for this page.

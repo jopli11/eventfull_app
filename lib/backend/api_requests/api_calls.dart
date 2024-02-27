@@ -1,12 +1,8 @@
-import 'dart:convert';
-import 'dart:typed_data';
 
-import '/flutter_flow/flutter_flow_util.dart';
 import 'api_manager.dart';
 
 export 'api_manager.dart' show ApiCallResponse;
 
-const _kPrivateApiFunctionName = 'ffPrivateApiCall';
 
 class ReverseGeoCodeCall {
   static Future<ApiCallResponse> call({
@@ -46,20 +42,4 @@ class ApiPagingParams {
       'PagingParams(nextPageNumber: $nextPageNumber, numItems: $numItems, lastResponse: $lastResponse,)';
 }
 
-String _serializeList(List? list) {
-  list ??= <String>[];
-  try {
-    return json.encode(list);
-  } catch (_) {
-    return '[]';
-  }
-}
 
-String _serializeJson(dynamic jsonVar, [bool isList = false]) {
-  jsonVar ??= (isList ? [] : {});
-  try {
-    return json.encode(jsonVar);
-  } catch (_) {
-    return isList ? '[]' : '{}';
-  }
-}

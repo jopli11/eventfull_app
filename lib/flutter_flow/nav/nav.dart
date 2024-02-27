@@ -1,8 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:page_transition/page_transition.dart';
+
 import 'package:provider/provider.dart';
 import '/backend/backend.dart';
 
@@ -10,11 +9,9 @@ import '/auth/base_auth_user_provider.dart';
 
 import '/index.dart';
 import '/main.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
-import '/flutter_flow/lat_lng.dart';
-import '/flutter_flow/place.dart';
+
 import '/flutter_flow/flutter_flow_util.dart';
-import 'serialization_util.dart';
+
 
 export 'package:go_router/go_router.dart';
 export 'serialization_util.dart';
@@ -79,25 +76,25 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? NavBarPage() : SignUpWidget(),
+          appStateNotifier.loggedIn ? NavBarPage() : const SignUpWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? NavBarPage() : SignUpWidget(),
+              appStateNotifier.loggedIn ? NavBarPage() : const SignUpWidget(),
         ),
         FFRoute(
           name: 'SignUp',
           path: '/signUp',
-          builder: (context, params) => SignUpWidget(),
+          builder: (context, params) => const SignUpWidget(),
         ),
         FFRoute(
           name: 'chat_Main',
           path: '/chatMain',
           builder: (context, params) => params.isEmpty
               ? NavBarPage(initialPage: 'chat_Main')
-              : ChatMainWidget(),
+              : const ChatMainWidget(),
         ),
         FFRoute(
           name: 'chat_Details',
@@ -122,31 +119,31 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'Calendar',
           path: '/calendar',
-          builder: (context, params) => CalendarWidget(),
+          builder: (context, params) => const CalendarWidget(),
         ),
         FFRoute(
           name: 'FriendMap',
           path: '/friendMap',
           builder: (context, params) => params.isEmpty
               ? NavBarPage(initialPage: 'FriendMap')
-              : FriendMapWidget(),
+              : const FriendMapWidget(),
         ),
         FFRoute(
           name: 'ProfileCreation',
           path: '/profileCreation',
-          builder: (context, params) => ProfileCreationWidget(),
+          builder: (context, params) => const ProfileCreationWidget(),
         ),
         FFRoute(
           name: 'ProfileEdit',
           path: '/profileEdit',
-          builder: (context, params) => ProfileEditWidget(),
+          builder: (context, params) => const ProfileEditWidget(),
         ),
         FFRoute(
           name: 'MyProfile',
           path: '/myProfile',
           builder: (context, params) => params.isEmpty
               ? NavBarPage(initialPage: 'MyProfile')
-              : MyProfileWidget(),
+              : const MyProfileWidget(),
         ),
         FFRoute(
           name: 'EventExpanded',
@@ -159,46 +156,46 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'EventTickets',
           path: '/eventTickets',
-          builder: (context, params) => EventTicketsWidget(),
+          builder: (context, params) => const EventTicketsWidget(),
         ),
         FFRoute(
           name: 'OnBoarding02',
           path: '/onBoarding02',
-          builder: (context, params) => OnBoarding02Widget(),
+          builder: (context, params) => const OnBoarding02Widget(),
         ),
         FFRoute(
           name: 'OnBoarding01',
           path: '/onBoarding01',
-          builder: (context, params) => OnBoarding01Widget(),
+          builder: (context, params) => const OnBoarding01Widget(),
         ),
         FFRoute(
           name: 'MyTickets',
           path: '/myTickets',
-          builder: (context, params) => MyTicketsWidget(),
+          builder: (context, params) => const MyTicketsWidget(),
         ),
         FFRoute(
           name: 'SettingsPage',
           path: '/settingsPage',
-          builder: (context, params) => SettingsPageWidget(),
+          builder: (context, params) => const SettingsPageWidget(),
         ),
         FFRoute(
           name: 'HomeFeed',
           path: '/homeFeed',
           builder: (context, params) => params.isEmpty
               ? NavBarPage(initialPage: 'HomeFeed')
-              : HomeFeedWidget(),
+              : const HomeFeedWidget(),
         ),
         FFRoute(
           name: 'Search',
           path: '/search',
           builder: (context, params) => params.isEmpty
               ? NavBarPage(initialPage: 'Search')
-              : SearchWidget(),
+              : const SearchWidget(),
         ),
         FFRoute(
           name: 'AddEvent',
           path: '/addEvent',
-          builder: (context, params) => AddEventWidget(),
+          builder: (context, params) => const AddEventWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -428,7 +425,7 @@ class TransitionInfo {
   final Duration duration;
   final Alignment? alignment;
 
-  static TransitionInfo appDefault() => TransitionInfo(hasTransition: false);
+  static TransitionInfo appDefault() => const TransitionInfo(hasTransition: false);
 }
 
 class RootPageContext {
