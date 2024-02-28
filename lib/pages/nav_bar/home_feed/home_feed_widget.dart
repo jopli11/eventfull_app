@@ -133,75 +133,67 @@ class _HomeFeedWidgetState extends State<HomeFeedWidget> {
   }
 
   Widget _buildContent(BuildContext context) {
-    return Container(
-      decoration: const BoxDecoration(),
-      child: Stack(
-        children: [
-          SingleChildScrollView(
-            child: Column(
-              mainAxisSize: MainAxisSize.max,
-              children: [
-                Padding(
-                  padding:
-                      const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
-                  child: Container(
-                    decoration: const BoxDecoration(),
-                    child: StreamBuilder<List<EventsRecord>>(
-                      stream: queryEventsRecord(
-                        queryBuilder: (eventsRecord) => eventsRecord.where(
-                          'StartTime',
-                          isGreaterThanOrEqualTo: getCurrentTimestamp,
-                        ),
-                        limit: 25,
-                      ),
-                      builder: (context, snapshot) {
-                        if (!snapshot.hasData) {
-                          return _buildEventsLoadingIndicator();
-                        }
-                        return _buildEventsListView(snapshot.data!);
-                      },
-                    ),
-                  ),
-                ),
-              ],
+    return Stack(
+      children: [
+        Container(
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              fit: BoxFit.cover,
+              image: AssetImage('assets/images/event_feed_bg.png'),
             ),
           ),
-          Align(
-            alignment: const AlignmentDirectional(0.0, 0.0),
-            child: Padding(
-              padding:
-                  const EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 15.0, 0.0),
-              child: Row(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Align(
-                    alignment: const AlignmentDirectional(1.0, -1.0),
-                    child: Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(
-                          15.0, 50.0, 15.0, 0.0),
-                      child: FlutterFlowIconButton(
-                        borderRadius: 100.0,
-                        borderWidth: 1.0,
-                        buttonSize: 50.0,
-                        fillColor: const Color(0x51192B7F),
-                        icon: const Icon(
-                          Icons.menu_rounded,
-                          color: Color(0xFFED49BB),
-                          size: 30.0,
-                        ),
-                        onPressed: () async {
-                          context.pushNamed('AddEvent');
-                        },
-                      ),
-                    ),
-                  ),
-                ],
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height,
+        ),
+        Container(
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              fit: BoxFit.cover,
+              image: AssetImage('assets/images/Untitled-2_bg.png'),
+            ),
+          ),
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height,
+        ),
+        Padding(
+          padding: const EdgeInsets.fromLTRB(15.0, 20.0, 15.0, 0.0),
+          child: StreamBuilder<List<EventsRecord>>(
+            stream: queryEventsRecord(
+              queryBuilder: (eventsRecord) => eventsRecord.where(
+                'StartTime',
+                isGreaterThanOrEqualTo: getCurrentTimestamp,
               ),
+              limit: 25,
+            ),
+            builder: (context, snapshot) {
+              if (!snapshot.hasData) {
+                return _buildEventsLoadingIndicator();
+              }
+              return _buildEventsListView(snapshot.data!);
+            },
+          ),
+        ),
+        Align(
+          alignment: Alignment.topRight,
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(0.0, 50.0, 20.0, 0.0), // Adjust top padding here
+            child: FlutterFlowIconButton(
+              borderRadius: 100.0,
+              borderWidth: 1.0,
+              buttonSize: 50.0,
+              fillColor: const Color(0x51192B7F),
+              icon: const Icon(
+                Icons.menu_rounded,
+                color: Color(0xFFED49BB),
+                size: 30.0,
+              ),
+              onPressed: () async {
+                context.pushNamed('AddEvent');
+              },
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 
