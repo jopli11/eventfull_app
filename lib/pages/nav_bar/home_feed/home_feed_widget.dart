@@ -176,24 +176,57 @@ class _HomeFeedWidgetState extends State<HomeFeedWidget> {
         Align(
           alignment: Alignment.topRight,
           child: Padding(
-            padding: const EdgeInsets.fromLTRB(0.0, 50.0, 20.0, 0.0), // Adjust top padding here
-            child: FlutterFlowIconButton(
-              borderRadius: 100.0,
-              borderWidth: 1.0,
-              buttonSize: 50.0,
-              fillColor: const Color(0x51192B7F),
+            padding: const EdgeInsets.fromLTRB(
+                0.0, 50.0, 20.0, 0.0), // Adjust top padding here
+            child: PopupMenuButton<int>(
+              color:
+                  const Color.fromARGB(255, 0, 1, 61), // background color of the menu
+              itemBuilder: (context) => [
+                const PopupMenuItem(
+                  value: 1,
+                  child: Text(
+                    "Filter by Category",
+                    style: TextStyle(color: Colors.white), // text color
+                  ),
+                ),
+                const PopupMenuItem(
+                  value: 2,
+                  child: Text(
+                    "Filter by Date",
+                    style: TextStyle(color: Colors.white), // text color
+                  ),
+                ),
+                const PopupMenuItem(
+                  value: 3,
+                  child: Text(
+                    "Add New Event",
+                    style: TextStyle(color: Colors.white), // text color
+                  ),
+                ),
+              ],
               icon: const Icon(
                 Icons.menu_rounded,
-                color: Color(0xFFED49BB),
-                size: 30.0,
+                color: Color(0xFFED49BB), // icon color
+                size: 30.0, // icon size
               ),
-              onPressed: () async {
-                context.pushNamed('AddEvent');
+              onSelected: (value) {
+                switch (value) {
+                  case 1:
+                    print('Filter by Category selected');
+                    break;
+                  case 2:
+                    print('Filter by Date selected');
+                    break;
+                  case 3:
+                    context.pushNamed('AddEvent');
+                    break;
+                }
               },
             ),
           ),
         ),
       ],
+      
     );
   }
 
