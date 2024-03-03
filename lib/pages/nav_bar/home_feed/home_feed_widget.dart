@@ -1,5 +1,6 @@
 // ignore_for_file: avoid_print
 
+import 'package:share/share.dart';
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
@@ -268,9 +269,7 @@ class _HomeFeedWidgetState extends State<HomeFeedWidget> {
     return StreamBuilder<DocumentSnapshot>(
       stream: userEventsRef.doc(event.reference.id).snapshots(),
       builder: (context, snapshot) {
-
         final bool isEventAdded = snapshot.hasData && snapshot.data!.exists;
-
 
         return InkWell(
           splashColor: Colors.transparent,
@@ -480,6 +479,7 @@ class _HomeFeedWidgetState extends State<HomeFeedWidget> {
                               ),
                             ),
                             FlutterFlowIconButton(
+                              //share button
                               borderColor: Colors.transparent,
                               borderWidth: 1.0,
                               icon: const Icon(
@@ -487,8 +487,12 @@ class _HomeFeedWidgetState extends State<HomeFeedWidget> {
                                 color: Color(0xFFED49BB),
                                 size: 24.0,
                               ),
-                              onPressed: () {
-                                print('IconButton pressed ...');
+                              onPressed: () async {
+                                final Uri url = Uri.parse(
+                                    'https://yourapp.link/event/${event.reference.id}');
+                                const String msg =
+                                    'Check out this event on EventFull. If you don\'t have the app, download it here: [App Download Link]';
+                                Share.share('$msg $url');
                               },
                             ),
                             FlutterFlowIconButton(
@@ -499,20 +503,8 @@ class _HomeFeedWidgetState extends State<HomeFeedWidget> {
                                 color: Color(0xFFED49BB),
                                 size: 24.0,
                               ),
-                              onPressed: () {
-                                print('IconButton pressed ...');
-                              },
-                            ),
-                            FlutterFlowIconButton(
-                              borderColor: Colors.transparent,
-                              borderWidth: 1.0,
-                              icon: const Icon(
-                                Icons.navigate_next_rounded,
-                                color: Color(0xFFED49BB),
-                                size: 24.0,
-                              ),
-                              onPressed: () {
-                                print('IconButton pressed ...');
+                              onPressed: () async {
+                                await launchURL(event.ticketLink);
                               },
                             ),
                           ],

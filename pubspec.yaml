@@ -100,6 +100,7 @@ dependencies:
   pointer_interceptor: 0.9.3+4
   provider: 6.0.5
   rxdart: 0.27.7
+  share: ^2.0.4
   shared_preferences: 2.2.2
   shared_preferences_android: 2.2.1
   shared_preferences_foundation: 2.3.4
