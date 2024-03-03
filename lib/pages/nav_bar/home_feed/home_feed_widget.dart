@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
@@ -169,7 +171,9 @@ class _HomeFeedWidgetState extends State<HomeFeedWidget> {
               if (!snapshot.hasData) {
                 return _buildEventsLoadingIndicator();
               }
-              return _buildEventsListView(snapshot.data!);
+              final events =
+                  snapshot.data ?? []; // Default to an empty list if null
+              return _buildEventsListView(events);
             },
           ),
         ),
@@ -179,8 +183,8 @@ class _HomeFeedWidgetState extends State<HomeFeedWidget> {
             padding: const EdgeInsets.fromLTRB(
                 0.0, 50.0, 20.0, 0.0), // Adjust top padding here
             child: PopupMenuButton<int>(
-              color:
-                  const Color.fromARGB(255, 0, 1, 61), // background color of the menu
+              color: const Color.fromARGB(
+                  255, 0, 1, 61), // background color of the menu
               itemBuilder: (context) => [
                 const PopupMenuItem(
                   value: 1,
@@ -226,7 +230,6 @@ class _HomeFeedWidgetState extends State<HomeFeedWidget> {
           ),
         ),
       ],
-      
     );
   }
 
@@ -257,108 +260,163 @@ class _HomeFeedWidgetState extends State<HomeFeedWidget> {
   }
 
   Widget _buildEventItem(EventsRecord event) {
-    return InkWell(
-      splashColor: Colors.transparent,
-      focusColor: Colors.transparent,
-      hoverColor: Colors.transparent,
-      highlightColor: Colors.transparent,
-      onTap: () async {
-        setState(() {});
-      },
-      child: Stack(
-        children: [
-          Container(
-            height: 525.0,
-            decoration: const BoxDecoration(),
-            child: Column(
-              mainAxisSize: MainAxisSize.max,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Align(
-                  alignment: const AlignmentDirectional(0.0, 0.0),
-                  child: InkWell(
-                    splashColor: Colors.transparent,
-                    focusColor: Colors.transparent,
-                    hoverColor: Colors.transparent,
-                    highlightColor: Colors.transparent,
-                    onTap: () async {
-                      context.pushNamed(
-                        'EventExpanded',
-                        queryParameters: {
-                          'eventID': serializeParam(
-                            event.reference,
-                            ParamType.DocumentReference,
-                          ),
-                        }.withoutNulls,
-                      );
-                    },
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(6.0),
-                      child: Image.network(
-                        event.photoUrl,
-                        width: 400.0,
-                        height: 400.0,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(
-                      15.0, 0.0, 15.0, 0.0),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
-                            0.0, 8.0, 0.0, 0.0),
-                        child: Text(
-                          event.title.maybeHandleOverflow(
-                            maxChars: 27,
-                            replacement: '…',
-                          ),
-                          style: FlutterFlowTheme.of(context)
-                              .headlineSmall
-                              .override(
-                                fontFamily: 'Proxima Nova Final',
-                                color: Colors.white,
-                                fontSize: 22.0,
-                                fontWeight: FontWeight.w500,
-                                useGoogleFonts: false,
+    final userEventsRef = FirebaseFirestore.instance
+        .collection('users')
+        .doc(currentUserReference?.id)
+        .collection('userEvents');
+
+    return StreamBuilder<DocumentSnapshot>(
+      stream: userEventsRef.doc(event.reference.id).snapshots(),
+      builder: (context, snapshot) {
+
+        final bool isEventAdded = snapshot.hasData && snapshot.data!.exists;
+
+
+        return InkWell(
+          splashColor: Colors.transparent,
+          focusColor: Colors.transparent,
+          hoverColor: Colors.transparent,
+          highlightColor: Colors.transparent,
+          onTap: () async {
+            setState(() {});
+          },
+          child: Stack(
+            children: [
+              Container(
+                height: 525.0,
+                decoration: const BoxDecoration(),
+                child: Column(
+                  mainAxisSize: MainAxisSize.max,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Align(
+                      alignment: const AlignmentDirectional(0.0, 0.0),
+                      child: InkWell(
+                        splashColor: Colors.transparent,
+                        focusColor: Colors.transparent,
+                        hoverColor: Colors.transparent,
+                        highlightColor: Colors.transparent,
+                        onTap: () async {
+                          context.pushNamed(
+                            'EventExpanded',
+                            queryParameters: {
+                              'eventID': serializeParam(
+                                event.reference,
+                                ParamType.DocumentReference,
                               ),
+                            }.withoutNulls,
+                          );
+                        },
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(6.0),
+                          child: Image.network(
+                            event.photoUrl,
+                            width: 400.0,
+                            height: 400.0,
+                            fit: BoxFit.cover,
+                          ),
                         ),
                       ),
-                    ],
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(
-                      15.0, 0.0, 15.0, 0.0),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
-                            0.0, 5.0, 0.0, 0.0),
-                        child: FutureBuilder<ApiCallResponse>(
-                          future: ReverseGeoCodeCall.call(
-                            latlng: functions.parseLatLng(
-                              event.location,
+                    ),
+                    Padding(
+                      padding: const EdgeInsetsDirectional.fromSTEB(
+                        15.0,
+                        0.0,
+                        15.0,
+                        0.0,
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0,
+                              8.0,
+                              0.0,
+                              0.0,
+                            ),
+                            child: Text(
+                              event.title.maybeHandleOverflow(
+                                maxChars: 27,
+                                replacement: '…',
+                              ),
+                              style: FlutterFlowTheme.of(context)
+                                  .headlineSmall
+                                  .override(
+                                    fontFamily: 'Proxima Nova Final',
+                                    color: Colors.white,
+                                    fontSize: 22.0,
+                                    fontWeight: FontWeight.w500,
+                                    useGoogleFonts: false,
+                                  ),
                             ),
                           ),
-                          builder: (context, snapshot) {
-                            if (!snapshot.hasData) {
-                              return _buildGeoCodeLoadingIndicator();
-                            }
-                            final textReverseGeoCodeResponse = snapshot.data!;
-                            return AutoSizeText(
-                              getJsonField(
-                                textReverseGeoCodeResponse.jsonBody,
-                                r'''$.results[0].formatted_address''',
-                              ).toString().maybeHandleOverflow(
-                                    maxChars: 70,
-                                    replacement: '…',
-                                  ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsetsDirectional.fromSTEB(
+                        15.0,
+                        0.0,
+                        15.0,
+                        0.0,
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0,
+                              5.0,
+                              0.0,
+                              0.0,
+                            ),
+                            child: FutureBuilder<ApiCallResponse>(
+                              future: ReverseGeoCodeCall.call(
+                                latlng: functions.parseLatLng(
+                                  event.location,
+                                ),
+                              ),
+                              builder: (context, snapshot) {
+                                final textReverseGeoCodeResponse =
+                                    snapshot.data!;
+                                return AutoSizeText(
+                                  getJsonField(
+                                    textReverseGeoCodeResponse.jsonBody,
+                                    r'''$.results[0].formatted_address''',
+                                  ).toString().maybeHandleOverflow(
+                                        maxChars: 70,
+                                        replacement: '…',
+                                      ),
+                                  textAlign: TextAlign.start,
+                                  style: FlutterFlowTheme.of(context)
+                                      .labelMedium
+                                      .override(
+                                        fontFamily: 'Proxima Nova Final',
+                                        color: const Color(0xFF57636C),
+                                        fontSize: 2.0,
+                                        fontWeight: FontWeight.normal,
+                                        useGoogleFonts: false,
+                                      ),
+                                );
+                              },
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                              12.0,
+                              5.0,
+                              0.0,
+                              0.0,
+                            ),
+                            child: AutoSizeText(
+                              dateTimeFormat(
+                                'yMMMd',
+                                event.startTime!,
+                              ).maybeHandleOverflow(
+                                maxChars: 70,
+                                replacement: '…',
+                              ),
                               textAlign: TextAlign.start,
                               style: FlutterFlowTheme.of(context)
                                   .labelMedium
@@ -369,150 +427,105 @@ class _HomeFeedWidgetState extends State<HomeFeedWidget> {
                                     fontWeight: FontWeight.normal,
                                     useGoogleFonts: false,
                                   ),
-                            );
-                          },
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
-                            12.0, 5.0, 0.0, 0.0),
-                        child: AutoSizeText(
-                          dateTimeFormat(
-                            'yMMMd',
-                            event.startTime!,
-                          ).maybeHandleOverflow(
-                            maxChars: 70,
-                            replacement: '…',
-                          ),
-                          textAlign: TextAlign.start,
-                          style:
-                              FlutterFlowTheme.of(context).labelMedium.override(
-                                    fontFamily: 'Proxima Nova Final',
-                                    color: const Color(0xFF57636C),
-                                    fontSize: 2.0,
-                                    fontWeight: FontWeight.normal,
-                                    useGoogleFonts: false,
-                                  ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                Align(
-                  alignment: const AlignmentDirectional(-1.0, 0.0),
-                  child: Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(
-                        5.0, 4.0, 0.0, 0.0),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Align(
-                          alignment: const AlignmentDirectional(0.0, 0.0),
-                          child: ToggleIcon(
-                            onPressed: () async {
-                              final userEventsRef = FirebaseFirestore.instance
-                                  .collection('users')
-                                  .doc(currentUserReference?.id)
-                                  .collection('userEvents');
-                              final userEventDoc =
-                                  userEventsRef.doc(event.reference.id);
-                              final userEventSnapshot =
-                                  await userEventDoc.get();
-
-                              if (userEventSnapshot.exists) {
-                                // The event is already in the userEvents collection, remove it
-                                await userEventDoc.delete();
-                                setState(() => _model.isEventAdded = false);
-                              } else {
-                                // The event is not in the userEvents collection, add it
-                                await userEventDoc.set({
-                                  'eventId': event.reference.id,
-                                  'title': event.title,
-                                  'description': event.description,
-                                  'startTime': event.startTime,
-                                  'endTime': event.endTime,
-                                  'photo_url': event.photoUrl,
-                                  'location': event.location,
-                                  'ticketLink': event.ticketLink,
-                                  'organiserName': event.organiserName,
-                                });
-                                setState(() => _model.isEventAdded = true);
-                              }
-                            },
-                            value: _model.isEventAdded,
-                            onIcon: const Icon(
-                              Icons.favorite_rounded,
-                              color: Color(0xFFED49BB),
-                              size: 24.0,
-                            ),
-                            offIcon: Icon(
-                              Icons.favorite_border_rounded,
-                              color: FlutterFlowTheme.of(context).primary,
-                              size: 24.0,
                             ),
                           ),
-                        ),
-                        FlutterFlowIconButton(
-                          borderColor: Colors.transparent,
-                          borderWidth: 1.0,
-                          icon: const Icon(
-                            Icons.share_rounded,
-                            color: Color(0xFFED49BB),
-                            size: 24.0,
-                          ),
-                          onPressed: () {
-                            print('IconButton pressed ...');
-                          },
-                        ),
-                        FlutterFlowIconButton(
-                          borderColor: Colors.transparent,
-                          borderWidth: 1.0,
-                          icon: const Icon(
-                            Icons.shopping_cart_checkout_rounded,
-                            color: Color(0xFFED49BB),
-                            size: 24.0,
-                          ),
-                          onPressed: () {
-                            print('IconButton pressed ...');
-                          },
-                        ),
-                        FlutterFlowIconButton(
-                          borderColor: Colors.transparent,
-                          borderWidth: 1.0,
-                          icon: const Icon(
-                            Icons.navigate_next_rounded,
-                            color: Color(0xFFED49BB),
-                            size: 24.0,
-                          ),
-                          onPressed: () {
-                            print('IconButton pressed ...');
-                          },
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
-                  ),
+                    Align(
+                      alignment: const AlignmentDirectional(-1.0, 0.0),
+                      child: Padding(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
+                          5.0,
+                          4.0,
+                          0.0,
+                          0.0,
+                        ),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Align(
+                              alignment: const AlignmentDirectional(0.0, 0.0),
+                              child: ToggleIcon(
+                                onPressed: () async {
+                                  if (isEventAdded) {
+                                    // If the event is already added, remove it
+                                    await userEventsRef
+                                        .doc(event.reference.id)
+                                        .delete();
+                                  } else {
+                                    // If the event is not added, add it
+                                    await userEventsRef
+                                        .doc(event.reference.id)
+                                        .set({
+                                      'eventRef': event
+                                          .reference, // Store the event document reference
+                                      // Add any other necessary fields based on your data model
+                                    });
+                                  }
+                                },
+                                value: isEventAdded,
+                                onIcon: const Icon(
+                                  Icons.favorite_rounded,
+                                  color: Color(0xFFED49BB),
+                                  size: 24.0,
+                                ),
+                                offIcon: Icon(
+                                  Icons.favorite_border_rounded,
+                                  color: FlutterFlowTheme.of(context).primary,
+                                  size: 24.0,
+                                ),
+                              ),
+                            ),
+                            FlutterFlowIconButton(
+                              borderColor: Colors.transparent,
+                              borderWidth: 1.0,
+                              icon: const Icon(
+                                Icons.share_rounded,
+                                color: Color(0xFFED49BB),
+                                size: 24.0,
+                              ),
+                              onPressed: () {
+                                print('IconButton pressed ...');
+                              },
+                            ),
+                            FlutterFlowIconButton(
+                              borderColor: Colors.transparent,
+                              borderWidth: 1.0,
+                              icon: const Icon(
+                                Icons.shopping_cart_checkout_rounded,
+                                color: Color(0xFFED49BB),
+                                size: 24.0,
+                              ),
+                              onPressed: () {
+                                print('IconButton pressed ...');
+                              },
+                            ),
+                            FlutterFlowIconButton(
+                              borderColor: Colors.transparent,
+                              borderWidth: 1.0,
+                              icon: const Icon(
+                                Icons.navigate_next_rounded,
+                                color: Color(0xFFED49BB),
+                                size: 24.0,
+                              ),
+                              onPressed: () {
+                                print('IconButton pressed ...');
+                              },
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildGeoCodeLoadingIndicator() {
-    return Center(
-      child: SizedBox(
-        width: 50.0,
-        height: 50.0,
-        child: CircularProgressIndicator(
-          valueColor: AlwaysStoppedAnimation<Color>(
-            FlutterFlowTheme.of(context).primary,
-          ),
-        ),
-      ),
+        );
+      },
     );
   }
 }
