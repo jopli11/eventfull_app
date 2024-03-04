@@ -2,10 +2,7 @@ import '/flutter_flow/flutter_flow_button_tabbar.dart';
 import '/flutter_flow/flutter_flow_calendar.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'calendar_model.dart';
 export 'calendar_model.dart';
 
@@ -66,16 +63,16 @@ class _CalendarWidgetState extends State<CalendarWidget>
                           'assets/images/background.png',
                           width: 1000.0,
                           fit: BoxFit.fill,
-                          alignment: Alignment(0.0, 0.0),
+                          alignment: const Alignment(0.0, 0.0),
                         ),
                       ),
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 80.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 80.0, 0.0, 0.0),
                         child: Column(
                           children: [
                             Align(
-                              alignment: Alignment(0.0, 0),
+                              alignment: const Alignment(0.0, 0),
                               child: FlutterFlowButtonTabBar(
                                 useToggleButtonStyle: true,
                                 isScrollable: true,
@@ -88,20 +85,20 @@ class _CalendarWidgetState extends State<CalendarWidget>
                                       fontWeight: FontWeight.w500,
                                       useGoogleFonts: false,
                                     ),
-                                unselectedLabelStyle: TextStyle(),
+                                unselectedLabelStyle: const TextStyle(),
                                 labelColor: Colors.white,
-                                unselectedLabelColor: Color(0xFF101D68),
-                                backgroundColor: Color(0xFF101D68),
-                                unselectedBackgroundColor: Color(0xFF192B7F),
-                                borderColor: Color(0xFFED49BB),
+                                unselectedLabelColor: const Color(0xFF101D68),
+                                backgroundColor: const Color(0xFF101D68),
+                                unselectedBackgroundColor: const Color(0xFF192B7F),
+                                borderColor: const Color(0xFFED49BB),
                                 borderWidth: 2.0,
                                 borderRadius: 12.0,
                                 elevation: 0.0,
-                                labelPadding: EdgeInsetsDirectional.fromSTEB(
+                                labelPadding: const EdgeInsetsDirectional.fromSTEB(
                                     20.0, 0.0, 20.0, 0.0),
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 12.0, 0.0, 12.0),
-                                tabs: [
+                                tabs: const [
                                   Tab(
                                     text: 'Month',
                                   ),
@@ -122,7 +119,7 @@ class _CalendarWidgetState extends State<CalendarWidget>
                                   Container(
                                     width: 100.0,
                                     height: 100.0,
-                                    decoration: BoxDecoration(),
+                                    decoration: const BoxDecoration(),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       crossAxisAlignment:
@@ -130,7 +127,7 @@ class _CalendarWidgetState extends State<CalendarWidget>
                                       children: [
                                         Container(
                                           width: double.infinity,
-                                          decoration: BoxDecoration(
+                                          decoration: const BoxDecoration(
                                             color: Color(0xFF101D68),
                                             boxShadow: [
                                               BoxShadow(
@@ -141,7 +138,7 @@ class _CalendarWidgetState extends State<CalendarWidget>
                                             ],
                                           ),
                                           child: FlutterFlowCalendar(
-                                            color: Color(0xFFED49BB),
+                                            color: const Color(0xFFED49BB),
                                             iconColor: Colors.white,
                                             weekFormat: false,
                                             weekStartsMonday: true,
@@ -205,7 +202,7 @@ class _CalendarWidgetState extends State<CalendarWidget>
                                                     .override(
                                                       fontFamily:
                                                           'Proxima Nova Final',
-                                                      color: Color(0xFF57636C),
+                                                      color: const Color(0xFF57636C),
                                                       fontSize: 14.0,
                                                       fontWeight:
                                                           FontWeight.w500,
@@ -220,7 +217,7 @@ class _CalendarWidgetState extends State<CalendarWidget>
                                                 CrossAxisAlignment.start,
                                             children: [
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 12.0, 0.0, 0.0),
                                                 child: Text(
@@ -232,7 +229,7 @@ class _CalendarWidgetState extends State<CalendarWidget>
                                                         fontFamily:
                                                             'Proxima Nova Final',
                                                         color:
-                                                            Color(0xFF57636C),
+                                                            const Color(0xFF57636C),
                                                         fontSize: 14.0,
                                                         fontWeight:
                                                             FontWeight.w500,
@@ -241,7 +238,7 @@ class _CalendarWidgetState extends State<CalendarWidget>
                                                 ),
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 12.0, 0.0, 0.0),
                                                 child: ListView(
@@ -253,7 +250,7 @@ class _CalendarWidgetState extends State<CalendarWidget>
                                                   children: [
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   0.0,
@@ -264,8 +261,8 @@ class _CalendarWidgetState extends State<CalendarWidget>
                                                         decoration:
                                                             BoxDecoration(
                                                           color:
-                                                              Color(0xFF020442),
-                                                          boxShadow: [
+                                                              const Color(0xFF020442),
+                                                          boxShadow: const [
                                                             BoxShadow(
                                                               blurRadius: 3.0,
                                                               color: Color(
@@ -281,7 +278,7 @@ class _CalendarWidgetState extends State<CalendarWidget>
                                                         ),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsets.all(
+                                                              const EdgeInsets.all(
                                                                   8.0),
                                                           child: Row(
                                                             mainAxisSize:
@@ -293,7 +290,7 @@ class _CalendarWidgetState extends State<CalendarWidget>
                                                             children: [
                                                               Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             10.0,
                                                                             0.0,
@@ -311,7 +308,7 @@ class _CalendarWidgetState extends State<CalendarWidget>
                                                                           .start,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           4.0,
                                                                           0.0,
                                                                           0.0,
@@ -331,7 +328,7 @@ class _CalendarWidgetState extends State<CalendarWidget>
                                                                       ),
                                                                     ),
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           4.0,
                                                                           0.0,
@@ -342,7 +339,7 @@ class _CalendarWidgetState extends State<CalendarWidget>
                                                                             MainAxisSize.max,
                                                                         children: [
                                                                           Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 0.0,
                                                                                 0.0,
                                                                                 8.0,
@@ -350,13 +347,13 @@ class _CalendarWidgetState extends State<CalendarWidget>
                                                                             child:
                                                                                 Card(
                                                                               clipBehavior: Clip.antiAliasWithSaveLayer,
-                                                                              color: Color(0xFFED49BB),
+                                                                              color: const Color(0xFFED49BB),
                                                                               elevation: 0.0,
                                                                               shape: RoundedRectangleBorder(
                                                                                 borderRadius: BorderRadius.circular(8.0),
                                                                               ),
                                                                               child: Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(8.0, 4.0, 8.0, 4.0),
+                                                                                padding: const EdgeInsetsDirectional.fromSTEB(8.0, 4.0, 8.0, 4.0),
                                                                                 child: Text(
                                                                                   '19:00pm',
                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -395,7 +392,7 @@ class _CalendarWidgetState extends State<CalendarWidget>
                                                 ),
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 12.0, 0.0, 24.0),
                                                 child: ListView(
@@ -407,7 +404,7 @@ class _CalendarWidgetState extends State<CalendarWidget>
                                                   children: [
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   0.0,
@@ -418,8 +415,8 @@ class _CalendarWidgetState extends State<CalendarWidget>
                                                         decoration:
                                                             BoxDecoration(
                                                           color:
-                                                              Color(0xFF020442),
-                                                          boxShadow: [
+                                                              const Color(0xFF020442),
+                                                          boxShadow: const [
                                                             BoxShadow(
                                                               blurRadius: 3.0,
                                                               color: Color(
@@ -435,7 +432,7 @@ class _CalendarWidgetState extends State<CalendarWidget>
                                                         ),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsets.all(
+                                                              const EdgeInsets.all(
                                                                   8.0),
                                                           child: Row(
                                                             mainAxisSize:
@@ -447,7 +444,7 @@ class _CalendarWidgetState extends State<CalendarWidget>
                                                             children: [
                                                               Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             10.0,
                                                                             0.0,
@@ -465,7 +462,7 @@ class _CalendarWidgetState extends State<CalendarWidget>
                                                                           .start,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           4.0,
                                                                           0.0,
                                                                           0.0,
@@ -490,7 +487,7 @@ class _CalendarWidgetState extends State<CalendarWidget>
                                                                               .max,
                                                                       children: [
                                                                         Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               0.0,
                                                                               0.0,
                                                                               8.0,
@@ -500,7 +497,7 @@ class _CalendarWidgetState extends State<CalendarWidget>
                                                                             clipBehavior:
                                                                                 Clip.antiAliasWithSaveLayer,
                                                                             color:
-                                                                                Color(0xFFED49BB),
+                                                                                const Color(0xFFED49BB),
                                                                             elevation:
                                                                                 0.0,
                                                                             shape:
@@ -509,7 +506,7 @@ class _CalendarWidgetState extends State<CalendarWidget>
                                                                             ),
                                                                             child:
                                                                                 Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(8.0, 4.0, 8.0, 4.0),
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(8.0, 4.0, 8.0, 4.0),
                                                                               child: Text(
                                                                                 '21:00pm',
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -524,7 +521,7 @@ class _CalendarWidgetState extends State<CalendarWidget>
                                                                           ),
                                                                         ),
                                                                         Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               4.0,
                                                                               0.0,
                                                                               0.0,
@@ -563,7 +560,7 @@ class _CalendarWidgetState extends State<CalendarWidget>
                                   Container(
                                     width: 100.0,
                                     height: 100.0,
-                                    decoration: BoxDecoration(),
+                                    decoration: const BoxDecoration(),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
@@ -573,7 +570,7 @@ class _CalendarWidgetState extends State<CalendarWidget>
                                       children: [
                                         Container(
                                           width: double.infinity,
-                                          decoration: BoxDecoration(
+                                          decoration: const BoxDecoration(
                                             color: Color(0xFF101D68),
                                             boxShadow: [
                                               BoxShadow(
@@ -584,7 +581,7 @@ class _CalendarWidgetState extends State<CalendarWidget>
                                             ],
                                           ),
                                           child: FlutterFlowCalendar(
-                                            color: Color(0xFFED49BB),
+                                            color: const Color(0xFFED49BB),
                                             iconColor: Colors.white,
                                             weekFormat: true,
                                             weekStartsMonday: true,
@@ -644,7 +641,7 @@ class _CalendarWidgetState extends State<CalendarWidget>
                                                     .override(
                                                       fontFamily:
                                                           'Plus Jakarta Sans',
-                                                      color: Color(0xFF57636C),
+                                                      color: const Color(0xFF57636C),
                                                       fontSize: 14.0,
                                                       fontWeight:
                                                           FontWeight.normal,
@@ -658,7 +655,7 @@ class _CalendarWidgetState extends State<CalendarWidget>
                                                 CrossAxisAlignment.start,
                                             children: [
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 12.0, 0.0, 0.0),
                                                 child: Text(
@@ -670,7 +667,7 @@ class _CalendarWidgetState extends State<CalendarWidget>
                                                         fontFamily:
                                                             'Proxima Nova Final',
                                                         color:
-                                                            Color(0xFF57636C),
+                                                            const Color(0xFF57636C),
                                                         fontSize: 14.0,
                                                         fontWeight:
                                                             FontWeight.w500,
@@ -679,7 +676,7 @@ class _CalendarWidgetState extends State<CalendarWidget>
                                                 ),
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 12.0, 0.0, 0.0),
                                                 child: ListView(
@@ -691,7 +688,7 @@ class _CalendarWidgetState extends State<CalendarWidget>
                                                   children: [
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   0.0,
@@ -702,8 +699,8 @@ class _CalendarWidgetState extends State<CalendarWidget>
                                                         decoration:
                                                             BoxDecoration(
                                                           color:
-                                                              Color(0xFF020442),
-                                                          boxShadow: [
+                                                              const Color(0xFF020442),
+                                                          boxShadow: const [
                                                             BoxShadow(
                                                               blurRadius: 3.0,
                                                               color: Color(
@@ -719,7 +716,7 @@ class _CalendarWidgetState extends State<CalendarWidget>
                                                         ),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsets.all(
+                                                              const EdgeInsets.all(
                                                                   8.0),
                                                           child: Row(
                                                             mainAxisSize:
@@ -731,7 +728,7 @@ class _CalendarWidgetState extends State<CalendarWidget>
                                                             children: [
                                                               Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             10.0,
                                                                             0.0,
@@ -749,7 +746,7 @@ class _CalendarWidgetState extends State<CalendarWidget>
                                                                           .start,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           4.0,
                                                                           0.0,
                                                                           0.0,
@@ -769,7 +766,7 @@ class _CalendarWidgetState extends State<CalendarWidget>
                                                                       ),
                                                                     ),
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           4.0,
                                                                           0.0,
@@ -780,7 +777,7 @@ class _CalendarWidgetState extends State<CalendarWidget>
                                                                             MainAxisSize.max,
                                                                         children: [
                                                                           Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 0.0,
                                                                                 0.0,
                                                                                 8.0,
@@ -788,13 +785,13 @@ class _CalendarWidgetState extends State<CalendarWidget>
                                                                             child:
                                                                                 Card(
                                                                               clipBehavior: Clip.antiAliasWithSaveLayer,
-                                                                              color: Color(0xFFED49BB),
+                                                                              color: const Color(0xFFED49BB),
                                                                               elevation: 0.0,
                                                                               shape: RoundedRectangleBorder(
                                                                                 borderRadius: BorderRadius.circular(8.0),
                                                                               ),
                                                                               child: Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(8.0, 4.0, 8.0, 4.0),
+                                                                                padding: const EdgeInsetsDirectional.fromSTEB(8.0, 4.0, 8.0, 4.0),
                                                                                 child: Text(
                                                                                   '19:00pm',
                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -833,7 +830,7 @@ class _CalendarWidgetState extends State<CalendarWidget>
                                                 ),
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 12.0, 0.0, 24.0),
                                                 child: ListView(
@@ -845,7 +842,7 @@ class _CalendarWidgetState extends State<CalendarWidget>
                                                   children: [
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   0.0,
@@ -856,8 +853,8 @@ class _CalendarWidgetState extends State<CalendarWidget>
                                                         decoration:
                                                             BoxDecoration(
                                                           color:
-                                                              Color(0xFF020442),
-                                                          boxShadow: [
+                                                              const Color(0xFF020442),
+                                                          boxShadow: const [
                                                             BoxShadow(
                                                               blurRadius: 3.0,
                                                               color: Color(
@@ -873,7 +870,7 @@ class _CalendarWidgetState extends State<CalendarWidget>
                                                         ),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsets.all(
+                                                              const EdgeInsets.all(
                                                                   8.0),
                                                           child: Row(
                                                             mainAxisSize:
@@ -885,7 +882,7 @@ class _CalendarWidgetState extends State<CalendarWidget>
                                                             children: [
                                                               Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             10.0,
                                                                             0.0,
@@ -903,7 +900,7 @@ class _CalendarWidgetState extends State<CalendarWidget>
                                                                           .start,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           4.0,
                                                                           0.0,
                                                                           0.0,
@@ -927,7 +924,7 @@ class _CalendarWidgetState extends State<CalendarWidget>
                                                                               .max,
                                                                       children: [
                                                                         Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               0.0,
                                                                               0.0,
                                                                               8.0,
@@ -937,7 +934,7 @@ class _CalendarWidgetState extends State<CalendarWidget>
                                                                             clipBehavior:
                                                                                 Clip.antiAliasWithSaveLayer,
                                                                             color:
-                                                                                Color(0xFFED49BB),
+                                                                                const Color(0xFFED49BB),
                                                                             elevation:
                                                                                 0.0,
                                                                             shape:
@@ -946,7 +943,7 @@ class _CalendarWidgetState extends State<CalendarWidget>
                                                                             ),
                                                                             child:
                                                                                 Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(8.0, 4.0, 8.0, 4.0),
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(8.0, 4.0, 8.0, 4.0),
                                                                               child: Text(
                                                                                 '21:00pm',
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -961,7 +958,7 @@ class _CalendarWidgetState extends State<CalendarWidget>
                                                                           ),
                                                                         ),
                                                                         Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               4.0,
                                                                               0.0,
                                                                               0.0,
@@ -1009,7 +1006,7 @@ class _CalendarWidgetState extends State<CalendarWidget>
               ],
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(12.0, 50.0, 0.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(12.0, 50.0, 0.0, 0.0),
               child: Text(
                 'Calendar',
                 style: FlutterFlowTheme.of(context).headlineMedium.override(

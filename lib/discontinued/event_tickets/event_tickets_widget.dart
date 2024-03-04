@@ -1,10 +1,9 @@
+// ignore_for_file: avoid_print
+
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'event_tickets_model.dart';
 export 'event_tickets_model.dart';
 
@@ -41,7 +40,7 @@ class _EventTicketsWidgetState extends State<EventTicketsWidget> {
           : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: Color(0xFFF1F4F8),
+        backgroundColor: const Color(0xFFF1F4F8),
         body: Stack(
           children: [
             ClipRRect(
@@ -59,7 +58,7 @@ class _EventTicketsWidgetState extends State<EventTicketsWidget> {
                 Flexible(
                   child: Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(15.0, 55.0, 15.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(15.0, 55.0, 15.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -83,8 +82,8 @@ class _EventTicketsWidgetState extends State<EventTicketsWidget> {
                           borderRadius: 30.0,
                           borderWidth: 1.0,
                           buttonSize: 40.0,
-                          fillColor: Color(0x34FFFFFF),
-                          icon: Icon(
+                          fillColor: const Color(0x34FFFFFF),
+                          icon: const Icon(
                             Icons.ios_share,
                             color: Colors.white,
                             size: 20.0,
@@ -99,11 +98,11 @@ class _EventTicketsWidgetState extends State<EventTicketsWidget> {
                 ),
                 Padding(
                   padding:
-                      EdgeInsetsDirectional.fromSTEB(10.0, 30.0, 10.0, 0.0),
+                      const EdgeInsetsDirectional.fromSTEB(10.0, 30.0, 10.0, 0.0),
                   child: Stack(
                     children: [
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             20.0, 0.0, 20.0, 20.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
@@ -112,7 +111,7 @@ class _EventTicketsWidgetState extends State<EventTicketsWidget> {
                               width: double.infinity,
                               height: 650.0,
                               decoration: BoxDecoration(
-                                gradient: LinearGradient(
+                                gradient: const LinearGradient(
                                   colors: [
                                     Color(0xFFED49BB),
                                     Color(0xFF233D9B)
@@ -127,7 +126,7 @@ class _EventTicketsWidgetState extends State<EventTicketsWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsets.all(10.0),
+                                    padding: const EdgeInsets.all(10.0),
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(30.0),
                                       child: Image.asset(
@@ -139,7 +138,7 @@ class _EventTicketsWidgetState extends State<EventTicketsWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         20.0, 0.0, 20.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -177,7 +176,7 @@ class _EventTicketsWidgetState extends State<EventTicketsWidget> {
                                                         fontFamily:
                                                             'Proxima Nova Final',
                                                         color:
-                                                            Color(0x7BFFFFFF),
+                                                            const Color(0x7BFFFFFF),
                                                         fontSize: 12.0,
                                                         fontWeight:
                                                             FontWeight.normal,
@@ -194,7 +193,7 @@ class _EventTicketsWidgetState extends State<EventTicketsWidget> {
                                               borderRadius: 30.0,
                                               borderWidth: 1.0,
                                               buttonSize: 40.0,
-                                              icon: Icon(
+                                              icon: const Icon(
                                                 Icons.download_outlined,
                                                 color: Colors.white,
                                                 size: 20.0,
@@ -209,7 +208,7 @@ class _EventTicketsWidgetState extends State<EventTicketsWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         20.0, 70.0, 20.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -229,7 +228,7 @@ class _EventTicketsWidgetState extends State<EventTicketsWidget> {
                                                         fontFamily:
                                                             'Proxima Nova Final',
                                                         color:
-                                                            Color(0x80FFFFFF),
+                                                            const Color(0x80FFFFFF),
                                                         fontSize: 12.0,
                                                         fontWeight:
                                                             FontWeight.normal,
@@ -257,7 +256,7 @@ class _EventTicketsWidgetState extends State<EventTicketsWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         20.0, 20.0, 20.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -281,7 +280,7 @@ class _EventTicketsWidgetState extends State<EventTicketsWidget> {
                                                         fontFamily:
                                                             'Proxima Nova Final',
                                                         color:
-                                                            Color(0x80FFFFFF),
+                                                            const Color(0x80FFFFFF),
                                                         fontSize: 12.0,
                                                         fontWeight:
                                                             FontWeight.normal,
@@ -289,7 +288,7 @@ class _EventTicketsWidgetState extends State<EventTicketsWidget> {
                                                       ),
                                             )),
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 0.0, 0.0, 10.0),
                                               child: SelectionArea(
@@ -318,7 +317,7 @@ class _EventTicketsWidgetState extends State<EventTicketsWidget> {
                                                         fontFamily:
                                                             'Proxima Nova Final',
                                                         color:
-                                                            Color(0x80FFFFFF),
+                                                            const Color(0x80FFFFFF),
                                                         fontSize: 12.0,
                                                         fontWeight:
                                                             FontWeight.normal,
@@ -344,7 +343,7 @@ class _EventTicketsWidgetState extends State<EventTicketsWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 50.0, 0.0, 0.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
@@ -361,7 +360,7 @@ class _EventTicketsWidgetState extends State<EventTicketsWidget> {
                                                           fontFamily:
                                                               'Proxima Nova Final',
                                                           color:
-                                                              Color(0x80FFFFFF),
+                                                              const Color(0x80FFFFFF),
                                                           fontSize: 12.0,
                                                           fontWeight:
                                                               FontWeight.normal,
@@ -369,7 +368,7 @@ class _EventTicketsWidgetState extends State<EventTicketsWidget> {
                                                         ),
                                               )),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 0.0, 10.0),
                                                 child: SelectionArea(
@@ -395,7 +394,7 @@ class _EventTicketsWidgetState extends State<EventTicketsWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 30.0, 0.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -419,7 +418,7 @@ class _EventTicketsWidgetState extends State<EventTicketsWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsets.all(10.0),
+                                    padding: const EdgeInsets.all(10.0),
                                     child: Image.asset(
                                       'assets/images/barcode.png',
                                       width: double.infinity,
@@ -434,7 +433,7 @@ class _EventTicketsWidgetState extends State<EventTicketsWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             6.0, 460.0, 6.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
@@ -442,11 +441,11 @@ class _EventTicketsWidgetState extends State<EventTicketsWidget> {
                           children: [
                             Expanded(
                               child: Align(
-                                alignment: AlignmentDirectional(-1.0, 0.0),
+                                alignment: const AlignmentDirectional(-1.0, 0.0),
                                 child: Container(
                                   width: 30.0,
                                   height: 30.0,
-                                  decoration: BoxDecoration(
+                                  decoration: const BoxDecoration(
                                     color: Color(0xFF00013D),
                                     shape: BoxShape.circle,
                                   ),
@@ -454,7 +453,7 @@ class _EventTicketsWidgetState extends State<EventTicketsWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   1.0, 0.0, 0.0, 0.0),
                               child: SelectionArea(
                                   child: Text(
@@ -463,7 +462,7 @@ class _EventTicketsWidgetState extends State<EventTicketsWidget> {
                                     .bodyMedium
                                     .override(
                                       fontFamily: 'Readex Pro',
-                                      color: Color(0xFF1D0526),
+                                      color: const Color(0xFF1D0526),
                                       letterSpacing: 3.0,
                                       fontWeight: FontWeight.w500,
                                     ),
@@ -471,11 +470,11 @@ class _EventTicketsWidgetState extends State<EventTicketsWidget> {
                             ),
                             Expanded(
                               child: Align(
-                                alignment: AlignmentDirectional(0.0, 0.0),
+                                alignment: const AlignmentDirectional(0.0, 0.0),
                                 child: Container(
                                   width: 30.0,
                                   height: 30.0,
-                                  decoration: BoxDecoration(
+                                  decoration: const BoxDecoration(
                                     color: Color(0xFF00013D),
                                     shape: BoxShape.circle,
                                   ),
@@ -486,25 +485,25 @@ class _EventTicketsWidgetState extends State<EventTicketsWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             6.0, 280.0, 6.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Align(
-                              alignment: AlignmentDirectional(-1.0, 0.0),
+                              alignment: const AlignmentDirectional(-1.0, 0.0),
                               child: Container(
                                 width: 30.0,
                                 height: 30.0,
-                                decoration: BoxDecoration(
+                                decoration: const BoxDecoration(
                                   color: Color(0xFF00013D),
                                   shape: BoxShape.circle,
                                 ),
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   1.0, 0.0, 0.0, 0.0),
                               child: SelectionArea(
                                   child: Text(
@@ -513,7 +512,7 @@ class _EventTicketsWidgetState extends State<EventTicketsWidget> {
                                     .bodyMedium
                                     .override(
                                       fontFamily: 'Readex Pro',
-                                      color: Color(0xFF1D0526),
+                                      color: const Color(0xFF1D0526),
                                       letterSpacing: 3.0,
                                       fontWeight: FontWeight.w500,
                                     ),
@@ -523,7 +522,7 @@ class _EventTicketsWidgetState extends State<EventTicketsWidget> {
                               child: Container(
                                 width: 30.0,
                                 height: 30.0,
-                                decoration: BoxDecoration(
+                                decoration: const BoxDecoration(
                                   color: Color(0xFF00013D),
                                   shape: BoxShape.circle,
                                 ),

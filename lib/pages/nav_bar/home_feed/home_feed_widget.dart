@@ -371,29 +371,49 @@ class _HomeFeedWidgetState extends State<HomeFeedWidget> {
                               0.0,
                             ),
                             child: FutureBuilder<ApiCallResponse>(
-                              future: ReverseGeoCodeCall.call(
-                                latlng: functions.parseLatLng(
-                                  event.location,
-                                ),
-                              ),
+                              future: PlacesCall.call(
+                                  location:
+                                      functions.parseLatLng(event.location),
+                                  radius:
+                                      100, // Example radius, adjust based on your needs
+                                  type: 'night_club',
+                                  keyword:
+                                      'club' // Specifically targeting nightclubs
+                                  // keyword parameter is optional and can be omitted unless you have a specific keyword in mind
+                                  ),
                               builder: (context, snapshot) {
-                                final textReverseGeoCodeResponse =
-                                    snapshot.data!;
+                                if (!snapshot.hasData ||
+                                    snapshot.data == null) {
+                                  return const Text('Loading...');
+                                }
+
+                                final placesResponse = snapshot.data!;
+                                
+                                // Attempting to get the first result's name as the venue name and vicinity for address.
+                                final results = getJsonField(
+                                    placesResponse.jsonBody, r'''$.results''');
+                                String venueName = results.isNotEmpty
+                                    ? results[0]['name']
+                                    : '';
+                                String vicinity = results.isNotEmpty
+                                    ? results[0]['vicinity']
+                                    : ''; // Using 'vicinity' for address
+
+                                // Combining venue name with vicinity (address)
+                                String displayText = venueName.isNotEmpty
+                                    ? "$venueName, $vicinity"
+                                    : 'Venue not found';
+
                                 return AutoSizeText(
-                                  getJsonField(
-                                    textReverseGeoCodeResponse.jsonBody,
-                                    r'''$.results[0].formatted_address''',
-                                  ).toString().maybeHandleOverflow(
-                                        maxChars: 70,
-                                        replacement: '…',
-                                      ),
+                                  displayText,
                                   textAlign: TextAlign.start,
                                   style: FlutterFlowTheme.of(context)
                                       .labelMedium
                                       .override(
                                         fontFamily: 'Proxima Nova Final',
                                         color: const Color(0xFF57636C),
-                                        fontSize: 2.0,
+                                        fontSize:
+                                            14, // Adjusted font size for visibility
                                         fontWeight: FontWeight.normal,
                                         useGoogleFonts: false,
                                       ),
@@ -459,8 +479,18 @@ class _HomeFeedWidgetState extends State<HomeFeedWidget> {
                                     await userEventsRef
                                         .doc(event.reference.id)
                                         .set({
-                                      'eventRef': event
-                                          .reference, // Store the event document reference
+                                      'eventID': event
+                                          .reference, // Changed from event.reference to event.reference.id
+                                      'title': event.title,
+                                      'startTime': event.startTime,
+                                      'endTime': event.endTime,
+                                      'photo_url': event.photoUrl,
+                                      'location': GeoPoint(
+                                          event.location!.latitude,
+                                          event.location!.longitude),
+                                      'description': event.description,
+                                      'ticketLink': event.ticketLink,
+                                      'organiserName': event.organiserName,
                                       // Add any other necessary fields based on your data model
                                     });
                                   }

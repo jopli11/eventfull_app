@@ -1,3 +1,5 @@
+import 'package:share/share.dart';
+
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
@@ -196,8 +198,9 @@ class _MyProfileWidgetState extends State<MyProfileWidget>
                               child: Stack(
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        60.0, 0.0, 0.0, 0.0),
+                                    padding:
+                                        const EdgeInsetsDirectional.fromSTEB(
+                                            60.0, 0.0, 0.0, 0.0),
                                     child: AuthUserStreamWidget(
                                       builder: (context) => Text(
                                         valueOrDefault<String>(
@@ -220,8 +223,9 @@ class _MyProfileWidgetState extends State<MyProfileWidget>
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        34.0, 20.0, 0.0, 0.0),
+                                    padding:
+                                        const EdgeInsetsDirectional.fromSTEB(
+                                            34.0, 20.0, 0.0, 0.0),
                                     child: Text(
                                       'Attended',
                                       style: FlutterFlowTheme.of(context)
@@ -476,8 +480,9 @@ class _MyProfileWidgetState extends State<MyProfileWidget>
                                   height: 40.0,
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       24.0, 0.0, 24.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 0.0),
+                                  iconPadding:
+                                      const EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 0.0, 0.0, 0.0),
                                   color: const Color(0xFFED49BB),
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleSmall
@@ -508,8 +513,9 @@ class _MyProfileWidgetState extends State<MyProfileWidget>
                                   height: 40.0,
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       24.0, 0.0, 24.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 0.0),
+                                  iconPadding:
+                                      const EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 0.0, 0.0, 0.0),
                                   color: const Color(0xFF233D9B),
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleSmall
@@ -537,8 +543,8 @@ class _MyProfileWidgetState extends State<MyProfileWidget>
                 Align(
                   alignment: const AlignmentDirectional(0.0, 0.0),
                   child: Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 400.0, 0.0, 0.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(
+                        0.0, 400.0, 0.0, 0.0),
                     child: Column(
                       children: [
                         Align(
@@ -588,8 +594,9 @@ class _MyProfileWidgetState extends State<MyProfileWidget>
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 10.0, 0.0, 0.0),
+                                      padding:
+                                          const EdgeInsetsDirectional.fromSTEB(
+                                              0.0, 10.0, 0.0, 0.0),
                                       child: Stack(
                                         children: [
                                           Container(
@@ -655,10 +662,10 @@ class _MyProfileWidgetState extends State<MyProfileWidget>
                                                             padding:
                                                                 const EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        15.0,
-                                                                        0.0,
-                                                                        15.0,
-                                                                        0.0),
+                                                                    15.0,
+                                                                    0.0,
+                                                                    15.0,
+                                                                    0.0),
                                                             child: InkWell(
                                                               splashColor: Colors
                                                                   .transparent,
@@ -710,10 +717,10 @@ class _MyProfileWidgetState extends State<MyProfileWidget>
                                                               padding:
                                                                   const EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          15.0,
-                                                                          5.0,
-                                                                          15.0,
-                                                                          0.0),
+                                                                      15.0,
+                                                                      5.0,
+                                                                      15.0,
+                                                                      0.0),
                                                               child: Text(
                                                                 listViewUserEventsRecord
                                                                     .title,
@@ -738,10 +745,10 @@ class _MyProfileWidgetState extends State<MyProfileWidget>
                                                             padding:
                                                                 const EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        14.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0),
+                                                                    14.0,
+                                                                    0.0,
+                                                                    0.0,
+                                                                    0.0),
                                                             child: Row(
                                                               mainAxisSize:
                                                                   MainAxisSize
@@ -809,7 +816,8 @@ class _MyProfileWidgetState extends State<MyProfileWidget>
                                                                             0.0),
                                                                     child:
                                                                         Padding(
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional
+                                                                          .fromSTEB(
                                                                           25.0,
                                                                           0.0,
                                                                           0.0,
@@ -838,10 +846,10 @@ class _MyProfileWidgetState extends State<MyProfileWidget>
                                                             padding:
                                                                 const EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        5.0,
-                                                                        0.0,
-                                                                        15.0,
-                                                                        0.0),
+                                                                    5.0,
+                                                                    0.0,
+                                                                    15.0,
+                                                                    0.0),
                                                             child: Row(
                                                               mainAxisSize:
                                                                   MainAxisSize
@@ -862,7 +870,8 @@ class _MyProfileWidgetState extends State<MyProfileWidget>
                                                                       FlutterFlowIconButton(
                                                                     borderWidth:
                                                                         1.0,
-                                                                    icon: const Icon(
+                                                                    icon:
+                                                                        const Icon(
                                                                       Icons
                                                                           .remove_circle,
                                                                       color: Color(
@@ -879,22 +888,31 @@ class _MyProfileWidgetState extends State<MyProfileWidget>
                                                                   ),
                                                                 ),
                                                                 FlutterFlowIconButton(
+                                                                  //share button
                                                                   borderColor:
                                                                       Colors
                                                                           .transparent,
                                                                   borderWidth:
                                                                       1.0,
-                                                                  icon: const Icon(
+                                                                  icon:
+                                                                      const Icon(
                                                                     Icons
                                                                         .share_rounded,
                                                                     color: Color(
                                                                         0xFFED49BB),
-                                                                    size: 22.0,
+                                                                    size: 24.0,
                                                                   ),
                                                                   onPressed:
-                                                                      () {
-                                                                    print(
-                                                                        'IconButton pressed ...');
+                                                                      () async {
+                                                                    final Uri
+                                                                        url =
+                                                                        Uri.parse(
+                                                                            'https://yourapp.link/event/${listViewUserEventsRecord.reference.id}');
+                                                                    const String
+                                                                        msg =
+                                                                        'Check out this event on EventFull. If you don\'t have the app, download it here: [App Download Link]';
+                                                                    Share.share(
+                                                                        '$msg $url');
                                                                   },
                                                                 ),
                                                                 FlutterFlowIconButton(
@@ -903,36 +921,18 @@ class _MyProfileWidgetState extends State<MyProfileWidget>
                                                                           .transparent,
                                                                   borderWidth:
                                                                       1.0,
-                                                                  icon: const Icon(
+                                                                  icon:
+                                                                      const Icon(
                                                                     Icons
                                                                         .shopping_cart_checkout_rounded,
                                                                     color: Color(
                                                                         0xFFED49BB),
-                                                                    size: 22.0,
+                                                                    size: 24.0,
                                                                   ),
                                                                   onPressed:
-                                                                      () {
-                                                                    print(
-                                                                        'IconButton pressed ...');
-                                                                  },
-                                                                ),
-                                                                FlutterFlowIconButton(
-                                                                  borderColor:
-                                                                      Colors
-                                                                          .transparent,
-                                                                  borderWidth:
-                                                                      1.0,
-                                                                  icon: const Icon(
-                                                                    Icons
-                                                                        .navigate_next_rounded,
-                                                                    color: Color(
-                                                                        0xFFED49BB),
-                                                                    size: 22.0,
-                                                                  ),
-                                                                  onPressed:
-                                                                      () {
-                                                                    print(
-                                                                        'IconButton pressed ...');
+                                                                      () async {
+                                                                    await launchURL(
+                                                                        listViewUserEventsRecord.ticketLink);
                                                                   },
                                                                 ),
                                                               ],

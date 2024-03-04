@@ -1,10 +1,9 @@
+// ignore_for_file: avoid_print
+
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'my_tickets_model.dart';
 export 'my_tickets_model.dart';
 
@@ -41,7 +40,7 @@ class _MyTicketsWidgetState extends State<MyTicketsWidget> {
           : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: Color(0xFFF1F4F8),
+        backgroundColor: const Color(0xFFF1F4F8),
         body: Stack(
           children: [
             ClipRRect(
@@ -58,13 +57,13 @@ class _MyTicketsWidgetState extends State<MyTicketsWidget> {
               children: [
                 Padding(
                   padding:
-                      EdgeInsetsDirectional.fromSTEB(15.0, 55.0, 15.0, 0.0),
+                      const EdgeInsetsDirectional.fromSTEB(15.0, 55.0, 15.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Align(
-                        alignment: AlignmentDirectional(-1.0, 0.0),
+                        alignment: const AlignmentDirectional(-1.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
                           focusColor: Colors.transparent,
@@ -73,7 +72,7 @@ class _MyTicketsWidgetState extends State<MyTicketsWidget> {
                           onTap: () async {
                             context.pushNamed('SettingsPage');
                           },
-                          child: Icon(
+                          child: const Icon(
                             Icons.chevron_left_rounded,
                             color: Colors.white,
                             size: 30.0,
@@ -85,8 +84,8 @@ class _MyTicketsWidgetState extends State<MyTicketsWidget> {
                         borderRadius: 30.0,
                         borderWidth: 1.0,
                         buttonSize: 40.0,
-                        fillColor: Color(0x34FFFFFF),
-                        icon: Icon(
+                        fillColor: const Color(0x34FFFFFF),
+                        icon: const Icon(
                           Icons.ios_share,
                           color: Colors.white,
                           size: 20.0,
@@ -99,16 +98,16 @@ class _MyTicketsWidgetState extends State<MyTicketsWidget> {
                   ),
                 ),
                 Align(
-                  alignment: AlignmentDirectional(-1.0, -1.0),
+                  alignment: const AlignmentDirectional(-1.0, -1.0),
                   child: Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(15.0, 50.0, 15.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(15.0, 50.0, 15.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 5.0, 0.0, 0.0),
                           child: SelectionArea(
                               child: Text(
@@ -131,23 +130,23 @@ class _MyTicketsWidgetState extends State<MyTicketsWidget> {
                 ),
                 Container(
                   height: 852.0,
-                  decoration: BoxDecoration(),
+                  decoration: const BoxDecoration(),
                   child: Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(15.0, 15.0, 15.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(15.0, 15.0, 15.0, 0.0),
                     child: ListView(
                       padding: EdgeInsets.zero,
                       scrollDirection: Axis.vertical,
                       children: [
                         Container(
-                          decoration: BoxDecoration(),
+                          decoration: const BoxDecoration(),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Stack(
                                 children: [
                                   Align(
-                                    alignment: AlignmentDirectional(-1.0, 0.0),
+                                    alignment: const AlignmentDirectional(-1.0, 0.0),
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(8.0),
                                       child: Image.asset(
@@ -159,7 +158,7 @@ class _MyTicketsWidgetState extends State<MyTicketsWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         75.0, 12.0, 0.0, 0.0),
                                     child: Text(
                                       'An Evening With Skrillex',
@@ -173,7 +172,7 @@ class _MyTicketsWidgetState extends State<MyTicketsWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         75.0, 32.0, 0.0, 0.0),
                                     child: Text(
                                       'Red Rocks, CA',
@@ -181,14 +180,14 @@ class _MyTicketsWidgetState extends State<MyTicketsWidget> {
                                           .bodyMedium
                                           .override(
                                             fontFamily: 'Proxima Nova Final',
-                                            color: Color(0x9995A1AC),
+                                            color: const Color(0x9995A1AC),
                                             fontSize: 12.0,
                                             useGoogleFonts: false,
                                           ),
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         175.0, 32.0, 0.0, 0.0),
                                     child: Text(
                                       '29th Aprill, 2023',
@@ -196,16 +195,16 @@ class _MyTicketsWidgetState extends State<MyTicketsWidget> {
                                           .bodyMedium
                                           .override(
                                             fontFamily: 'Proxima Nova Final',
-                                            color: Color(0x9995A1AC),
+                                            color: const Color(0x9995A1AC),
                                             fontSize: 12.0,
                                             useGoogleFonts: false,
                                           ),
                                     ),
                                   ),
                                   Align(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    alignment: const AlignmentDirectional(0.0, 0.0),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           300.0, 15.0, 0.0, 0.0),
                                       child: InkWell(
                                         splashColor: Colors.transparent,
@@ -215,7 +214,7 @@ class _MyTicketsWidgetState extends State<MyTicketsWidget> {
                                         onTap: () async {
                                           context.pushNamed('EventTickets');
                                         },
-                                        child: Icon(
+                                        child: const Icon(
                                           Icons.navigate_next_rounded,
                                           color: Color(0xFFED49BB),
                                           size: 26.0,
