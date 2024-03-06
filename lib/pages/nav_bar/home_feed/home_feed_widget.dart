@@ -24,6 +24,7 @@ class HomeFeedWidget extends StatefulWidget {
 class _HomeFeedWidgetState extends State<HomeFeedWidget> {
   late HomeFeedModel _model;
   final scaffoldKey = GlobalKey<ScaffoldState>();
+  DateTimeRange? selectedDateRange; // Add this line
 
   @override
   void initState() {
@@ -138,42 +139,25 @@ class _HomeFeedWidgetState extends State<HomeFeedWidget> {
   Widget _buildContent(BuildContext context) {
     return Stack(
       children: [
-        Container(
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-              fit: BoxFit.cover,
-              image: AssetImage('assets/images/event_feed_bg.png'),
-            ),
-          ),
-          width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height,
-        ),
-        Container(
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-              fit: BoxFit.cover,
-              image: AssetImage('assets/images/Untitled-2_bg.png'),
-            ),
-          ),
-          width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height,
-        ),
         Padding(
           padding: const EdgeInsets.fromLTRB(15.0, 20.0, 15.0, 0.0),
           child: StreamBuilder<List<EventsRecord>>(
             stream: queryEventsRecord(
-              queryBuilder: (eventsRecord) => eventsRecord.where(
-                'StartTime',
-                isGreaterThanOrEqualTo: getCurrentTimestamp,
-              ),
-              limit: 25,
+              queryBuilder: (eventsRecord) {
+                Query<Object?> query = eventsRecord;
+                if (selectedDateRange != null) {
+                  query = query
+                      .where('StartTime', isGreaterThanOrEqualTo: selectedDateRange!.start)
+                      .where('EndTime', isLessThanOrEqualTo: selectedDateRange!.end);
+                }
+                return query.limit(25);
+              },
             ),
             builder: (context, snapshot) {
               if (!snapshot.hasData) {
-                return _buildEventsLoadingIndicator();
+                return _buildLoadingIndicator();
               }
-              final events =
-                  snapshot.data ?? []; // Default to an empty list if null
+              final events = snapshot.data ?? [];
               return _buildEventsListView(events);
             },
           ),
@@ -181,50 +165,47 @@ class _HomeFeedWidgetState extends State<HomeFeedWidget> {
         Align(
           alignment: Alignment.topRight,
           child: Padding(
-            padding: const EdgeInsets.fromLTRB(
-                0.0, 50.0, 20.0, 0.0), // Adjust top padding here
+            padding: const EdgeInsets.fromLTRB(0.0, 50.0, 20.0, 0.0),
             child: PopupMenuButton<int>(
-              color: const Color.fromARGB(
-                  255, 0, 1, 61), // background color of the menu
+              color: const Color.fromARGB(255, 0, 1, 61),
               itemBuilder: (context) => [
                 const PopupMenuItem(
                   value: 1,
-                  child: Text(
-                    "Filter by Category",
-                    style: TextStyle(color: Colors.white), // text color
-                  ),
+                  child: Text("Filter by Date", style: TextStyle(color: Colors.white)),
                 ),
                 const PopupMenuItem(
                   value: 2,
-                  child: Text(
-                    "Filter by Date",
-                    style: TextStyle(color: Colors.white), // text color
-                  ),
+                  child: Text("Add New Event", style: TextStyle(color: Colors.white)),
                 ),
                 const PopupMenuItem(
                   value: 3,
-                  child: Text(
-                    "Add New Event",
-                    style: TextStyle(color: Colors.white), // text color
-                  ),
+                  child: Text("Clear Filter", style: TextStyle(color: Colors.white)),
                 ),
               ],
-              icon: const Icon(
-                Icons.menu_rounded,
-                color: Color(0xFFED49BB), // icon color
-                size: 30.0, // icon size
-              ),
-              onSelected: (value) {
-                switch (value) {
-                  case 1:
-                    print('Filter by Category selected');
-                    break;
-                  case 2:
-                    print('Filter by Date selected');
-                    break;
-                  case 3:
-                    context.pushNamed('AddEvent');
-                    break;
+              icon: const Icon(Icons.menu_rounded, color: Color(0xFFED49BB), size: 30.0),
+              onSelected: (value) async {
+                if (value == 1) {
+                  final DateTimeRange? newRange = await showDateRangePicker(
+                    context: context,
+                    firstDate: DateTime(2000),
+                    lastDate: DateTime(2100),
+                    initialDateRange: selectedDateRange,
+                  );
+
+                  if (newRange != null) {
+                    setState(() {
+                      selectedDateRange = newRange;
+                    });
+                  }
+                } else if (value == 2) {
+                  Navigator.pushNamed(context, 'AddEvent');
+                } else if (value == 3) {
+                  // Clear filter action
+                  if (selectedDateRange != null) {
+                    setState(() {
+                      selectedDateRange = null;
+                    });
+                  }
                 }
               },
             ),
@@ -388,7 +369,7 @@ class _HomeFeedWidgetState extends State<HomeFeedWidget> {
                                 }
 
                                 final placesResponse = snapshot.data!;
-                                
+
                                 // Attempting to get the first result's name as the venue name and vicinity for address.
                                 final results = getJsonField(
                                     placesResponse.jsonBody, r'''$.results''');
