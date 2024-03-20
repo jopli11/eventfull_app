@@ -1,12 +1,8 @@
-import '/flutter_flow/flutter_flow_animations.dart';
-import '/flutter_flow/flutter_flow_google_map.dart';
-import '/flutter_flow/flutter_flow_icon_button.dart';
-import '/flutter_flow/flutter_flow_util.dart';
+import 'package:event_full/flutter_flow/flutter_flow_model.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
-import 'package:pointer_interceptor/pointer_interceptor.dart';
-import 'friend_map_model.dart';
-export 'friend_map_model.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart' as gmaps;
+import 'friend_map_model.dart'; // Update the path according to your project structure
 
 class FriendMapWidget extends StatefulWidget {
   const FriendMapWidget({super.key});
@@ -15,134 +11,78 @@ class FriendMapWidget extends StatefulWidget {
   State<FriendMapWidget> createState() => _FriendMapWidgetState();
 }
 
-class _FriendMapWidgetState extends State<FriendMapWidget>
-    with TickerProviderStateMixin {
+class _FriendMapWidgetState extends State<FriendMapWidget> {
   late FriendMapModel _model;
-
-  final scaffoldKey = GlobalKey<ScaffoldState>();
-
-  final animationsMap = {
-    'iconButtonOnPageLoadAnimation': AnimationInfo(
-      trigger: AnimationTrigger.onPageLoad,
-      effects: [
-        FadeEffect(
-          curve: Curves.easeInOut,
-          delay: 0.ms,
-          duration: 300.ms,
-          begin: 0.0,
-          end: 1.0,
-        ),
-        ScaleEffect(
-          curve: Curves.easeInOut,
-          delay: 0.ms,
-          duration: 300.ms,
-          begin: const Offset(0.5, 0.0),
-          end: const Offset(0.0, 1.0),
-        ),
-      ],
-    ),
-  };
+  final Set<gmaps.Marker> _markers = {};
 
   @override
   void initState() {
     super.initState();
     _model = createModel(context, () => FriendMapModel());
-
-    setupAnimations(
-      animationsMap.values.where((anim) =>
-          anim.trigger == AnimationTrigger.onActionTrigger ||
-          !anim.applyInitialState),
-      this,
-    );
+    fetchThisWeeksEvents().then((eventDocs) {
+      displayEventsOnMap(eventDocs);
+    });
   }
 
-  @override
-  void dispose() {
-    _model.dispose();
+  Future<List<QueryDocumentSnapshot>> fetchThisWeeksEvents() async {
+    var now = DateTime.now();
+    var startOfWeek = DateTime(now.year, now.month, now.day - now.weekday + 1);
+    var endOfWeek = startOfWeek.add(const Duration(days: 7));
 
-    super.dispose();
+    var eventsCollection = FirebaseFirestore.instance.collection('events');
+    var snapshot = await eventsCollection
+        .where('StartTime', isGreaterThanOrEqualTo: Timestamp.fromDate(startOfWeek))
+        .where('StartTime', isLessThanOrEqualTo: Timestamp.fromDate(endOfWeek))
+        .get();
+
+    return snapshot.docs;
+  }
+
+  void displayEventsOnMap(List<QueryDocumentSnapshot> eventDocs) {
+    final markers = <gmaps.Marker>{};
+
+    for (var doc in eventDocs) {
+      var event = doc.data() as Map<String, dynamic>;
+      var geoPoint = event['location'] as GeoPoint;
+      var markerId = gmaps.MarkerId(doc.id);
+
+      var marker = gmaps.Marker(
+        markerId: markerId,
+        position: gmaps.LatLng(geoPoint.latitude, geoPoint.longitude),
+        infoWindow: gmaps.InfoWindow(
+          title: event['name'],
+        ),
+      );
+
+      markers.add(marker);
+    }
+
+    setState(() {
+      _markers.addAll(markers);
+    });
   }
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => _model.unfocusNode.canRequestFocus
-          ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-          : FocusScope.of(context).unfocus(),
+      onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
-        key: scaffoldKey,
+        key: GlobalKey<ScaffoldState>(),
         resizeToAvoidBottomInset: false,
         backgroundColor: const Color(0xFFF1F4F8),
-        body: Container(
+        body: SizedBox(
           width: double.infinity,
           height: double.infinity,
-          decoration: BoxDecoration(
-            color: const Color(0xFFF1F4F8),
-            image: DecorationImage(
-              fit: BoxFit.fill,
-              image: Image.asset(
-                'assets/images/background.png',
-              ).image,
+          child: gmaps.GoogleMap(
+            initialCameraPosition: const gmaps.CameraPosition(
+              target: gmaps.LatLng(13.106061, -59.613158),
+              zoom: 14.0,
             ),
-          ),
-          child: Stack(
-            children: [
-              FlutterFlowGoogleMap(
-                controller: _model.googleMapsController,
-                onCameraIdle: (latLng) => _model.googleMapsCenter = latLng,
-                initialLocation: _model.googleMapsCenter ??=
-                    const LatLng(13.106061, -59.613158),
-                markerColor: GoogleMarkerColor.violet,
-                mapType: MapType.normal,
-                style: GoogleMapStyle.standard,
-                initialZoom: 14.0,
-                allowInteraction: true,
-                allowZoom: true,
-                showZoomControls: true,
-                showLocation: true,
-                showCompass: false,
-                showMapToolbar: false,
-                showTraffic: false,
-                centerMapOnMarkerTap: true,
-              ),
-              Align(
-                alignment: const AlignmentDirectional(0.0, 0.0),
-                child: PointerInterceptor(
-                  intercepting: isWeb,
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
-                            16.0, 44.0, 16.0, 0.0),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            FlutterFlowIconButton(
-                              borderColor: Colors.transparent,
-                              borderRadius: 30.0,
-                              borderWidth: 1.0,
-                              buttonSize: 50.0,
-                              icon: const Icon(
-                                Icons.chevron_left_rounded,
-                                color: Colors.white,
-                                size: 30.0,
-                              ),
-                              onPressed: () async {
-                                context.pop();
-                              },
-                            ).animateOnPageLoad(animationsMap[
-                                'iconButtonOnPageLoadAnimation']!),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ],
+            markers: _markers,
+            mapType: gmaps.MapType.normal,
+            zoomControlsEnabled: true,
+            myLocationEnabled: true,
+            myLocationButtonEnabled: true,
           ),
         ),
       ),

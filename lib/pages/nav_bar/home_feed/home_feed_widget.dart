@@ -198,7 +198,7 @@ class _HomeFeedWidgetState extends State<HomeFeedWidget> {
                     });
                   }
                 } else if (value == 2) {
-                  Navigator.pushNamed(context, 'AddEvent');
+                  context.pushNamed('AddEvent');
                 } else if (value == 3) {
                   // Clear filter action
                   if (selectedDateRange != null) {
