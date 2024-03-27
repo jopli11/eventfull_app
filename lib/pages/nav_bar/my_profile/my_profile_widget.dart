@@ -589,244 +589,214 @@ class _MyProfileWidgetState extends State<MyProfileWidget>
                           child: TabBarView(
                             controller: _model.tabBarController,
                             children: [
-                              SingleChildScrollView(
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Padding(
-                                      padding:
-                                          const EdgeInsetsDirectional.fromSTEB(
-                                              0.0, 10.0, 0.0, 0.0),
-                                      child: Stack(
-                                        children: [
-                                          Container(
-                                            width: 430.0,
-                                            height: 852.0,
-                                            decoration: const BoxDecoration(),
-                                            child: StreamBuilder<
-                                                List<UserEventsRecord>>(
-                                              stream: queryUserEventsRecord(
-                                                parent: currentUserReference,
-                                                queryBuilder:
-                                                    (userEventsRecord) =>
-                                                        userEventsRecord
-                                                            .orderBy(
-                                                                'startTime'),
-                                                limit: 25,
-                                              ),
-                                              builder: (context, snapshot) {
-                                                // Customize what your widget looks like when it's loading.
-                                                if (!snapshot.hasData) {
-                                                  return Center(
-                                                    child: SizedBox(
-                                                      width: 50.0,
-                                                      height: 50.0,
-                                                      child:
-                                                          CircularProgressIndicator(
-                                                        valueColor:
-                                                            AlwaysStoppedAnimation<
-                                                                Color>(
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primary,
-                                                        ),
+                              Column(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Padding(
+                                    padding:
+                                        const EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 10.0, 0.0, 0.0),
+                                    child: Stack(
+                                      children: [
+                                        Container(
+                                          width: 430.0,
+                                          height: 852.0,
+                                          decoration: const BoxDecoration(),
+                                          child: StreamBuilder<
+                                              List<UserEventsRecord>>(
+                                            stream: queryUserEventsRecord(
+                                              parent: currentUserReference,
+                                              queryBuilder:
+                                                  (userEventsRecord) =>
+                                                      userEventsRecord
+                                                          .orderBy('startTime'),
+                                              limit: 25,
+                                            ),
+                                            builder: (context, snapshot) {
+                                              // Customize what your widget looks like when it's loading.
+                                              if (!snapshot.hasData) {
+                                                return Center(
+                                                  child: SizedBox(
+                                                    width: 50.0,
+                                                    height: 50.0,
+                                                    child:
+                                                        CircularProgressIndicator(
+                                                      valueColor:
+                                                          AlwaysStoppedAnimation<
+                                                              Color>(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .primary,
                                                       ),
                                                     ),
-                                                  );
-                                                }
-                                                List<UserEventsRecord>
-                                                    listViewUserEventsRecordList =
-                                                    snapshot.data!;
-                                                return ListView.builder(
-                                                  padding: EdgeInsets.zero,
-                                                  scrollDirection:
-                                                      Axis.vertical,
-                                                  itemCount:
-                                                      listViewUserEventsRecordList
-                                                          .length,
-                                                  itemBuilder:
-                                                      (context, listViewIndex) {
-                                                    final listViewUserEventsRecord =
-                                                        listViewUserEventsRecordList[
-                                                            listViewIndex];
-                                                    return Container(
-                                                      width: 100.0,
-                                                      height: 360.0,
-                                                      decoration:
-                                                          const BoxDecoration(),
-                                                      child: Column(
-                                                        mainAxisSize:
-                                                            MainAxisSize.max,
-                                                        children: [
-                                                          Padding(
-                                                            padding:
-                                                                const EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                    15.0,
-                                                                    0.0,
-                                                                    15.0,
-                                                                    0.0),
-                                                            child: InkWell(
-                                                              splashColor: Colors
-                                                                  .transparent,
-                                                              focusColor: Colors
-                                                                  .transparent,
-                                                              hoverColor: Colors
-                                                                  .transparent,
-                                                              highlightColor:
-                                                                  Colors
-                                                                      .transparent,
-                                                              onTap: () async {
-                                                                context
-                                                                    .pushNamed(
-                                                                  'EventExpanded',
-                                                                  queryParameters:
-                                                                      {
-                                                                    'eventID':
-                                                                        serializeParam(
-                                                                      listViewUserEventsRecord
-                                                                          .eventID,
-                                                                      ParamType
-                                                                          .DocumentReference,
-                                                                    ),
-                                                                  }.withoutNulls,
-                                                                );
-                                                              },
-                                                              child: ClipRRect(
-                                                                borderRadius:
-                                                                    BorderRadius
-                                                                        .circular(
-                                                                            12.0),
-                                                                child: Image
-                                                                    .network(
-                                                                  listViewUserEventsRecord
-                                                                      .photoUrl,
-                                                                  width: 444.0,
-                                                                  height: 250.0,
-                                                                  fit: BoxFit
-                                                                      .cover,
-                                                                ),
-                                                              ),
-                                                            ),
-                                                          ),
-                                                          Align(
-                                                            alignment:
-                                                                const AlignmentDirectional(
-                                                                    -1.0, 0.0),
-                                                            child: Padding(
-                                                              padding:
-                                                                  const EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                      15.0,
-                                                                      5.0,
-                                                                      15.0,
-                                                                      0.0),
-                                                              child: Text(
+                                                  ),
+                                                );
+                                              }
+                                              List<UserEventsRecord>
+                                                  listViewUserEventsRecordList =
+                                                  snapshot.data!;
+                                              return ListView.builder(
+                                                padding: EdgeInsets.zero,
+                                                scrollDirection: Axis.vertical,
+                                                itemCount:
+                                                    listViewUserEventsRecordList
+                                                        .length,
+                                                itemBuilder:
+                                                    (context, listViewIndex) {
+                                                  final listViewUserEventsRecord =
+                                                      listViewUserEventsRecordList[
+                                                          listViewIndex];
+                                                  return Container(
+                                                    width: 100.0,
+                                                    height: 360.0,
+                                                    decoration:
+                                                        const BoxDecoration(),
+                                                    child: Column(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      children: [
+                                                        Padding(
+                                                          padding:
+                                                              const EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                  15.0,
+                                                                  0.0,
+                                                                  15.0,
+                                                                  0.0),
+                                                          child: InkWell(
+                                                            splashColor: Colors
+                                                                .transparent,
+                                                            focusColor: Colors
+                                                                .transparent,
+                                                            hoverColor: Colors
+                                                                .transparent,
+                                                            highlightColor:
+                                                                Colors
+                                                                    .transparent,
+                                                            onTap: () async {
+                                                              context.pushNamed(
+                                                                'EventExpanded',
+                                                                queryParameters:
+                                                                    {
+                                                                  'eventID':
+                                                                      serializeParam(
+                                                                    listViewUserEventsRecord
+                                                                        .eventID,
+                                                                    ParamType
+                                                                        .DocumentReference,
+                                                                  ),
+                                                                }.withoutNulls,
+                                                              );
+                                                            },
+                                                            child: ClipRRect(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          12.0),
+                                                              child:
+                                                                  Image.network(
                                                                 listViewUserEventsRecord
-                                                                    .title,
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          'Proxima Nova Final',
-                                                                      fontSize:
-                                                                          20.0,
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .w500,
-                                                                      useGoogleFonts:
-                                                                          false,
-                                                                    ),
+                                                                    .photoUrl,
+                                                                width: 444.0,
+                                                                height: 250.0,
+                                                                fit: BoxFit
+                                                                    .cover,
                                                               ),
                                                             ),
                                                           ),
-                                                          Padding(
+                                                        ),
+                                                        Align(
+                                                          alignment:
+                                                              const AlignmentDirectional(
+                                                                  -1.0, 0.0),
+                                                          child: Padding(
                                                             padding:
                                                                 const EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                    14.0,
-                                                                    0.0,
-                                                                    0.0,
+                                                                    15.0,
+                                                                    5.0,
+                                                                    15.0,
                                                                     0.0),
-                                                            child: Row(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              children: [
-                                                                Opacity(
-                                                                  opacity: 0.3,
-                                                                  child: Align(
-                                                                    alignment:
-                                                                        const AlignmentDirectional(
-                                                                            -1.0,
-                                                                            0.0),
-                                                                    child: FutureBuilder<
-                                                                        ApiCallResponse>(
-                                                                      future: ReverseGeoCodeCall
-                                                                          .call(
-                                                                        latlng:
-                                                                            functions.parseLatLng(listViewUserEventsRecord.location),
-                                                                      ),
-                                                                      builder:
-                                                                          (context,
-                                                                              snapshot) {
-                                                                        // Customize what your widget looks like when it's loading.
-                                                                        if (!snapshot
-                                                                            .hasData) {
-                                                                          return Center(
+                                                            child: Text(
+                                                              listViewUserEventsRecord
+                                                                  .title,
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Proxima Nova Final',
+                                                                    fontSize:
+                                                                        20.0,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w500,
+                                                                    useGoogleFonts:
+                                                                        false,
+                                                                  ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        Padding(
+                                                          padding:
+                                                              const EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                  14.0,
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0),
+                                                          child: Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            children: [
+                                                              Opacity(
+                                                                opacity: 0.3,
+                                                                child: Align(
+                                                                  alignment:
+                                                                      const AlignmentDirectional(
+                                                                          -1.0,
+                                                                          0.0),
+                                                                  child: FutureBuilder<
+                                                                      ApiCallResponse>(
+                                                                    future:
+                                                                        ReverseGeoCodeCall
+                                                                            .call(
+                                                                      latlng: functions
+                                                                          .parseLatLng(
+                                                                              listViewUserEventsRecord.location),
+                                                                    ),
+                                                                    builder:
+                                                                        (context,
+                                                                            snapshot) {
+                                                                      // Customize what your widget looks like when it's loading.
+                                                                      if (!snapshot
+                                                                          .hasData) {
+                                                                        return Center(
+                                                                          child:
+                                                                              SizedBox(
+                                                                            width:
+                                                                                50.0,
+                                                                            height:
+                                                                                50.0,
                                                                             child:
-                                                                                SizedBox(
-                                                                              width: 50.0,
-                                                                              height: 50.0,
-                                                                              child: CircularProgressIndicator(
-                                                                                valueColor: AlwaysStoppedAnimation<Color>(
-                                                                                  FlutterFlowTheme.of(context).primary,
-                                                                                ),
+                                                                                CircularProgressIndicator(
+                                                                              valueColor: AlwaysStoppedAnimation<Color>(
+                                                                                FlutterFlowTheme.of(context).primary,
                                                                               ),
                                                                             ),
-                                                                          );
-                                                                        }
-                                                                        final textReverseGeoCodeResponse =
-                                                                            snapshot.data!;
-                                                                        return Text(
-                                                                          getJsonField(
-                                                                            textReverseGeoCodeResponse.jsonBody,
-                                                                            r'''$.results[0].formatted_address''',
-                                                                          ).toString(),
-                                                                          style: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .override(
-                                                                                fontFamily: 'Proxima Nova Final',
-                                                                                fontSize: 12.0,
-                                                                                fontWeight: FontWeight.w500,
-                                                                                useGoogleFonts: false,
-                                                                              ),
+                                                                          ),
                                                                         );
-                                                                      },
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                                Opacity(
-                                                                  opacity: 0.3,
-                                                                  child: Align(
-                                                                    alignment:
-                                                                        const AlignmentDirectional(
-                                                                            -1.0,
-                                                                            0.0),
-                                                                    child:
-                                                                        Padding(
-                                                                      padding: const EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                          25.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                                      child:
-                                                                          Text(
-                                                                        dateTimeFormat(
-                                                                            'MMMMEEEEd',
-                                                                            listViewUserEventsRecord.startTime!),
+                                                                      }
+                                                                      final textReverseGeoCodeResponse =
+                                                                          snapshot
+                                                                              .data!;
+                                                                      return Text(
+                                                                        getJsonField(
+                                                                          textReverseGeoCodeResponse
+                                                                              .jsonBody,
+                                                                          r'''$.results[0].formatted_address''',
+                                                                        ).toString(),
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
@@ -835,124 +805,158 @@ class _MyProfileWidgetState extends State<MyProfileWidget>
                                                                               fontWeight: FontWeight.w500,
                                                                               useGoogleFonts: false,
                                                                             ),
-                                                                      ),
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                              ],
-                                                            ),
-                                                          ),
-                                                          Padding(
-                                                            padding:
-                                                                const EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                    5.0,
-                                                                    0.0,
-                                                                    15.0,
-                                                                    0.0),
-                                                            child: Row(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              mainAxisAlignment:
-                                                                  MainAxisAlignment
-                                                                      .start,
-                                                              crossAxisAlignment:
-                                                                  CrossAxisAlignment
-                                                                      .center,
-                                                              children: [
-                                                                Align(
-                                                                  alignment:
-                                                                      const AlignmentDirectional(
-                                                                          1.0,
-                                                                          0.0),
-                                                                  child:
-                                                                      FlutterFlowIconButton(
-                                                                    borderWidth:
-                                                                        1.0,
-                                                                    icon:
-                                                                        const Icon(
-                                                                      Icons
-                                                                          .remove_circle,
-                                                                      color: Color(
-                                                                          0xFFED49BB),
-                                                                      size:
-                                                                          22.0,
-                                                                    ),
-                                                                    onPressed:
-                                                                        () async {
-                                                                      await listViewUserEventsRecord
-                                                                          .reference
-                                                                          .delete();
+                                                                      );
                                                                     },
                                                                   ),
                                                                 ),
-                                                                FlutterFlowIconButton(
-                                                                  //share button
-                                                                  borderColor:
-                                                                      Colors
-                                                                          .transparent,
-                                                                  borderWidth:
-                                                                      1.0,
-                                                                  icon:
-                                                                      const Icon(
-                                                                    Icons
-                                                                        .share_rounded,
-                                                                    color: Color(
-                                                                        0xFFED49BB),
-                                                                    size: 24.0,
+                                                              ),
+                                                              Opacity(
+                                                                opacity: 0.3,
+                                                                child: Align(
+                                                                  alignment:
+                                                                      const AlignmentDirectional(
+                                                                          -1.0,
+                                                                          0.0),
+                                                                  child:
+                                                                      Padding(
+                                                                    padding: const EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                        25.0,
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0),
+                                                                    child: Text(
+                                                                      dateTimeFormat(
+                                                                          'MMMMEEEEd',
+                                                                          listViewUserEventsRecord
+                                                                              .startTime!),
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                'Proxima Nova Final',
+                                                                            fontSize:
+                                                                                12.0,
+                                                                            fontWeight:
+                                                                                FontWeight.w500,
+                                                                            useGoogleFonts:
+                                                                                false,
+                                                                          ),
+                                                                    ),
                                                                   ),
-                                                                  onPressed:
-                                                                      () async {
-                                                                    final Uri
-                                                                        url =
-                                                                        Uri.parse(
-                                                                            'https://yourapp.link/event/${listViewUserEventsRecord.reference.id}');
-                                                                    const String
-                                                                        msg =
-                                                                        'Check out this event on EventFull. If you don\'t have the app, download it here: [App Download Link]';
-                                                                    Share.share(
-                                                                        '$msg $url');
-                                                                  },
                                                                 ),
-                                                                FlutterFlowIconButton(
-                                                                  borderColor:
-                                                                      Colors
-                                                                          .transparent,
-                                                                  borderWidth:
-                                                                      1.0,
-                                                                  icon:
-                                                                      const Icon(
-                                                                    Icons
-                                                                        .shopping_cart_checkout_rounded,
-                                                                    color: Color(
-                                                                        0xFFED49BB),
-                                                                    size: 24.0,
-                                                                  ),
-                                                                  onPressed:
-                                                                      () async {
-                                                                    await launchURL(
-                                                                        listViewUserEventsRecord.ticketLink);
-                                                                  },
-                                                                ),
-                                                              ],
-                                                            ),
+                                                              ),
+                                                            ],
                                                           ),
-                                                        ],
-                                                      ),
-                                                    );
-                                                  },
-                                                );
-                                              },
-                                            ),
+                                                        ),
+                                                        Padding(
+                                                          padding:
+                                                              const EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                  5.0,
+                                                                  0.0,
+                                                                  15.0,
+                                                                  0.0),
+                                                          child: Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .start,
+                                                            crossAxisAlignment:
+                                                                CrossAxisAlignment
+                                                                    .center,
+                                                            children: [
+                                                              Align(
+                                                                alignment:
+                                                                    const AlignmentDirectional(
+                                                                        1.0,
+                                                                        0.0),
+                                                                child:
+                                                                    FlutterFlowIconButton(
+                                                                  borderWidth:
+                                                                      1.0,
+                                                                  icon:
+                                                                      const Icon(
+                                                                    Icons
+                                                                        .remove_circle,
+                                                                    color: Color(
+                                                                        0xFFED49BB),
+                                                                    size: 22.0,
+                                                                  ),
+                                                                  onPressed:
+                                                                      () async {
+                                                                    await listViewUserEventsRecord
+                                                                        .reference
+                                                                        .delete();
+                                                                  },
+                                                                ),
+                                                              ),
+                                                              FlutterFlowIconButton(
+                                                                //share button
+                                                                borderColor: Colors
+                                                                    .transparent,
+                                                                borderWidth:
+                                                                    1.0,
+                                                                icon:
+                                                                    const Icon(
+                                                                  Icons
+                                                                      .share_rounded,
+                                                                  color: Color(
+                                                                      0xFFED49BB),
+                                                                  size: 24.0,
+                                                                ),
+                                                                onPressed:
+                                                                    () async {
+                                                                  final Uri
+                                                                      url =
+                                                                      Uri.parse(
+                                                                          'https://yourapp.link/event/${listViewUserEventsRecord.reference.id}');
+                                                                  const String
+                                                                      msg =
+                                                                      'Check out this event on EventFull. If you don\'t have the app, download it here: [App Download Link]';
+                                                                  Share.share(
+                                                                      '$msg $url');
+                                                                },
+                                                              ),
+                                                              FlutterFlowIconButton(
+                                                                borderColor: Colors
+                                                                    .transparent,
+                                                                borderWidth:
+                                                                    1.0,
+                                                                icon:
+                                                                    const Icon(
+                                                                  Icons
+                                                                      .shopping_cart_checkout_rounded,
+                                                                  color: Color(
+                                                                      0xFFED49BB),
+                                                                  size: 24.0,
+                                                                ),
+                                                                onPressed:
+                                                                    () async {
+                                                                  await launchURL(
+                                                                      listViewUserEventsRecord
+                                                                          .ticketLink);
+                                                                },
+                                                              ),
+                                                            ],
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  );
+                                                },
+                                              );
+                                            },
                                           ),
-                                        ],
-                                      ),
+                                        ),
+                                      ],
                                     ),
-                                  ],
-                                ),
+                                  ),
+                                ],
                               ),
-                              Container(),
                             ],
                           ),
                         ),
