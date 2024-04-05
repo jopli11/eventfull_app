@@ -6,7 +6,7 @@ import 'package:geolocator/geolocator.dart';
 import 'package:event_full/flutter_flow/flutter_flow_util.dart';
 
 class FriendMapWidget extends StatefulWidget {
-  const FriendMapWidget({Key? key}) : super(key: key);
+  const FriendMapWidget({super.key});
 
   @override
   State<FriendMapWidget> createState() => _FriendMapWidgetState();
@@ -141,83 +141,89 @@ class _FriendMapWidgetState extends State<FriendMapWidget> {
     }
   }
 
-void showEventsBottomSheet(
-    BuildContext context, List<QueryDocumentSnapshot> events) {
-  showModalBottomSheet(
-    context: context,
-    builder: (context) {
-      return Container(
-        decoration: const BoxDecoration(
-          color: Color(0xFF0E1963), // Bottom sheet's background color
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(20.0),
-            topRight: Radius.circular(20.0),
+  void showEventsBottomSheet(
+      BuildContext context, List<QueryDocumentSnapshot> events) {
+    showModalBottomSheet(
+      context: context,
+      builder: (context) {
+        return Container(
+          decoration: const BoxDecoration(
+            color: Color(0xFF0E1963), // Bottom sheet's background color
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(20.0),
+              topRight: Radius.circular(20.0),
+            ),
           ),
-        ),
-        child: Column(
-          children: [
-            const Padding(
-              padding: EdgeInsets.all(12.0),
-              child: Align(
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  "Coming Up...",
-                  style: TextStyle(
-                    color: Color(0xFFED49BB), // Title's color
-                    fontWeight: FontWeight.bold,
-                    fontSize: 24,
+          child: Column(
+            children: [
+              const Padding(
+                padding: EdgeInsets.all(12.0),
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    "Coming Up...",
+                    style: TextStyle(
+                      color: Color(0xFFED49BB), // Title's color
+                      fontWeight: FontWeight.bold,
+                      fontSize: 24,
+                    ),
                   ),
                 ),
               ),
-            ),
-            Expanded(
-              child: ListView.builder(
-                itemCount: events.length,
-                itemBuilder: (context, index) {
-                  var event = events[index].data() as Map<String, dynamic>;
-                  return ListTile(
-                    leading: event['photo_url'] != null
-                        ? Image.network(
-                            event['photo_url'],
-                            width: 40,
-                            height: 40,
-                            fit: BoxFit.cover,
-                          )
-                        : const SizedBox(width: 40, height: 40), // Placeholder for the image
-                    title: Text(
-                      event['title'],
-                      style: const TextStyle(color: Colors.white), // Event title color
-                    ),
-                    subtitle: Text(
-                      event['description'] ?? 'No description',
-                      style: TextStyle(color: Colors.white.withOpacity(0.7)), // Subtitle color
-                    ),
-                    onTap: () {
-                      Navigator.pop(context); // Close the bottom sheet
-                      // Navigate to the event details page using the original method
-                      context.pushNamed(
-                        'EventExpanded',
-                        queryParameters: {
-                          'eventID': serializeParam(
-                            events[index].reference,
-                            ParamType.DocumentReference,
-                          ),
-                        }.withoutNulls,
-                      );
-                    },
-                  );
-                },
+              Expanded(
+                child: ListView.builder(
+                  itemCount: events.length,
+                  itemBuilder: (context, index) {
+                    var event = events[index].data() as Map<String, dynamic>;
+                    return ListTile(
+                      leading: event['photo_url'] != null
+                          ? Image.network(
+                              event['photo_url'],
+                              width: 40,
+                              height: 40,
+                              fit: BoxFit.cover,
+                            )
+                          : const SizedBox(
+                              width: 40,
+                              height: 40), // Placeholder for the image
+                      title: Text(
+                        event['title'].length > 35
+                            ? event['title'].substring(0, 35) + '...'
+                            : event['title'],
+                        style: const TextStyle(
+                            color: Colors.white), // Event title color
+                      ),
+                      subtitle: Text(
+                        (event['description'] ?? 'No description').length > 35
+                            ? event['description'].substring(0, 35) + '...'
+                            : event['description'],
+                        style: TextStyle(
+                            color: Colors.white
+                                .withOpacity(0.7)), // Subtitle color
+                      ),
+                      onTap: () {
+                        Navigator.pop(context); // Close the bottom sheet
+                        // Navigate to the event details page using the original method
+                        context.pushNamed(
+                          'EventExpanded',
+                          queryParameters: {
+                            'eventID': serializeParam(
+                              events[index].reference,
+                              ParamType.DocumentReference,
+                            ),
+                          }.withoutNulls,
+                        );
+                      },
+                    );
+                  },
+                ),
               ),
-            ),
-          ],
-        ),
-      );
-    },
-  );
-}
-
-
-
+            ],
+          ),
+        );
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
