@@ -185,9 +185,7 @@ class _AddEventWidgetState extends State<AddEventWidget> {
                                     color: Color(0xFFED49BB),
                                     size: 20.0,
                                   ),
-                                  onPressed: () {
-                                    print('IconButton pressed ...');
-                                  },
+                                  onPressed: () {},
                                 ),
                               ),
                             ),
@@ -212,8 +210,8 @@ class _AddEventWidgetState extends State<AddEventWidget> {
                                       alignment:
                                           const AlignmentDirectional(-1.0, 0.0),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 20.0, 0.0, 0.0),
+                                        padding: const EdgeInsetsDirectional
+                                            .fromSTEB(0.0, 20.0, 0.0, 0.0),
                                         child: Text(
                                           'Event title',
                                           style: FlutterFlowTheme.of(context)
@@ -230,25 +228,25 @@ class _AddEventWidgetState extends State<AddEventWidget> {
                                     ),
                                     Expanded(
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 8.0, 0.0),
+                                        padding: const EdgeInsetsDirectional
+                                            .fromSTEB(0.0, 0.0, 8.0, 0.0),
                                         child: TextFormField(
                                           controller: _model.textController1,
                                           focusNode: _model.textFieldFocusNode1,
                                           obscureText: false,
                                           decoration: InputDecoration(
                                             labelText: 'Write a title...',
-                                            labelStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .labelMedium
-                                                    .override(
-                                                      fontFamily:
-                                                          'Proxima Nova Final',
-                                                      color: const Color(0x40FFFFFF),
-                                                      fontWeight:
-                                                          FontWeight.w500,
-                                                      useGoogleFonts: false,
-                                                    ),
+                                            labelStyle: FlutterFlowTheme.of(
+                                                    context)
+                                                .labelMedium
+                                                .override(
+                                                  fontFamily:
+                                                      'Proxima Nova Final',
+                                                  color:
+                                                      const Color(0x40FFFFFF),
+                                                  fontWeight: FontWeight.w500,
+                                                  useGoogleFonts: false,
+                                                ),
                                             hintStyle:
                                                 FlutterFlowTheme.of(context)
                                                     .labelMedium
@@ -326,8 +324,8 @@ class _AddEventWidgetState extends State<AddEventWidget> {
                                       alignment:
                                           const AlignmentDirectional(-1.0, 0.0),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 20.0, 0.0, 0.0),
+                                        padding: const EdgeInsetsDirectional
+                                            .fromSTEB(0.0, 20.0, 0.0, 0.0),
                                         child: Text(
                                           'Description',
                                           style: FlutterFlowTheme.of(context)
@@ -344,25 +342,25 @@ class _AddEventWidgetState extends State<AddEventWidget> {
                                     ),
                                     Expanded(
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 8.0, 0.0),
+                                        padding: const EdgeInsetsDirectional
+                                            .fromSTEB(0.0, 0.0, 8.0, 0.0),
                                         child: TextFormField(
                                           controller: _model.textController2,
                                           focusNode: _model.textFieldFocusNode2,
                                           obscureText: false,
                                           decoration: InputDecoration(
                                             labelText: 'Write a description...',
-                                            labelStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .labelMedium
-                                                    .override(
-                                                      fontFamily:
-                                                          'Proxima Nova Final',
-                                                      color: const Color(0x40FFFFFF),
-                                                      fontWeight:
-                                                          FontWeight.w500,
-                                                      useGoogleFonts: false,
-                                                    ),
+                                            labelStyle: FlutterFlowTheme.of(
+                                                    context)
+                                                .labelMedium
+                                                .override(
+                                                  fontFamily:
+                                                      'Proxima Nova Final',
+                                                  color:
+                                                      const Color(0x40FFFFFF),
+                                                  fontWeight: FontWeight.w500,
+                                                  useGoogleFonts: false,
+                                                ),
                                             hintStyle:
                                                 FlutterFlowTheme.of(context)
                                                     .labelMedium
@@ -436,171 +434,81 @@ class _AddEventWidgetState extends State<AddEventWidget> {
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
-                                    Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      children: [
-                                        Align(
-                                          alignment:
-                                              const AlignmentDirectional(1.0, 0.0),
-                                          child: Padding(
-                                            padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 20.0, 0.0, 0.0),
-                                            child: InkWell(
-                                              splashColor: Colors.transparent,
-                                              focusColor: Colors.transparent,
-                                              hoverColor: Colors.transparent,
-                                              highlightColor:
-                                                  Colors.transparent,
-                                              onTap: () async {
-                                                final datePicked1Date =
-                                                    await showDatePicker(
-                                                  context: context,
-                                                  initialDate:
-                                                      getCurrentTimestamp,
-                                                  firstDate:
-                                                      getCurrentTimestamp,
-                                                  lastDate: DateTime(2050),
-                                                );
-
-                                                TimeOfDay? datePicked1Time;
-                                                if (datePicked1Date != null) {
-                                                  datePicked1Time =
-                                                      await showTimePicker(
-                                                    context: context,
-                                                    initialTime:
-                                                        TimeOfDay.fromDateTime(
-                                                            getCurrentTimestamp),
-                                                  );
-                                                }
-
-                                                if (datePicked1Date != null &&
-                                                    datePicked1Time != null) {
-                                                  safeSetState(() {
-                                                    _model.datePicked1 =
-                                                        DateTime(
-                                                      datePicked1Date.year,
-                                                      datePicked1Date.month,
-                                                      datePicked1Date.day,
-                                                      datePicked1Time!.hour,
-                                                      datePicked1Time.minute,
-                                                    );
-                                                  });
-                                                }
-                                              },
-                                              child: Text(
-                                                'Date & Time',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily:
-                                                              'Proxima Nova Final',
-                                                          fontSize: 14.0,
-                                                          fontWeight:
-                                                              FontWeight.w500,
-                                                          useGoogleFonts: false,
-                                                        ),
+                                    Align(
+                                      alignment:
+                                          const AlignmentDirectional(-1.0, 0.0),
+                                      child: Padding(
+                                        padding: const EdgeInsetsDirectional
+                                            .fromSTEB(0.0, 20.0, 0.0, 0.0),
+                                        child: Text(
+                                          'Event Timing',
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily:
+                                                    'Proxima Nova Final',
+                                                fontSize: 14.0,
+                                                fontWeight: FontWeight.w500,
+                                                useGoogleFonts: false,
                                               ),
-                                            ),
-                                          ),
                                         ),
-                                        Align(
-                                          alignment:
-                                              const AlignmentDirectional(1.0, 0.0),
-                                          child: Padding(
-                                            padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
-                                                    105.0, 20.0, 0.0, 0.0),
-                                            child: InkWell(
-                                              splashColor: Colors.transparent,
-                                              focusColor: Colors.transparent,
-                                              hoverColor: Colors.transparent,
-                                              highlightColor:
-                                                  Colors.transparent,
-                                              onTap: () async {
-                                                final datePicked2Date =
-                                                    await showDatePicker(
-                                                  context: context,
-                                                  initialDate:
-                                                      getCurrentTimestamp,
-                                                  firstDate:
-                                                      getCurrentTimestamp,
-                                                  lastDate: DateTime(2050),
-                                                );
-
-                                                TimeOfDay? datePicked2Time;
-                                                if (datePicked2Date != null) {
-                                                  datePicked2Time =
-                                                      await showTimePicker(
-                                                    context: context,
-                                                    initialTime:
-                                                        TimeOfDay.fromDateTime(
-                                                            getCurrentTimestamp),
-                                                  );
-                                                }
-
-                                                if (datePicked2Date != null &&
-                                                    datePicked2Time != null) {
-                                                  safeSetState(() {
-                                                    _model.datePicked2 =
-                                                        DateTime(
-                                                      datePicked2Date.year,
-                                                      datePicked2Date.month,
-                                                      datePicked2Date.day,
-                                                      datePicked2Time!.hour,
-                                                      datePicked2Time.minute,
-                                                    );
-                                                  });
-                                                }
-                                              },
-                                              child: Text(
-                                                'Select End',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily:
-                                                              'Proxima Nova Final',
-                                                          fontSize: 14.0,
-                                                          fontWeight:
-                                                              FontWeight.w500,
-                                                          useGoogleFonts: false,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ],
+                                      ),
                                     ),
                                     Expanded(
                                       child: Stack(
                                         children: [
                                           Align(
-                                            alignment: const AlignmentDirectional(
-                                                -1.0, -1.0),
+                                            alignment:
+                                                const AlignmentDirectional(
+                                                    -1.0, -1.0),
                                             child: Padding(
-                                              padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(
+                                              padding:
+                                                  const EdgeInsetsDirectional
+                                                      .fromSTEB(
                                                       0.0, 12.0, 0.0, 0.0),
                                               child: FFButtonWidget(
-                                                onPressed: () {
-                                                  print('Button pressed ...');
+                                                onPressed: () async {
+                                                  final datePicked1Date =
+                                                      await showDatePicker(
+                                                    context: context,
+                                                    initialDate:
+                                                        getCurrentTimestamp,
+                                                    firstDate:
+                                                        getCurrentTimestamp,
+                                                    lastDate: DateTime(2050),
+                                                  );
+
+                                                  TimeOfDay? datePicked1Time;
+                                                  if (datePicked1Date != null) {
+                                                    datePicked1Time =
+                                                        await showTimePicker(
+                                                      context: context,
+                                                      initialTime: TimeOfDay
+                                                          .fromDateTime(
+                                                              getCurrentTimestamp),
+                                                    );
+                                                  }
+
+                                                  if (datePicked1Date != null &&
+                                                      datePicked1Time != null) {
+                                                    safeSetState(() {
+                                                      _model.datePicked1 =
+                                                          DateTime(
+                                                        datePicked1Date.year,
+                                                        datePicked1Date.month,
+                                                        datePicked1Date.day,
+                                                        datePicked1Time!.hour,
+                                                        datePicked1Time.minute,
+                                                      );
+                                                    });
+                                                  }
                                                 },
                                                 text: 'Select Start',
                                                 options: FFButtonOptions(
                                                   width: 150.0,
                                                   height: 40.0,
-                                                  padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 0.0, 0.0, 0.0),
-                                                  iconPadding:
-                                                      const EdgeInsetsDirectional
-                                                          .fromSTEB(0.0, 0.0,
-                                                              0.0, 0.0),
-                                                  color: const Color(0xFF192B7F),
+                                                  color:
+                                                      const Color(0xFF192B7F),
                                                   textStyle: FlutterFlowTheme
                                                           .of(context)
                                                       .titleSmall
@@ -624,28 +532,57 @@ class _AddEventWidgetState extends State<AddEventWidget> {
                                             ),
                                           ),
                                           Align(
-                                            alignment: const AlignmentDirectional(
-                                                -1.0, -1.0),
+                                            alignment:
+                                                const AlignmentDirectional(
+                                                    -1.0, -1.0),
                                             child: Padding(
-                                              padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(
+                                              padding:
+                                                  const EdgeInsetsDirectional
+                                                      .fromSTEB(
                                                       175.0, 12.0, 0.0, 0.0),
                                               child: FFButtonWidget(
-                                                onPressed: () {
-                                                  print('Button pressed ...');
+                                                onPressed: () async {
+                                                  final datePicked2Date =
+                                                      await showDatePicker(
+                                                    context: context,
+                                                    initialDate:
+                                                        getCurrentTimestamp,
+                                                    firstDate:
+                                                        getCurrentTimestamp,
+                                                    lastDate: DateTime(2050),
+                                                  );
+
+                                                  TimeOfDay? datePicked2Time;
+                                                  if (datePicked2Date != null) {
+                                                    datePicked2Time =
+                                                        await showTimePicker(
+                                                      context: context,
+                                                      initialTime: TimeOfDay
+                                                          .fromDateTime(
+                                                              getCurrentTimestamp),
+                                                    );
+                                                  }
+
+                                                  if (datePicked2Date != null &&
+                                                      datePicked2Time != null) {
+                                                    safeSetState(() {
+                                                      _model.datePicked2 =
+                                                          DateTime(
+                                                        datePicked2Date.year,
+                                                        datePicked2Date.month,
+                                                        datePicked2Date.day,
+                                                        datePicked2Time!.hour,
+                                                        datePicked2Time.minute,
+                                                      );
+                                                    });
+                                                  }
                                                 },
                                                 text: 'Select End',
                                                 options: FFButtonOptions(
                                                   width: 150.0,
                                                   height: 40.0,
-                                                  padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 0.0, 0.0, 0.0),
-                                                  iconPadding:
-                                                      const EdgeInsetsDirectional
-                                                          .fromSTEB(0.0, 0.0,
-                                                              0.0, 0.0),
-                                                  color: const Color(0xFF192B7F),
+                                                  color:
+                                                      const Color(0xFF192B7F),
                                                   textStyle: FlutterFlowTheme
                                                           .of(context)
                                                       .titleSmall
@@ -687,8 +624,8 @@ class _AddEventWidgetState extends State<AddEventWidget> {
                                       alignment:
                                           const AlignmentDirectional(-1.0, 0.0),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 20.0, 0.0, 0.0),
+                                        padding: const EdgeInsetsDirectional
+                                            .fromSTEB(0.0, 20.0, 0.0, 0.0),
                                         child: Text(
                                           'Location',
                                           style: FlutterFlowTheme.of(context)
@@ -707,8 +644,8 @@ class _AddEventWidgetState extends State<AddEventWidget> {
                                       alignment:
                                           const AlignmentDirectional(-1.0, 0.0),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 12.0, 0.0, 0.0),
+                                        padding: const EdgeInsetsDirectional
+                                            .fromSTEB(0.0, 12.0, 0.0, 0.0),
                                         child: FlutterFlowPlacePicker(
                                           iOSGoogleMapsApiKey:
                                               'AIzaSyDOrVvK4Dy-G-8KZKjNH2ZtSGAhtuP_nwU',
@@ -771,8 +708,8 @@ class _AddEventWidgetState extends State<AddEventWidget> {
                                       alignment:
                                           const AlignmentDirectional(-1.0, 0.0),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 20.0, 0.0, 0.0),
+                                        padding: const EdgeInsetsDirectional
+                                            .fromSTEB(0.0, 20.0, 0.0, 0.0),
                                         child: Text(
                                           'Ticket Link',
                                           style: FlutterFlowTheme.of(context)
@@ -789,8 +726,8 @@ class _AddEventWidgetState extends State<AddEventWidget> {
                                     ),
                                     Expanded(
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 8.0, 0.0),
+                                        padding: const EdgeInsetsDirectional
+                                            .fromSTEB(0.0, 0.0, 8.0, 0.0),
                                         child: TextFormField(
                                           controller:
                                               _model.ticketLinkController,
@@ -798,17 +735,17 @@ class _AddEventWidgetState extends State<AddEventWidget> {
                                           obscureText: false,
                                           decoration: InputDecoration(
                                             labelText: 'Add ticket link..',
-                                            labelStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .labelMedium
-                                                    .override(
-                                                      fontFamily:
-                                                          'Proxima Nova Final',
-                                                      color: const Color(0x40FFFFFF),
-                                                      fontWeight:
-                                                          FontWeight.w500,
-                                                      useGoogleFonts: false,
-                                                    ),
+                                            labelStyle: FlutterFlowTheme.of(
+                                                    context)
+                                                .labelMedium
+                                                .override(
+                                                  fontFamily:
+                                                      'Proxima Nova Final',
+                                                  color:
+                                                      const Color(0x40FFFFFF),
+                                                  fontWeight: FontWeight.w500,
+                                                  useGoogleFonts: false,
+                                                ),
                                             hintStyle:
                                                 FlutterFlowTheme.of(context)
                                                     .labelMedium
@@ -884,8 +821,8 @@ class _AddEventWidgetState extends State<AddEventWidget> {
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 820.0, 0.0, 0.0),
+                      padding: const EdgeInsetsDirectional.fromSTEB(
+                          0.0, 820.0, 0.0, 0.0),
                       child: Container(
                         width: 430.0,
                         height: 120.0,
@@ -934,8 +871,9 @@ class _AddEventWidgetState extends State<AddEventWidget> {
                                     options: FFButtonOptions(
                                       width: 350.0,
                                       height: 45.0,
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          24.0, 0.0, 24.0, 0.0),
+                                      padding:
+                                          const EdgeInsetsDirectional.fromSTEB(
+                                              24.0, 0.0, 24.0, 0.0),
                                       iconPadding:
                                           const EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
@@ -970,8 +908,8 @@ class _AddEventWidgetState extends State<AddEventWidget> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(15.0, 50.0, 15.0, 0.0),
+                      padding: const EdgeInsetsDirectional.fromSTEB(
+                          15.0, 50.0, 15.0, 0.0),
                       child: FlutterFlowIconButton(
                         borderColor: Colors.transparent,
                         borderRadius: 30.0,
